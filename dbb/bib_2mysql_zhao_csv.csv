@@ -1,0 +1,173 @@
+﻿Contribution type;Sequence;Nb of electrodes;Dimension;Boreholes;Rhizotron;Method;Boundary cond;Spatial scale;Spatial scale (m);Temporal scale;Prospection date;Instrument;Permanent setup;Ancillary measurements;Crop type;Organ studied;Research purpose* (According to Zhao et al 2019);Calibration ;Temperature correction;Authors;Surname;Name;Corresponding email;Personal website;DOI;Preprint;URL;Institution;Adress;Title;Keywords;Date;Journal;Dataset DOI;Notebook DOI;Notebook filename;Lat;Long;Software DOI;Software website
+Research article;Wenner;(1x48);2D;No;;ERT;Field;Large-scale;11.75 m x 1.05 m;No;;;;;Alder;;"Test its ability for detecting the spatial variability
+of roots and quantifying their biomass.";No;Yes;Amato et al. ;;;;;10.1093/treephys/28.10.1441;;;Department of Crop, Forest and Environmental Sciences;University of Basilicata, Via Ateneo Lucano, 10, Potenza 85100, Italy;In situ detection of tree root distribution and biomass by multi-electrode resistivity imaging;;2008;Tree Physiology;;;;41.5416;12.9785;;
+Research article;Wenner;;"2D;3D";;;ERT;Field;Small-scale ;3.5 m x 0.7 m;Month;;;;;"Poplar; Pine";;Evaluate the possibility of using techniques such as ERT for detecting roots.;No;Yes;Zenone et al. ;;;;;10.1071/FP08062;;;Department of Forest Science and Environment;University of Tuscia, Viterbo, Italy. ;Preliminary use of ground-penetrating radar and electrical resistivity tomography to study tree roots in pine forests and poplar plantations;;2008;Functional Plant Biology;;;;;;;
+Research article;Dipole-dipole;(4x18);3D;Yes;;ERT;Laboratory;Small-scale ;0.2 m x 0.2 m x 0.18 m;No;;;;;Alfalfa;;Prove its applicability to quantify and map root biomass at low root density and in herbaceous plants.;No;Yes;Amato et al. ;;;;;10.1016/j.eja.2009.08.005;;;Department of Crop, Forest and Environmental Sciences;University of Basilicata, Via Ateneo Lucano, 10, Potenza 85100, Italy;Multi-electrode 3D resistivity imaging of alfalfa root zone;;2009;European Journal of Agronomy;;;;;;;
+Research article;Dipole-dipole;"(1 x 48);  (4 x 18)";"2D;3D";"No;Yes";;ERT;Field/Laboratory;"Large-scale; Small-scale";"11.75 m x 2-3m; 0.2 m x 0.2 m x 0.2 m";No;;;;;"Arundo; Olive; Alfalfa";;Test its ability to measure the spatial distribution of roots even at low contrast between roots and soil variation.;No;Yes;Amato et al.;;;;;10.4081/ija.2010.257;;;Department of Crop, Forest and Environmental Sciences;University of Basilicata, Via Ateneo Lucano, 10, Potenza 85100, Italy;Multielectrode Geoelectrical Tomography for the Quantification of Plant Roots;ERT, plant  roots, spatial  variability, soil  resistivity.;2010;Italian Journal of Agronomy;;;;;;;
+Research article;"Dipole-dipole; Time-lapse;";"(1 x 93);(24 x 24)";"2D;3D";"No;Yes";;ERT;Field;Large-scale;"13.8 m x 1.18 m;
+6.9 m x 6.9 m x 1.31 m";20min/No;;;;;Eucalyptus;;"Explore the ability of ERT and other two
+geophysical methods to inspect the extension of tree roots.";No;No;Leucci;;;;;10.1071/EG09034;;;;;The use of three geophysical methods for 3D images of total root volume of soil in urban environments;;2010;Exploration Geophysics;;;;;;;
+Research article;Wenner-Schlumberger;1×32;2D;No;;ERT;Laboratory;Small-scale ;"6.9m×6.9m×1.31m; 0.62m×0.108m";No;;;;;Peach ;;"Study the feasibility of using methods such as
+ERT to identify tree root system in homogeneous sand-clay.";No;No;Satriani et al.;;;;;10.5194/adgeo-24-133-2010;;;Institute of Methodologies for Environmental Analysis – CNR ;Tito Scalo (PZ), Italy;Building damage caused by tree roots: laboratory experiments of GPR and ERT surveys;;2010;Advances in Geosciences;;;;;;;
+Research article;"Eight different quadripole schemes; ";(1×16+2×8)/(2C×16+4×8);"2D;3D";Yes;;ERT;Laboratory;;;No;;;;;Hibiscus;;"Investigate its optimized electrode configurations
+to map conductive and resistive zones with fine roots of small plants.";No;No;Attia al Hagrey and Petersen;;;;;10.1190/1.3545067;;;;;Numerical and experimental mapping of small root zones using optimized surface and borehole resistivity tomography;;2011;Geophysics;;;;;;;
+Research article;Dipole-dipole;(1×48/6×8);"2D;3D";No;;ERT;Field;;;No;;;;;"Orange; Lemon; Olive";;Determine if root biomass, compared with other soil properties, has a discernable and dominant effect on soil resistivity so as to allow developing a univariate regression model.;No;Yes;Rossi et al.;;;;;10.1111/j.1365-2389.2010.01329.x;;;;;Electrical resistivity tomography as a non-destructive method for mapping root biomass in an orchard;;2011;European Journal of Soil Science;;;;;;;
+Research article;Pole-dipole;(1×48);2D;No;;ERT;Field;;;No;;;;;Coffee;;"Explore the ability of using ERT to detect root
+biomass.";No;No;Paglis;;;;;10.1155/2013/383261;;;;;Application of Electrical Resistivity Tomography for Detecting Root Biomass in Coffee Trees;;2013;International Journal of Geophysics;;;;;;;
+Research article; Dipole-dipole;(1×48);2D;No;;ERT;Field;;;No;;;;;Wild rocket;;"Explore its ability to map soil variability and crop
+yield in greenhouse.";No;No;Rossi et al.;;;;;10.2478/v10247-012-0087-6;;;;;Electrical resistivity tomography to delineate greenhouse soil variability;;2013;International Agrophysics;;;;;;;
+Research article;Wenner-Schlumberger; (1×12);2D;No;;"ERT;IP";"Field;Laboratory";;;Day;;;;;Poplar;;Assess the ability of IP to detect tree roots and the effect of soil water content (SWC) on it.;No;No;Mary et al.;Benjamin;Mary;benjamin.mary@unipd.it;http://geo.geoscienze.unipd.it/growingwebsite/;10.1016/j.jappgeo.2016.05.005;;;UNIPD;;Mapping tree root system in dikes using induced polarization: Focus on the influence of soil water content;;2016;Journal of Applied Geophysics;;;;;;;
+Research article;Skip-0 and skip-1 dipole-dipole;(5R×8);3D;Yes;;"ERT;IP";Laboratory;;;No;;;;;Barley;;Quantify the effect of roots on soil electrical properties, and map roots in space and time with ERT and IP.;No;No; Maloteau et al.;;;;;;;http://adsabs.harvard.edu/abs/2016EGUGA..1811695M;;;Influence of plant roots on electrical resistivity measurements of cultivated soil columns;;2016;;;;;;;;
+Research article;Skip-2 dipole dipole;Surface (5×5 – 1) and borehole (4×12);3D;Yes;;ERT;Field;;;No;;;;;Grapevine;;"Test the ability of the proposed method with
+jointly using mise-à-la-masse (MALM) and ERT for locating active roots.";No;No;Mary et al. ;Benjamin;Mary;;;10.5194/hess-22-5427-2018;;https://doi.org/;UNIPD;;Small-scale characterization of vine plant root water uptake via 3-D electrical resistivity tomography and mise-à-la-masse method;;2018;Hydrology and Earth System Sciences;;;;;;;
+Research article;Skip-2 dipole dipole;Surface (5×5 – 1) and borehole (4×12);3D;Yes;;ERT;Field;;;No;;;;;Orange;;"Evaluate the reliability of jointly using ERT and
+MALM for explaining differences in rooting systems  caused by  different irrigation strategies.";No;No;Mary et al.;Benjamin;Mary;;;10.1038/s41598-019-46107-w;;;UNIPD;;Assessing the extent of citrus trees root apparatus under deficit irrigation via multi-method geo-electrical imaging;;2019;Scientific Reports;;;;;;;
+Research article;"Adjacent; Difference;"; (1R×16);2D;No;;ERT;Laboratory;;;No;;;;;Maple;Root;Verify its applicability for mapping root segment, and explore the effect of inversion algorithm and soil moisture content on the imaging.;No;No;Li et al.;;;;;;;https://www.ingentaconnect.com/content/tcsae/tcsae/2014/00000030/00000016/art00023;;;Tomographic image reconstruction of plant single root by electrical impedance tomography;;2014;;;;;;;;
+Research article;Adjacent;(6R×16);2D;No;;ERT;Laboratory;;;No;;;;;Potato;;Extend its application to map tuber.;No;No;Jiang et al.;;;;;;;;;;;;2016;;;;;;;;
+Research article;Adjacent;(6R×16);2D;No;;ERT;Laboratory;;;No;;;;;Potato;;Extend its application to map tuber.;No;No;Liu et al. ;;;;;;;;;;;;2016;;;;;;;;
+Research article;"Surface (32) and internal (6); Skip-0 & skip-1 dipole-dipole
+";Surface (32) and internal (6);2D;No;Yes;EIT;Laboratory;;;Hours;;;;;Oilseed rape;;Investigate and highlight its capability for structural and functional characterization of roots.;No;No;Weigand and Kemna;;;mweigand@geo.uni-bonn.de;;10.5194/bg-14-921-2017;;https://doi.org/;Uni-Bonn;;Multi-frequency electrical impedance tomography as a non-invasive tool to characterize and monitor crop root systems;;2017;Biogeosciences;;;;;;;
+Research article;"‘cross-rhizotron’; Absolute; Multi-frequency;";Surface (32) and internal (6);2D;No;Yes;EIT;Laboratory;;;Hours;;;;;Oilseed rape;;Investigate and highlight its capability for structural and functional characterization of roots.;No;No;Weigand and Kemna;;;;;10.1007/s11104-018-3867-3;;https://doi.org/;Uni-Bonn;;Imaging and functional characterization of crop root systems using spectroscopic electrical impedance measurements;;2019;Plant and Soil;;;;;;;
+Research article;"Opposite; Difference"; (2R×16);3D ;;;EIT;Laboratory;;;Day;;;;;Oilseed rape;;"Demonstrate its utility to characterize root
+architecture as well as plant-pathogen interactions in nontransparent growth media.";No;No;Corona-Lopez et al. ;;;diego.coronalopez@manchester.ac.uk;;10.1186/s13007-019-0438-4;;https://doi.org/;e‑Agri Sensors Centre, The University of Manchester ;"Oxford Road,
+Manchester M13 9PL, UK";Electrical impedance tomography as a tool for phenotyping plant roots;;2019;Plant Methods;;;;;;;
+Research article;"Surface ; Adjacent";(4R×16);3D;;;ECT;Laboratory;Small-scale;Φ0.19m×0.37m;"No;Hours";;;;;Unknown;;"Justify its availability to measure root
+distribution in water and monitor water
+infiltration in soil.";;;Liao et al.;;;;;10.1016/j.jappgeo.2015.03.030;;;;;Application of 3D electrical capacitance tomography in probing anomalous blocks in water;;2015;Journal of Applied Geophysics;;;;;;;
+Research article;"Wenner; Time-lapse
+"; (1×84);2D;No;;ERT;Field;Large-scale;124.5m×5m;Month;;;;;"Forest (maple); grassland ecotone";;"Illustrate the effect of vegetation types on
+spatiotemporal soil moisture dynamics and its
+impacts on groundwater recharge, water flow,
+etc.";;;Jayawickreme et al.;;;;;10.1029/2008GL034690;;;;;Subsurface imaging of vegetation, climate, and root-zone moisture interactions;;2008;Geophysical Research Letters;;;;;;;
+Research article;"Wenner; Time-lapse; ";(1×32);2D;No;;ERT;Field;Large-scale;23.25m×4m;Month;;;;;"Oak; Willow";;"Confirm its value to detect temporal soil moisture
+distributions around trees and reveal its
+promising potential for tree-induced subsidence
+assessment.";;;Jones et al. ;;;;;10.3997/1873-0604.2009017;;;;;Imaging and monitoring tree-induced subsidence using electrical resistivity imaging;;2009;Near Surface Geophysics;;;;;;;
+Research article;"Wenner; Time-lapse"; (1×84);2D;No;;ERT;Field;Large-scale;124.5m×10m;"Week;Month";;;;;"Forest-grassland
+ecotone";;"Demonstrate its ability to image soil moisture
+dynamics, affected by the interaction of climate
+and vegetation.";;;Jayawickreme et al.;;;;;10.1190/1.3464760;;;;;Hydrological consequences of land-cover change: Quantifying the influence of plants on soil moisture with time-lapse electrical resistivity;;2010;Geophysics;;;;;;;
+Research article;"Schlumberger; Time-lapse";(1×28);2D;;;ERT;Field;Large-scale;27m×6m;Week/Month;;;;;"Natural vegetation
+(evergreen shrubs and
+trees)";;"Assess the possibilities of using ERT for
+measuring soil moisture availability as well as plant water use.";;;Nijland et al.;;;;;10.1016/j.catena.2010.03.005;;;;;Detection of soil moisture and vegetation water abstraction in a Mediterranean natural area using electrical resistivity tomography;;2010;CATENA;;;;;;;
+Research article;Pole-dipole;(1×48);2D;;;ERT;Field;Large-scale;11.75m×3m;Month;;;;;Olive;;Verify its usefulness to assess the spatiotemporal variability of soil moisture content in soil management.;;;Celano et al.;;;;;10.1016/j.geoderma.2011.03.012;;;;;Evaluation of soil water content in tilled and cover-cropped olive orchards by the geoelectrical technique;;2011;Geoderma;;;;;;;
+Research article;Wenner;(1×56);2D;;;ERT;Field;Large-scale;275m×42m;Month/Year;;;;;Mature tropical forest;;"Explore the significance of deep roots, whose
+rooting depth have an effect on the profiles of water uptake and carbon inputs in soil.";;;Davidson et al.;;;;;10.1093/forestscience/57.1.51;;;;;Carbon Inputs and Water Uptake in Deep Soils of an Eastern Amazon Forest;;2011;Forest Science;;;;;;;
+Research article;Dipole-dipole;(8×12);3D;;;ERT;Field;Large-scale;11m×14m×2m;Hours/Day;;;;;Oak-pine ;forest;"Suggest its significance to capture the
+spatiotemporal characteristics of water
+redistribution driven by root zone processes in
+the field.";;;Robinson et al.;;;;;10.1016/j.jhydrol.2012.02.002;;;;;Evidence for spatial variability in hydraulic redistribution within an oak-pine forest from resistivity imaging;;2012;Journal of Hydrology;;;;;;;
+Research article;"Wenner, dipole-dipole, etc.;
+";(1×72);2D;;;ERT;Field;Large-scale;108m×12–15m;No;;;;;"Corn;soybean;
+eucalyptus;grass";;"Quantify the response of ground-water salinity and soil to the gradients water-table depth and contrast vegetation types related to different land
+uses.";;;Nosetto et al.;;;;;10.1016/j.agwat.2013.07.017;;;;;Land-use and topography shape soil and groundwater salinity in central Argentina;;2013;Agricultural Water Management;;;;;;;
+Research article;"Surface ; Wenner α, dipole-dipole, and Wenner-
+Schlumberger; ";(1×24);2D;;;ERT;Field;Large-scale;17.25m×1.5m;No;;;;;Grapevine;;Present a pedotransfer function approach applied to remove the demand for site-specific calibration, allowing measuring soil moisture directly with ERT.;"Field-based
+pedotransfer
+function";Yes;Brillante et al.;;;;;10.1016/j.jhydrol.2014.01.052;;;;;Monitoring soil volume wetness in heterogeneous soils by electrical resistivity. A field-based pedotransfer function;;2014;Journal of Hydrology;;;;;;;
+Research article;"Surface ; Wenner α, dipole-dipole, and Wenner-
+Schlumberger; ";(1×24);2D;;;ERT;Field;Large-scale;17.25m×1.5m;Week;;;;;Grapevine;;"Review possible techniques for developing
+models which allow using ERT to spatialize soil moisture available to plants, and present an
+related application.";"Field-based
+pedotransfer
+function";Yes;Brillante et al.;;;;;10.5194/soil-1-273-2015;;https://doi.org/;;;The use of soil electrical resistivity to monitor plant and soil water relationships in vineyards;;2015;;;;;;;;
+Research article;"Dipole-dipole; Time-lapse "; (1×48);2D;;;ERT;Field;Large-scale;23.5m×4m;"Week to
+month";;;;;"Pine trees; banksia; understory
+grass";;Evaluate its applicability for monitoring rootzone moisture dynamics and investigate the interactions of vegetation and soil water.;Site-specific;Yes;Fan et al.;;;;;10.1016/j.jhydrol.2015.01.064;;;;;Quantifying spatiotemporal dynamics of root-zone soil water in a mixed forest on subtropical coastal sand dune using surface ERT and spatial TDR;;2015;Journal of Hydrology;;;;;;;
+Research article;"Dipole-Dipole; Schlumberger
+";(1×96);2D;;;ERT;Field;Large-scale;20m×3m;Month;;;;;Orange;;"Test its applicability to monitor spatiotemporal
+root-zone moisture state and properties in a semiarid agricultural region.
+";Laboratory and field;Yes;Moreno et al.;;;;;;;;;;;;2015;;;;;;;;
+Research article;"Dipole-dipole;Wenner;Wenner-
+Schlumberger";(1×48);2D;;;ERT;Field;Large-scale;"96m×20 m/14.8m×3 m/
+20m×4.32m";Week;;;;;Argania spinose;;Determine its value in exploring root architecture and monitoring soil moisture temporal dynamics in root zone.;No;No;Ain-Lhout et al.;;;;;10.1016/j.agwat.2015.08.007;;;;;Monitoring the evolution of soil moisture in root zone system of Argania spinosa using electrical resistivity imaging;;2016;Agricultural Water Management;;;;;;;
+Research article;"Wenner α; dipole-dipole; Wenner-
+Schlumberger"; (1×24);2D;;;ERT;Field;Large-scale;17.25m×1.5m;Week;;;;;Grapevine;;"Couple plant physiological and soil geophysics
+measurements, and propose a statistical approach for visualizing spatiotemporal plant soil-water uptake.";"Field-based
+pedotransfer
+function";Yes;Brillante et al.;;;;;10.1016/j.eja.2016.04.004;;;UMR CNRS/uB 6282 Biogéosciences;Université de Bourgogne, 6 Boulevard Gabriel, F-21000 Dijon, France;Variations in soil-water use by grapevine according to plant water status and soil physical-chemical characteristics—A 3D spatio-temporal analysis;"Electrical resistivity tomography (ERT); Vitis vinifera L. (grapevine); Soil water uptake; Plant water stress; Roots; Terroir";2016;European Journal of Agronomy;;;;47.0653;4.8603;;
+Research article;"Wenner α; dipole-dipole; Wenner-
+Schlumberger";(1×24);2D;;;ERT;Field;Large-scale;17.25m×1.5m;No;;;;;Grapevine;;Investigate the possibility to extend the use of electrical resistivity for measuring plant available soil water variables by developing reasonably accurate prediction models with machine learning algorithms.;"Field-based
+pedotransfer
+function";Yes;Brillante et al.;;;;;10.1007/s11119-016-9441-1;;;;;Electrical imaging of soil water availability to grapevine: a benchmark experiment of several machine-learning techniques;;2016;Precision Agriculture;;;;;;;
+Research article;"Wenner; dipole-dipole; Schlumberger;
+Time-lapse
+
+";(1×25);2D;;;ERT;Field;Large-scale;99m×12m;Month;;;;;"Western juniper;
+sagebrush;";;Sense spatiotemporal moisture dynamics in rootzone and saprolite covered with woody plants.;No;No;Niemeyer et al.;;;;;10.1016/j.jhydrol.2016.11.005;;https://doi.org/;;;Spatiotemporal soil and saprolite moisture dynamics across a semi-arid woody plant gradient;;2017;Journal of Hydrology;;;;;;;
+Research article;"Wenner
+";(1×24);2D;;;ERT;Field;Large-scale;25m×2m;Month;;;;;"Pine; oak ";;"Assess if ERT can map the spatiotemporal soil
+moisture variability beneath vegetation patches.";No;Yes;Rodríguez-Robles et al.;;;;;https://doi.org/10.5194/bg-14-5343-2017;;https://doi.org/;;;Technical note: Application of geophysical tools for tree root studies in forest ecosystems in complex soils;;2017;Biogeosciences;;;;;;;
+Research article;"Dipole-dipole; Wenner-Schlumberger";(1×36);2D;;;ERT;Field;Large-scale;5.25m×0.4m;"1/2 h to
+hours";;;;;Grapefruit;;"Determine if ERT-measured preferential
+pathways in the soils irrigated with brackish
+water are induced by water or salinity.";No;No;Brindt et al.;;;;;10.1016/j.jhydrol.2019.04.029;;;;;ERT and salinity - A method to determine whether ERT-detected preferential pathways in brackish water-irrigated soils are water-induced or an artifact of salinity;;2019;Journal of Hydrology;;;;;;;
+Research article;"Dipole-dipole
+";(1×32);2D;;;ERT;Field;Large-scale;6.2m×0.8m;Hours to days;;;;;Corn;;Verify its ability to monitor spatiotemporal soil moisture dynamics related to soil drainage through root uptake and water infiltration.;Field;Yes;Michot et al.;;;;;10.1029/2002WR001581;;;;;Spatial and temporal monitoring of soil water content with an irrigated corn crop cover using surface electrical resistivity tomography;;2003;Water Resources Research;;;;;;;
+Research article;"Wenner α
+";(1×32);2D;;;ERT;Field;Large-scale;9.3m×1.2m;Days;;;;;"Corn; sorghum";;"Evaluate the potential of ERT to quantify root
+water uptake (RWU) and its spatiotemporal
+variability related to water stress.";No;Yes;Srayeddin and Doussan;;;;;10.1007/s11104-008-9860-5;;;;;Estimation of the spatial variability of root water uptake of maize and sorghum at the field scale by electrical resistivity tomography;;2009;Plant and Soil;;;;;;;
+Research article;"Wenner
+";(1×32);2D ;;;ERT;Field;Large-scale;78.75m×10m;"Hours and
+months";;;;;Cotton;;"Demonstrate its applicability for mapping spatial soil moisture variability and the necessity of integrating it into water management surveys for
+improving irrigation scheduling.";No;No;Kelly et al. ;;;;;10.1071/SR11145;;https://www.publish.csiro.au/sr/SR11145;Connected Waters Initiative ;The University of New South Wales, Sydney, NSW 2052, Australia;Better placement of soil moisture point measurements guided by 2D resistivity tomography for improved irrigation scheduling;;2011;Soil Research;;;;;;;
+Research article;"Skip-0 dipole-dipole
+";(1×24);2D ;;;ERT;Field;Large-scale;4.6m×1m;Hours to days;;;;;"Alfalfa coexisted with
+several other invasive
+species, or grass weed";;Understand the interactions between soil and vegetation as well as how they can act on the soil water balance, especially in the light of possible climatic changes.;Field;No;Cassiani et al.;;;;;10.2136/vzj2011.0195;;;;;Noninvasive Monitoring of Soil Static Characteristics and Dynamic States: A Case Study Highlighting Vegetation Effects on Agricultural Land;;2012;Vadose Zone Journal;;;;;;;
+Research article;"Wenner;Dipole-dipole;
+Pole-dipole;Wenner";"Surface (1×36); buried (1×9)";2D ;;;ERT;Field;Large-scale;13m×3m;Months;;;;;"Maize; leucaena";;"Identify the optimal ERT survey design for
+studying soil water dynamics under two different cropping systems based on simulations.";Field;Yes;Garré et al.;;;;;10.2136/vzj2011.0186;;;;;Evaluating Experimental Design of ERT for Soil Moisture Monitoring in Contour Hedgerow Intercropping Systems;;2012;Vadose Zone Journal;;;;;;;
+Research article;"Dipole-dipole;
+Wenner; cross-stick; and surface-stick cross; Time-lapse;
+";"Surface (6×14 – 8); borehole (8×7);";3D;;;ERT;Field;Large-scale;1.95m×0.75m×1.4m;Days to week;;;;;Maize;;Validate its ability to monitor SWC distribution, and investigate how rainfall and plants affect that distribution.;Field;Yes;Beff et al.;;;;;10.5194/hessd-9-8535-2012;;;;;Three-dimensional monitoring of soil water content in a maize field using electrical resistivity tomography;;2013;Hydrology and Earth System Sciences Discussions;;;;;;;
+Research article;" Dipole-dipole;
+Wenner
+";"Surface (1×36); buried (2×9);";2D;;;ERT;Field;Large-scale;13m×3m;"Days to
+weeks";;;;;"Maize; chili; leucaena; grass";;"Demonstrate its potential to map soil water
+depletion in different cropping patterns.";Field;Yes;Garré et al.;;;;;10.2136/vzj2012.0129;;;;;Noninvasive Monitoring of Soil Water Dynamics in Mixed Cropping Systems: A Case Study in Ratchaburi Province, Thailand;;2013;Vadose Zone Journal;;;;;;;
+Research article;Wenner;(1×32);2D;;;ERT;Field;Large-scale;2.9m×0.4m;No;;;;;Grass;;Report an evaluation of a novel grass hybrid with the usefulness of ERT to map spatial soil moisture patterns related to the activity of distinct grasses.;No;Yes;Macleod et al.;;;;;10.1038/srep01683;;;;;A novel grass hybrid to reduce flood generation in temperate regions;;2013;Scientific Reports;;;;;;;
+Research article;"Skip-0 dipole-dipole; Time-lapse
+";(1×24); 2D;;;ERT;;Large-scale;4.6m×1m;Day;;;;;"Grass weed; alfalfa";;"Examine the potential of integrating ground image analysis and non-invasive geophysical
+methods, and quantify the effect of water-related soil-vegetation interactions.";No;No;Ursino et al.;;;;;10.5194/hess-18-1105-2014;;https://doi.org/10.5194/hess-18-1105-2014;;;Measuring and modeling water-related soil-vegetation feedbacks in a fallow plot;;2014;Hydrology and Earth System Sciences;;;;;;;
+Research article;"Dipole-dipole and
+Wenner";"Surface (1×36); buried (2×9)";2D;;;ERT;Field;Large-scale;13m×4m;Day;;;;;"Maize; chili; leucaena";;"Combine δ13C measurements and ERT for
+improving the understanding of water and
+nutrient competition at the crop-soil-hedge
+interface.";Field;Yes;Hussain et al.;;;;;10.1007/s11104-015-2455-z;;;;;Combining δ13C measurements and ERT imaging: improving our understanding of competition at the crop-soil-hedge interface;;2015;Plant and Soil;;;;;;;
+Research article;Wenner-Schlumberger;(1×48);2D;No;;ERT;Field;Large-scale;7m×1.3m;Day;;;;;Dry bean;;Combine geophysical methods for mapping the spatial moisture distribution and soil section.;No;No;Satriani et al.;;;;;10.1016/j.agwat.2015.08.010;;;;;Integrated geophysical techniques for sustainable management of water resource. A case study of local dry bean versus commercial common bean cultivars;;2015;Agricultural Water Management;;;;;;;
+Research article;"Dipole-dipole; Time-lapse
+";(1×96);2D;No;;ERT;Field;Large-scale;30m×1m;;;;;;Wheat;;Compare methods for phenotyping wheat lines.;No;Yes;Whalley et al.;;;;;10.1007/s11104-016-3161-1;;;;;Methods to estimate changes in soil water for phenotyping root activity in the field;;2017;Plant and Soil;;;;;;;
+Research article;"Dipole-dipole; Time-lapse"; (1×24);2D;No;;ERT;Field;Large-scale;4.6m×0.9m;;;;;;Maize;;;;;Chen et al.;;;;;10.1016/j.compag.2019.02.028;;;;;Two-dimensional monitoring of soil water content in fields with plastic mulching using electrical resistivity tomography;;2019;Computers and Electronics in Agriculture;;;;;;;
+Research article;"Skip-0 dipole-dipole;
+Time-lapse; 
+";"Surface (5×5 – 1); borehole (4×12)";3D;;;ERT;Field;Small-scale;1.3m×1.3m×1.2m;;;;;;Orange;;;;;Cassiani et al.;Giorgio;Cassiani;;UNIPD;10.5194/hess-19-2213-2015;;10.5194/hess-19-2213-2015;;;Monitoring and modelling of soil-plant interactions: the joint use of ERT, sap flow and eddy covariance data to characterize the volume of an orange tree root zone;;2015;Hydrology and Earth System Sciences;;;;;;;
+Research article;"Skip-0 dipole-dipole;
+Time-lapse; 
+";"Surface (5×5 – 1); borehole (4×12)";3D;;;ERT;Field;Small-scale;0.9m×0.9m×1.2m;;;;;;Apple;;;;;Cassiani et al.;;;;;10.1016/j.scitotenv.2015.03.113;;;;;Soil-plant interaction monitoring: Small scale example of an apple orchard in Trentino, North-Eastern Italy;;2016;Science of The Total Environment;;;;;;;
+Research article;"Dipole-dipole with up to skip-4 in each
+direction; Time-lapse
+";;2.5D;No;;ERT;Field;Small-scale;3.5m×0.6m;;;;;;Ponderosa pine;;;;;Mares et al.;;;;;10.1016/j.jhydrol.2016.03.003;;;;;Examining diel patterns of soil and xylem moisture using electrical resistivity imaging;;2016;;;;;;;;
+Research article;"Skip-0 dipole-dipole;
+Time-lapse
+";"Surface (5×5 – 1); borehole (4×12)";3D;Yes;;ERT;Field;Small-scale;1.3m×1.3m×1.2m;;;;;;Orange;;;;;Consoli et al.;;;;;10.1016/j.eja.2016.11.001;;;;;Partial root-zone drying irrigation in orange orchards: Effects on water use and crop production characteristics;;2017;European Journal of Agronomy;;;;;;;
+Research article;"Skip-0 dipole-dipole;
+Time-lapse;";"Surface (10×10 – 4); borehole (9×12)"; 3D;Yes;; ERT;Field;Small-scale;2.6m×2.6m×1.2m;;;;;;Orange;;;;;Vanella et al.;;;;;10.1016/j.jhydrol.2017.11.025;;;;;Use of small scale electrical resistivity tomography to identify soil-root interactions during deficit irrigation;;2018;Journal of Hydrology;;;;;;;
+Research article;Time-lapse;"Surface (5×5 – 1); borehole (4×12); ";3D;Yes;;ERT;Field;Small-scale;1.3m×1.3m×1.2m;;;;;;Orange;;;;;Vanella et al.;;;;;10.3390/rs11040373;;;;;Combining Electrical Resistivity Tomography and Satellite Images for Improving Evapotranspiration Estimates of Citrus Orchards;;2019;Remote Sensing;;;;;;;
+Research article;"Wenner, Schlumberger,
+dipole-dipole and surface-buried cross; Time-lapse";Surface (1×16) and buried (1×8);2D;Yes;;ERT;Laboratory; Small-scale;0.3m×0.1m;;;;;;Lupine;;;;;Werban et al.;;;;;10.1002/jpln.200700145;;;;;Monitoring of root-zone water content in the laboratory by 2D geoelectrical tomography;;2008;Journal of Plant Nutrition and Soil Science;;;;;;;
+Research article;Skip-1 dipole-dipole;(6R×32); 3D;;;ERT;Laboratory;Small-scale;Φ1.16m×1.5m;;;;;;Barley;;;;;Garré et al.;;;;;10.2136/vzj2010.0079;;;;;Three-Dimensional Electrical Resistivity Tomography to Monitor Root Zone Water Dynamics;;2011;Vadose Zone Journal;;;;;;;
+Research article;"Cross-hole dipole-dipole; Time-lapse";Borehole (4×16);3D;;;ERT;Field;Small-scale;0.55m×0.55m×1.2m;;;;;;Sorghum;;"Verify its ability to monitor water percolation
+patterns for assessing the efficiency of irrigation practices.";;;Greve et al.;;;;;10.1071/SR11270;;https://doi.org/10.1071/SR11270;;;3D Cross-hole resistivity tomography to monitor water percolation during irrigation on cracking soil;;2012;Soil Research;;;;;;;
+Research article;Dipole-dipole;(1×17);2D;;;ERT;Laboratory;Small-scale;0.8m×0.25m;;;;;;Corn seedling;;Identify its feasibility to monitor the root zone development and related soil water dynamics in controlled containers.;;;Yoon et al.;;;;;;;https://agris.fao.org/agris-search/search.do?recordID=KR2015006293;;;Use of Two Dimensional Electrical Resistivity Tomography to Identify Soil Water Dynamics and the Effective Plant Root Zone;;2012;Korean Journal of Soil Science and Fertilizer;;;;;;;
+Research article;"Unknown; Time-lapse"; (6R×14+3×4);3D;;;ERT;Laboratory;Small-scale;Φ0.42m×0.56m;Hours;;;;;Bell pepper;;Study how high frequency irrigation affects the soil water dynamics and more specifically, the spatiotemporal RWU dynamics.;;;Garré et al.;;;;;;;;;;Exploring Root Uptake Under High Frequency Irrigation Using Electrical Resistivity Tomography;;2013;;;;;;;;
+Research article;"Skip-0 dipole-dipole;
+Time-lapse";"Surface (1x24); borehole (2x12);";2D;Yes;;ERT;Field;Small-scale;2.3mx1.2m;Hours;;;;;Halophytes;;"Show that ERT combined with tensiometric
+measurements allows identifying variably
+saturated zones and characterizing spatiotemporal soil water dynamics in a salt
+marsh.";;;Boaga et al.;;;;;10.1002/2014GL060983;;;;;Plant-soil interactions in salt marsh environments: Experimental evidence from electrical resistivity tomography in the Venice Lagoon;;2014;Geophysical Research Letters;;;;;;;
+Research article;Dipole-dipole;50;2D;No;;ERT;Laboratory;Small-scale;0.2mx0.4m;Days;;;;;Maize;;"Study how growing roots might affect SWC
+estimates using ERT with virtual rhizotron
+simulations.";;;Rao et al.;;;;;10.5194/bg-2018-280;;https://doi.org/;;;A mechanistic model for electrical conduction in soil-root continuum: a virtual rhizotron study;;2018;Biogeosciences Discussions;;;;;;;
