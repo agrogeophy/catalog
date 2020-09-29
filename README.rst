@@ -1,6 +1,9 @@
 .. image:: https://img.shields.io/badge/Slack-agrogeophy-1.svg?logo=slack
     :target: https://agrogeophy.slack.com/
     
+.. image:: https://zenodo.org/badge/292792330.svg
+   :target: https://zenodo.org/badge/latestdoi/292792330
+
 About
 -----
 **Agrogeophy-catalog is part of the agrogeophysical catalog website:** `<http://geo.geoscienze.unipd.it/growingwebsite/map_catalog>`__ 
