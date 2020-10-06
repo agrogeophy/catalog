@@ -13,3 +13,7 @@ Let us know by submitting
 `issues on Github <https://github.com/BenjMy/agrogeophy-catalog/issues>`__
 or send us a message on our
 `Slack chatroom <https://agrogeophy.slack.com/>`__.
+
+Documentation
+-------------
+https://agrogeophy.github.io/catalog/
