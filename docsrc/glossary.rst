@@ -5,6 +5,7 @@ Geoelectrical methods
 ---------------------
 
 **spectroscopic**
+
 - EIS: Electrical Impedance Spectroscopy
 - IP: Induced Polarization
 - SIP: Spectral Induced Polarization
@@ -12,6 +13,7 @@ Geoelectrical methods
 
 
 **imaging or tomography**
+
 - ERT: Electrical Resistivity Tomography
 - ERI: Electrical Resistivity Imaging
 - ECT: Electrical Capacitance Tomography
