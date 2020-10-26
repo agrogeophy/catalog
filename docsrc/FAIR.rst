@@ -8,7 +8,7 @@ Findability
 -----------
 To enable an effective findability of users contributions, the website interface automatically extracts and inserts into the database all the metadata provided in the user submission form (for each type i.e. datasets, numerical studies and communications). The website interface allows then the retrieval and display of the contribution thanks to its search and filtering tool. A geospatial visualization and analysis component enables searching, visualizing, and analyzing users’ contributions.
 
-.. image:: images/Map_contributions_26102020.png
+.. image:: ./images/Map_contributions_26102020.png
    :width: 600
    :alt: Geospatial visualization (26/10/2020)
 
