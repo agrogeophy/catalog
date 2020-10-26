@@ -13,6 +13,7 @@ agrogeophysic-catalog
    :caption: Contents:
    
    getting-started
+   FAIR
    glossary
    
 
