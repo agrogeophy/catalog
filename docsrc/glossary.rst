@@ -1,3 +1,6 @@
+Glossary
+========
+
 Geoelectrical methods
 ---------------------
 
