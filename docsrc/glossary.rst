@@ -1,6 +1,17 @@
 Glossary
 ========
 
+Graphical
+---------
+
+.. _importing:
+.. figure:: image/channels.png
+    :alt: channels
+    
+    Possible channels for soil/plant geoelectical measurements. Credit to L. Peruzzo.
+
+
+
 Geoelectrical methods
 ---------------------
 
