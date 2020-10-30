@@ -5,7 +5,7 @@ Graphical
 ---------
 
 .. _importing:
-.. figure:: image/channels.png
+.. figure:: images/channels.png
     :alt: channels
     
     Possible channels for soil/plant geoelectical measurements. Credit to L. Peruzzo.
