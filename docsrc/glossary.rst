@@ -1,19 +1,21 @@
 Glossary
 ========
 
+Geoelectrical methods
+---------------------
+
 Graphical
----------
+*********
 
 .. _importing:
 .. figure:: images/channels.png
     :alt: channels
-    
+    :scale: 50 %
+
     Possible channels for soil/plant geoelectical measurements. Credit to L. Peruzzo.
 
-
-
-Geoelectrical methods
----------------------
+Acronyms
+********
 
 **spectroscopic**
 
@@ -34,6 +36,9 @@ Geoelectrical methods
 
 EM methods
 ----------
+
+Acronyms
+********
 
 - EMI: ElectroMagnetic Induction
 
