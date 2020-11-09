@@ -57,7 +57,7 @@ jobs:
       - name: Build the doc
         run: |
           cd docsrc
-          python3 -m sphinx -b html -b latex doc . ../docs
+          python3 -m sphinx -b html -b latex . ../docs
           cd ..
 
       # we set || true, in case, nothing really changes
