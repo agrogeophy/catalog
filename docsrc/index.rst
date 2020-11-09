@@ -15,7 +15,7 @@ agrogeophysic-catalog
    getting-started
    FAIR
    glossary
-   Schema_documentation
+   schema_documentation
 
 
 
