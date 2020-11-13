@@ -266,10 +266,10 @@ File-level geophysical metadata
 
 
 Table: ``report``
-=================
+-----------------
 
 Description: 
-------------
+~~~~~~~~~~~~
 
 Metadata describing general information about the contribution.
 
@@ -279,18 +279,20 @@ CAGS Metadata level)
 Columns:
 --------
 
-|    <br>Column           |    <br>Description                              |    <br>Multiplicity    |    <br>Obligation    |    <br>CAGS Metadata level     |    <br>Dublin Core (ArchSearch)    |    <br>INSPIRE Directive    |    <br>Data type    |    <br>Attributes    |    <br>Default    |
-|-------------------------|-------------------------------------------------|------------------------|----------------------|--------------------------------|------------------------------------|-----------------------------|---------------------|----------------------|-------------------|
-|    <br>Report_title     |    <br>Sort title description of the dataset    |    <br>[1]             |    <br>Mandatory     |    <br>File level              |    <br>                            |    <br>                     |    <br>             |    <br>Unique        |    <br>           |
-|    <br>Report_author    |    <br>Reporting authors names                  |    <br>[1,n]           |    <br>Mandatory     |    <br>File & project level    |    <br>                            |    <br>                     |    <br>             |    <br>Unique        |    <br>           |
+|     Column           |     Description                              |     Multiplicity    |     Obligation    |     CAGS Metadata level     |     Dublin Core (ArchSearch)    |     INSPIRE Directive    |     Data type    |     Attributes    |     Default    |
+|----------------------|----------------------------------------------|---------------------|-------------------|-----------------------------|---------------------------------|--------------------------|------------------|-------------------|----------------|
+|     Report_title     |     Sort title description of the dataset    |     [1]             |     Mandatory     |     File level              |                                 |                          |                  |     Unique        |                |
+|     Report_author    |     Reporting authors names                  |     [1,n]           |     Mandatory     |     File & project level    |                                 |                          |                  |     Unique        |                |
+
 
 Table: ``survey``
-=================
+-----------------
 
 .. _description-1:
 
+
 Description: 
-------------
+~~~~~~~~~~~~
 
 Metadata describing one to multiple survey(s).
 
@@ -319,12 +321,13 @@ Columns:
 |    <br> Add_remarks       |    <br>Free text for additional remarks                                         |    <br>[1]             |    <br>Optional      |    <br>File level                         |    <br>                              |    <br>                       |    <br>               |    <br>              |    <br>NULL       |
 
 Table: ``ERT metadata``
-==================================
+----------------------
 
 .. _description-2:
 
+
 Description: 
-------------
+~~~~~~~~~~~~
 
 Metadata describing one to multiple (n) ERT surveys.
 
@@ -345,12 +348,13 @@ Columns:
 |    <br>Elec_spacing    |    <br>Electrode spacing                          |    <br>[m,n]           |    <br>Optional      |    <br>File level                       |    <br>                            |    <br>                     |    <br>             |    <br>              |    <br>NULL       |
 
 Table: ``EM metadata``
-=================================
+----------------------
 
 .. _description-3:
 
+
 Description: 
-------------
+~~~~~~~~~~~~
 
 Metadata describing one to multiple (n) EM surveys.
 
@@ -370,12 +374,13 @@ Columns:
 |    <br>Read_interval    |    <br>If automatic time sampling, time steps   between different reading    |    <br>[m,n]           |    <br>Optional      |    <br>File level                       |    <br>                            |    <br>                     |    <br>             |    <br>              |    <br>NULL       |
 
 Table: ``data quality assessment metadata``
-===========================================================
+-------------------------------------------
 
 .. _description-4:
 
+
 Description: 
-------------
+~~~~~~~~~~~~
 
 .. _columns-5:
 
@@ -392,12 +397,12 @@ Columns:
 .. _section-1:
 
 Table: ``sampling``
-===================
+-------------------
 
 .. _description-5:
 
 Description: 
-------------
+~~~~~~~~~~~~
 
 .. _columns-6:
 
