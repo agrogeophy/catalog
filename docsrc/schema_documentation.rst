@@ -283,36 +283,11 @@ CAGS Metadata level)
 Columns:
 --------
 
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| C     | D     | Mu    | Oblig | CAGS  | D     | IN    | Data  | Attri | De    |
-| olumn | escri | ltipl | ation | Met   | ublin | SPIRE | type  | butes | fault |
-|       | ption | icity |       | adata | Core  | Dire  |       |       |       |
-|       |       |       |       | level | (A    | ctive |       |       |       |
-|       |       |       |       |       | rchSe |       |       |       |       |
-|       |       |       |       |       | arch) |       |       |       |       |
-+=======+=======+=======+=======+=======+=======+=======+=======+=======+=======+
-| \`\`  | Sort  | [1]   | Mand  | File  |       |       |       |       |       |
-| R     | title |       | atory | level |       |       |       |       |       |
-| eport | d     |       |       |       |       |       |       |       |       |
-| title | escri |       |       |       |       |       |       |       |       |
-| \`\`  | ption |       |       |       |       |       |       |       |       |
-|       | of    |       |       |       |       |       |       |       |       |
-|       | the   |       |       |       |       |       |       |       |       |
-|       | da    |       |       |       |       |       |       |       |       |
-|       | taset |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| \`\`  | Repo  | [1,n] | Mand  | File  |       |       |       |       |       |
-| R     | rting |       | atory | &     |       |       |       |       |       |
-| eport | au    |       |       | pr    |       |       |       |       |       |
-| a     | thors |       |       | oject |       |       |       |       |       |
-| uthor | names |       |       | level |       |       |       |       |       |
-| \`\`  |       |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
 
 Table: ``survey``
 =================
 
-.. _description-1:
 
 Description: 
 ------------
@@ -328,91 +303,16 @@ different fields. For example, if date of time of measurement contains 2
 values, the electrode configuration must contain n columns describing
 the configuration used.
 
-.. _columns-1:
 
 Columns:
 --------
-
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| C     | D     | Mu    | Oblig | CAGS  | D     | IN    | Data  | Attri | De    |
-| olumn | escri | ltipl | ation | Met   | ublin | SPIRE | type  | butes | fault |
-|       | ption | icity |       | adata | Core  | Dire  |       |       |       |
-|       |       |       |       | level | (A    | ctive |       |       |       |
-|       |       |       |       |       | rchSe |       |       |       |       |
-|       |       |       |       |       | arch) |       |       |       |       |
-+=======+=======+=======+=======+=======+=======+=======+=======+=======+=======+
-| `     | C     | [1,n] | Mand  | File  | Res   |       |       |       |       |
-| `Surv | hoose |       | atory | level | ource |       |       |       |       |
-| ey ty | acr   |       |       |       | Type  |       |       |       |       |
-| p``\  | onyms |       |       |       |       |       |       |       |       |
-| ``e`` | descr |       |       |       |       |       |       |       |       |
-|       | ibing |       |       |       |       |       |       |       |       |
-|       | the   |       |       |       |       |       |       |       |       |
-|       | s     |       |       |       |       |       |       |       |       |
-|       | urvey |       |       |       |       |       |       |       |       |
-|       | type  |       |       |       |       |       |       |       |       |
-|       | (     |       |       |       |       |       |       |       |       |
-|       | refer |       |       |       |       |       |       |       |       |
-|       | to    |       |       |       |       |       |       |       |       |
-|       | CAGS  |       |       |       |       |       |       |       |       |
-|       | glos  |       |       |       |       |       |       |       |       |
-|       | sary) |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| ``In  | Name  | [1,n] | Mand  | File  |       |       |       |       |       |
-| strum | of    |       | atory | level |       |       |       |       |       |
-| entat | the   |       |       |       |       |       |       |       |       |
-| ion`` | ins   |       |       |       |       |       |       |       |       |
-|       | trume |       |       |       |       |       |       |       |       |
-|       | nt(s) |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| ``    |       | [1,n] | Opt   | File  |       |       |       |       |       |
-| Reaso |       |       | ional | level |       |       |       |       |       |
-| ns fo |       |       |       |       |       |       |       |       |       |
-| r cho |       |       |       |       |       |       |       |       |       |
-| ice o |       |       |       |       |       |       |       |       |       |
-| f sur |       |       |       |       |       |       |       |       |       |
-| vey t |       |       |       |       |       |       |       |       |       |
-| echni |       |       |       |       |       |       |       |       |       |
-| que`` |       |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| Area  |       | [1,n] | Opt   | File  |       |       |       |       |       |
-| sur   |       |       | ional | level |       |       |       |       |       |
-| veyed |       |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| Re    |       |       | Opt   | File  |       |       |       |       |       |
-| ading |       |       | ional | level |       |       |       |       |       |
-| int   |       |       |       |       |       |       |       |       |       |
-| erval |       |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| M     |       |       | Opt   | File  |       |       |       |       |       |
-| ethod |       |       | ional | level |       |       |       |       |       |
-| of    |       |       |       |       |       |       |       |       |       |
-| cov   |       |       |       |       |       |       |       |       |       |
-| erage |       |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| Sam   |       |       | Opt   | File  |       |       |       |       |       |
-| pling |       |       | ional | level |       |       |       |       |       |
-| pos   |       |       |       |       |       |       |       |       |       |
-| ition |       |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| Data  |       |       | Opt   | File  |       |       |       |       |       |
-| grid  |       |       | ional | level |       |       |       |       |       |
-| size  |       |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| Accur |       |       | Opt   | File  |       |       |       |       |       |
-| acies |       |       | ional | level |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| Addit |       |       | Opt   | File  |       |       |       |       |       |
-| ional |       |       | ional | level |       |       |       |       |       |
-| re    |       |       |       |       |       |       |       |       |       |
-| marks |       |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-
+|    <br>Column    |    <br>Description    |    <br>Multiplicity    |    <br>Obligation    |    <br>CAGS Metadata level    |    <br>Dublin Core (ArchSearch)    |    <br>INSPIRE Directive    |    <br>Data type    |    <br>Attributes    |    <br>Default    |
+|-|-|-|-|-|-|-|-|-|-|
+|    <br>Report title |    <br>Sort title description of the dataset    |    <br>[1]    |    <br>Mandatory    |    <br>File level    |    <br>     |    <br>     |    <br>     |    <br>     |    <br>     |
+|    <br>Report author    |    <br>Reporting authors names    |    <br>[1,n]    |    <br>Mandatory    |    <br>File & project level    |    <br>     |    <br>     |    <br>     |    <br>     |    <br>     |
 
 Table: ``ERT metadata``
 =======================
-
-.. _description-2:
 
 Description: 
 ------------
@@ -422,48 +322,11 @@ different fields. For example, if date of time of measurement contains 2
 values, the electrode configuration must contain n columns describing
 the configuration used.
 
-.. _columns-3:
-
 Columns:
 --------
 
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| C     | D     | Mu    | Oblig | CAGS  | D     | IN    | Data  | Attri | De    |
-| olumn | escri | ltipl | ation | Met   | ublin | SPIRE | type  | butes | fault |
-|       | ption | icity |       | adata | Core  | Dire  |       |       |       |
-|       |       |       |       | level | (A    | ctive |       |       |       |
-|       |       |       |       |       | rchSe |       |       |       |       |
-|       |       |       |       |       | arch) |       |       |       |       |
-+=======+=======+=======+=======+=======+=======+=======+=======+=======+=======+
-| Date  |       | [1]   |       | File  |       |       |       | U     |       |
-| of    |       |       |       | level |       |       |       | nique |       |
-| the   |       |       |       |       |       |       |       |       |       |
-| m     |       |       |       |       |       |       |       |       |       |
-| easur |       |       |       |       |       |       |       |       |       |
-| ement |       |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| Time  |       | [1,n] |       |       |       |       |       |       |       |
-| of    |       |       |       |       |       |       |       |       |       |
-| m     |       |       |       |       |       |       |       |       |       |
-| easur |       |       |       |       |       |       |       |       |       |
-| ement |       |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| Elec  |       | [1,n] | Opt   | File  |       |       |       |       |       |
-| trode |       |       | ional | level |       |       |       |       |       |
-| con   |       |       |       |       |       |       |       |       |       |
-| figur |       |       |       |       |       |       |       |       |       |
-| ation |       |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| Elec  |       | [1,n] | Opt   | File  |       |       |       |       |       |
-| trode |       |       | ional | level |       |       |       |       |       |
-| sp    |       |       |       |       |       |       |       |       |       |
-| acing |       |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-|       |       | [1,n] | Opt   | File  |       |       |       |       |       |
-|       |       |       | ional | level |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
 
-Table: ``EM``\ ``metadata``
+Table: ``EM metadata``
 ===========================
 
 Description: 
@@ -474,101 +337,18 @@ different fields. For example, if date of measurements contains 2
 values, the coil configuration must contain n columns and m lines
 describing the coil configuration used.
 
-.. _columns-4:
 
 Columns:
 --------
 
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| C     | D     | Mu    | Oblig | CAGS  | D     | IN    | Data  | Attri | De    |
-| olumn | escri | ltipl | ation | Met   | ublin | SPIRE | type  | butes | fault |
-|       | ption | icity |       | adata | Core  | Dire  |       |       |       |
-|       |       |       |       | level | (A    | ctive |       |       |       |
-|       |       |       |       |       | rchSe |       |       |       |       |
-|       |       |       |       |       | arch) |       |       |       |       |
-+=======+=======+=======+=======+=======+=======+=======+=======+=======+=======+
-| Date  | Da    | [1,n] |       | File  |       |       |       |       |       |
-| of    | te(s) |       |       | level |       |       |       |       |       |
-| the   | of    |       |       |       |       |       |       |       |       |
-| m     | me    |       |       |       |       |       |       |       |       |
-| easur | asure |       |       |       |       |       |       |       |       |
-| ement | ments |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| Coil  |       | [m,n] | Opt   | File  |       |       |       |       |       |
-| con   |       |       | ional | level |       |       |       |       |       |
-| figur |       |       |       |       |       |       |       |       |       |
-| ation |       |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
 
-Table: ``data quality``\ ````\ ``assessment``\ ``metadata``
+
+Table: ``data quality assessment metadata``
 ===========================================================
-
-.. _description-3:
 
 Description: 
 ------------
 
-.. _columns-5:
-
 Columns:
 --------
-
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| C     | D     | Mu    | Oblig | CAGS  | D     | IN    | Data  | Attri | De    |
-| olumn | escri | ltipl | ation | Met   | ublin | SPIRE | type  | butes | fault |
-|       | ption | icity |       | adata | Core  | Dire  |       |       |       |
-|       |       |       |       | level | (A    | ctive |       |       |       |
-|       |       |       |       |       | rchSe |       |       |       |       |
-|       |       |       |       |       | arch) |       |       |       |       |
-+=======+=======+=======+=======+=======+=======+=======+=======+=======+=======+
-| \`\`  | True  | -     |       | File  |       |       |       |       |       |
-| Pee   | if    |       |       | level |       |       |       |       |       |
-| r_rev | the   |       |       |       |       |       |       |       |       |
-| iewed | da    |       |       |       |       |       |       |       |       |
-| \`\`  | taset |       |       |       |       |       |       |       |       |
-|       | has   |       |       |       |       |       |       |       |       |
-|       | been  |       |       |       |       |       |       |       |       |
-|       | pee   |       |       |       |       |       |       |       |       |
-|       | r-rev |       |       |       |       |       |       |       |       |
-|       | iewed |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| \`\`  | Co    | [1,n] | Mand  |       |       |       |       |       |       |
-| P     | ntact |       | atory |       |       |       |       |       |       |
-| eer_r | of    |       | only  |       |       |       |       |       |       |
-| eview | rev   |       | if    |       |       |       |       |       |       |
-| er_co | iewer |       | pee   |       |       |       |       |       |       |
-| ntact |       |       | r_rev |       |       |       |       |       |       |
-| \`\`  |       |       | iewed |       |       |       |       |       |       |
-|       |       |       | is    |       |       |       |       |       |       |
-|       |       |       | True  |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| \`\`  |       | [1,n] | Opt   |       |       |       |       |       |       |
-| Rep   |       |       | ional |       |       |       |       |       |       |
-| licat |       |       |       |       |       |       |       |       |       |
-| e_dat |       |       |       |       |       |       |       |       |       |
-| asets |       |       |       |       |       |       |       |       |       |
-| \`\`  |       |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| \`\`  | The   | [1,n] | Opt   |       |       |       |       |       |       |
-| Comp  | da    |       | ional |       |       |       |       |       |       |
-| ariso | taset |       |       |       |       |       |       |       |       |
-| n_ref | has   |       |       |       |       |       |       |       |       |
-| _data | been  |       |       |       |       |       |       |       |       |
-| \`\`  | com   |       |       |       |       |       |       |       |       |
-|       | pared |       |       |       |       |       |       |       |       |
-|       | with  |       |       |       |       |       |       |       |       |
-|       | refe  |       |       |       |       |       |       |       |       |
-|       | rence |       |       |       |       |       |       |       |       |
-|       | dat   |       |       |       |       |       |       |       |       |
-|       | asets |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| \`\`  | DOI   |       |       |       |       |       |       |       |       |
-| Ref   | of    |       |       |       |       |       |       |       |       |
-| _data | refe  |       |       |       |       |       |       |       |       |
-| \`\`  | rence |       |       |       |       |       |       |       |       |
-|       | da    |       |       |       |       |       |       |       |       |
-|       | taset |       |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-
-.. _section-1:
 
