@@ -277,12 +277,16 @@ This table has overlapping field with project level metadata (see column
 CAGS Metadata level)
 
 Columns:
---------
+~~~~~~~~
 
-|     Column           |     Description                              |     Multiplicity    |     Obligation    |     CAGS Metadata level     |     Dublin Core (ArchSearch)    |     INSPIRE Directive    |     Data type    |     Attributes    |     Default    |
-|----------------------|----------------------------------------------|---------------------|-------------------|-----------------------------|---------------------------------|--------------------------|------------------|-------------------|----------------|
-|     Report_title     |     Sort title description of the dataset    |     [1]             |     Mandatory     |     File level              |                                 |                          |                  |     Unique        |                |
-|     Report_author    |     Reporting authors names                  |     [1,n]           |     Mandatory     |     File & project level    |                                 |                          |                  |     Unique        |                |
+| Column \| Description \| Multiplicity \| Obligation \| CAGS Metadata
+level \| Dublin Core (ArchSearch) \| INSPIRE Directive \| Data type \|
+Attributes \| Default \|
+| --- \| --- \| --- \| --- \| --- \| --- \| --- \| --- \| --- \| --- \|
+| Report\_title \| Sort title description of the dataset \| [1] \|
+Mandatory \| File level \| \| \| \| Unique \| \|
+| Report\_author \| Reporting authors names \| [1,n] \| Mandatory \|
+File & project level \| \| \| \| Unique \| \|                            |                          |                  |     Unique        |                |
 
 
 Table: ``survey``
@@ -310,7 +314,7 @@ the configuration used.
 .. _columns-1:
 
 Columns:
---------
+~~~~~~~~
 
 |    <br>Column             |    <br>Description                                                              |    <br>Multiplicity    |    <br>Obligation    |    <br>CAGS<br>   <br>Metadata   level    |    <br>Dublin   Core (ArchSearch)    |    <br>INSPIRE   Directive    |    <br>Data   type    |    <br>Attributes    |    <br>Default    |
 |---------------------------|---------------------------------------------------------------------------------|------------------------|----------------------|-------------------------------------------|--------------------------------------|-------------------------------|-----------------------|----------------------|-------------------|
@@ -339,7 +343,7 @@ the configuration used.
 .. _columns-3:
 
 Columns:
---------
+~~~~~~~~
 |    <br>Column          |    <br>Description                                |    <br>Multiplicity    |    <br>Obligation    |    <br>CAGS<br>   <br>Metadata level    |    <br>Dublin Core (ArchSearch)    |    <br>INSPIRE Directive    |    <br>Data type    |    <br>Attributes    |    <br>Default    |
 |------------------------|---------------------------------------------------|------------------------|----------------------|-----------------------------------------|------------------------------------|-----------------------------|---------------------|----------------------|-------------------|
 |    <br>Date_measure    |    <br>Date(s) of the measurement (dd/mm/aaaa)    |    <br>[n]             |    <br>Mandatory     |    <br>File level                       |    <br>                            |    <br>                     |    <br>             |    <br>Unique        |    <br>           |
@@ -366,7 +370,7 @@ describing the coil configuration used.
 .. _columns-4:
 
 Columns:
---------
+~~~~~~~~
 |    <br>Column           |    <br>Description                                                           |    <br>Multiplicity    |    <br>Obligation    |    <br>CAGS<br>   <br>Metadata level    |    <br>Dublin Core (ArchSearch)    |    <br>INSPIRE Directive    |    <br>Data type    |    <br>Attributes    |    <br>Default    |
 |-------------------------|------------------------------------------------------------------------------|------------------------|----------------------|-----------------------------------------|------------------------------------|-----------------------------|---------------------|----------------------|-------------------|
 |    <br>Date_measure     |    <br>Date(s) of the measurement (dd/mm/aaaa)                               |    <br>[1,n]           |    <br>Mandatory     |    <br>File level                       |    <br>                            |    <br>                     |    <br>             |    <br>Unique        |    <br>           |
@@ -385,7 +389,7 @@ Description:
 .. _columns-5:
 
 Columns:
---------
+~~~~~~~~
 |    <br>Column                       |    <br>Description                                                |    <br>Multiplicity    |    <br>Obligation                                 |    <br>CAGS<br>   <br>Metadata level    |    <br>Dublin Core (ArchSearch)    |    <br>INSPIRE Directive    |    <br>Data type    |    <br>Attributes    |    <br>Default    |
 |-------------------------------------|-------------------------------------------------------------------|------------------------|---------------------------------------------------|-----------------------------------------|------------------------------------|-----------------------------|---------------------|----------------------|-------------------|
 |    <br> Peer_reviewed               |    <br>True if the dataset has been   peer-reviewed               |    <br>[1]             |    <br>Mandatory                                  |    <br>File level                       |    <br>                            |    <br>                     |    <br>             |    <br>Unique        |    <br>           |
@@ -407,7 +411,7 @@ Description:
 .. _columns-6:
 
 Columns:
---------
+~~~~~~~~
 
 ================= ===== ======== ==========
 Sampling position  [1,n] Optional File level     
