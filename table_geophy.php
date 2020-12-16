@@ -42,14 +42,22 @@
  <script src="https://unpkg.com/bootstrap-table@1.17.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
 
 
+<!--   <link rel="stylesheet" type="text/css" href="http://bootstrap-table.wenzhixin.net.cn/assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/bootstrap-table.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+
+<!--   <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/bootstrap-table.min.js"></script>
+ --><!--   <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/locale/bootstrap-table-pl-PL.min.js"></script> -->
+
+<!--   <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter/bootstrap-table-filter.min.js"></script>
+<!--  -->  
+<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+ -->
 <script>
 $(function(){
 $(".search").append('<span class="glyphicon glyphicon-search"></span>');
 /* add the span inside search div with append box*/
-// .search input[type=text]{
-//   border-color: red; /*Set the border color for search box*/
-// }
-
 });
 </script>
 
@@ -59,50 +67,47 @@ $(".search").append('<span class="glyphicon glyphicon-search"></span>');
   padding-bottom: 50px;
   padding-top: 50px;
  }
-
 .search {
-  width: 50%;
-  position: relative;
-}
-
-.search span {
-  position: relative; /*Set search icon*/
-  right: 50px;
-  top: 50px;
-}
-.search input[type=text]{
-  border-color: red; /*Set the border color for search box*/
-}
-
-.search input[type=text]:focus{
- outline:none;
- box-shadow:none; /*If you dont need the shadow on click*/
-}
-
-
-.fixed-table-toolbar .bs-bars,
-.fixed-table-toolbar .search,
-.fixed-table-toolbar .columns {
-  position: relative;
-  margin-top: 0px;
-  margin-bottom: 50px;
-  line-height: 34px;
-}
+      width: 25%;
+      position: relative;
+    }
+    
+    .search span {
+      position: absolute; /*Set search icon*/
+      right: 10px;
+      top: 10px;
+    }
+    .search input[type=text]{
+      border-color: red; /*Set the border color for search box*/
+    }
+    .search input[type=text]:focus{
+     outline:none;
+     box-shadow:none; /*If you dont need the shadow on click*/
+    }
+    
+    .fixed-table-toolbar .bs-bars,
+    .fixed-table-toolbar .search,
+    .fixed-table-toolbar .columns {
+      position: relative;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      line-height: 34px;
+    }
 
 </style>
 
 
-
 </head>
+
 <body>
 
     <div class="container">
-        <table id="result-table" data-url="populate_table.php"  data-show-export="true" data-search="true" data-height="560" data-show-columns="true" class="table table-striped table-bordered" data-filter-control="true" data-filter-show-clear="true">
+        <table id="result-table" data-url="populate_table.php"  data-show-export="true"  data-height="560" data-show-columns="true" class="table table-striped table-bordered" data-search="true" data-filter-control="true" data-filter-show-clear="true">
         <thead>
             <tr>
                 <th data-field="contrib_type" data-filter-control="select" data-sortable="true">Contr. type</th>
                 <th data-field="contrib_date" data-sortable="true">Date</th>
-                <th data-field="contrib_authors" data-sortable="true">Authors</th>
+                <th data-field="contrib_authors" data-sortable="true" data-filter-control="input">Authors</th>
                 <th data-field="organisation" data-visible="false" data-filter-control="select"  data-sortable="true">Organisation</th>
 
                 <th data-field="method" data-filter-control="select"  data-sortable="true">Method</th>
@@ -134,14 +139,17 @@ $(".search").append('<span class="glyphicon glyphicon-search"></span>');
 </html>
 
 
+
 <script>
 var $table = $('#result-table');
 $table.bootstrapTable();
 
+$('table').dataTable({searching: true});
+
 // Basic example
-oTable = $('#result-table').DataTable();   //pay attention to capital D, which is mandatory to retrieve "api" datatables' object, as @Lionel said
-$('#myInputTextField').keyup(function(){
-      oTable.search($(this).val()).draw() ;
-})
+// oTable = $('#result-table').DataTable();  
+// $('#myInputTextField').keyup(function(){
+      // oTable.search($(this).val()).draw() ;
+// })
 
 </script>

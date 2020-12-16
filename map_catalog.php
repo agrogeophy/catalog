@@ -10,6 +10,9 @@
 <meta name="author" content="Benjamin Mary">
 
 
+<link href="lib/font-awesome-4.7.0/css/all.css" rel="stylesheet"> <!--load all styles -->
+
+
  <!-- Global Site Tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=TRACKING_ID"></script>
 
@@ -59,7 +62,9 @@
 
 <!-- Libraries CSS Files -->
 <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="lib/animate/animate.min.css" rel="stylesheet">
+<!-- <link href="lib/font-awesome/css/all.css" rel="stylesheet">
+ -->
+ <link href="lib/animate/animate.min.css" rel="stylesheet">
 <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
 <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
@@ -421,6 +426,8 @@ input[type=text] {
 <body>
 
 
+
+
 <!-- header home-->
 <!---------------->
 
@@ -457,6 +464,7 @@ input[type=text] {
 include("dbb/connect_db.php");
 
 
+
 // -------------//
 // Count nb of entries 
 // -------------//
@@ -491,6 +499,7 @@ $rownb_datasets = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 
+
 <section id="count_db" class="wow fadeIn">
 
   <div class="container">
@@ -522,8 +531,9 @@ $rownb_datasets = $stmt->fetch(PDO::FETCH_ASSOC);
 
   <?php  include('table_geophy.php'); 
   ?>
-  Extend and select the collumns thanks to the widget on the top right corner of the table. Export it using the second widget.
-  *The current table is mainly build on top of the review article from Zhao et al. 2019. 
+  Extend and select the collumns thanks to the widget on the top right corner of the table. 
+  Export it using the second widget.
+  *The current table is partially build on top of the review article from Zhao et al. 2019. 
 
         </div>
 
@@ -531,6 +541,205 @@ $rownb_datasets = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 
+
+<?php
+    // ------------------------------------------------------------------------------------
+    //Making database connection
+
+    try
+    {
+    }
+    catch(Exception $e)
+    {
+            die('Erreur : '.$e->getMessage());
+    }
+
+    include("dbb/join_query.php"); # return sql_main_joint
+    // echo $sql_main_joint;
+
+    // new without joint
+    $select = $conn->prepare($sql_main_joint);
+    $select->execute();
+
+
+?>
+
+
+<!-- --------------------------------------------------
+------------- Project Ecosystem  ---------------------
+-------------------------------------------------- -->
+<section id="objectives">
+<header class="section-header">
+  <h3>Project ecosystem</h3>
+           <p>CAGS is an ecosystem with many interrelated projects and repositories.</p>
+ 
+</header>
+
+    <div class="container">
+<!--         <div class="row">
+ -->            <div class="about-content">
+  
+					<div class="container">
+					  <div class="row">
+					    <div class="col-sm" align="center">
+					      <h4> Catalog </h4>
+					      A platform putting together a database/catalog of agrogeophysical surveys in order to boost future research
+
+					        <div class="list-group-flush">
+					            <div class="list-group-item">
+					              <i class="fa fa-github fa-2x mr-4 mr-4"></i><a href="https://github.com/agrogeophy/catalog.git" style="text-align:center" target="_blank"> agrogeophy/catalog</a>              
+					            </div>
+
+								<div class="list-group-item">
+					              <i class="fa fa-book fa-lg fa-2x mr-4 mr-4"></i><a href="https://agrogeophy.github.io/catalog/" target="_blank"> agrogeophy.github.io/catalog</a>
+					            </div>
+					         	<div class="list-group-item">
+					             <i class="fa fa-bookmark fa-2x mr-4 mr-4"></i><a href="https://doi.org/10.5281/zenodo.4058524" target="_blank"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4058524.svg" alt="DOI"></a>
+					            </div>
+					            <div class="list-group-item">
+					              <i class="fa fa-refresh fa-2x mr-4 mr-4" style="color:green"></i> Ready to use but changing
+					            </div>
+					          </div>
+					    </div>
+					    <div class="col-sm" align="center">
+					      <h4>Notebooks</h4>
+					      A collection of jupyter notebooks that use agrogeophysical models			    
+							        <div class="list-group-flush">
+							            <div class="list-group-item">
+							              <i class="fa fa-github fa-2x mr-4 mr-4"></i><a href="https://github.com/agrogeophy/notebooks.git" style="text-align:center" target="_blank"> agrogeophy/notebooks</a>              
+							            </div>
+
+										<div class="list-group-item">
+							              <i class="fa fa-book fa-lg fa-2x mr-4 mr-4"></i><a href="https://agrogeophy.github.io/notebooks/" target="_blank"> agrogeophy.github.io/notebooks</a>
+							            </div>
+
+							         	<div class="list-group-item">
+							              <i class="fa fa-bookmark fa-2x mr-4 mr-4"></i><a href="https://zenodo.org/badge/latestdoi/292793548" target="_blank"><img src="https://zenodo.org/badge/292793548.svg" alt="DOI"></a>
+							            </div>
+							            <div class="list-group-item">
+							              <i class="fa fa-refresh fa-2x mr-4 mr-4" style="color:green"></i> Ready to use but changing
+							            </div>
+							          </div>
+					    </div>
+					    <div class="col-sm" align="center">
+					      <h4>Datasets</h4>
+					      A list of agrogeophysical dataset if interest with associated metadata and references
+							        <div class="list-group-flush">
+							            <div class="list-group-item">
+							              <i class="fa fa-github fa-2x mr-4 mr-4"></i><a href="https://github.com/agrogeophy/datasets.git" style="text-align:center" target="_blank"> agrogeophy/datasets</a>              
+							            </div>
+
+										<div class="list-group-item">
+							              <i class="fa fa-book fa-lg fa-2x mr-4 mr-4"></i><a href="https://agrogeophy.github.io/datasets/" target="_blank"> agrogeophy.github.io/datasets</a>
+							            </div>
+
+							         	<div class="list-group-item">
+							              <i class="fa fa-bookmark fa-2x mr-4 mr-4"></i><a href="" alt="DOI"></a>
+							            </div>
+							            <div class="list-group-item">
+							              <i class="fa fa-spinner fa-2x mr-4 mr-4" style="color:green"></i> In construction
+							            </div>
+							        </div>
+
+					    </div>
+					  </div>
+					</div>
+
+           </div>
+      </div>
+
+</section>
+
+
+<!-- --------------------------------------------------
+------------- CONTRIBUTE  -------------------------
+-------------------------------------------------- -->
+
+ <section id="about_catalog">
+      <div class="container">
+        <header class="section-header">
+          <h3 id="howtocontribute">How to contribute</h3>
+<!--           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+ -->        </header>
+
+        <ul id="about_catalog-list" class="wow fadeInUp">
+          <li>
+            <a data-toggle="collapse" class="collapsed" href="#sub_0" id="subm_model">Prepare a notebook<i class="ion-android-remove"></i></a>
+            <div id="sub_0" class="collapse" data-parent="#about_catalog-list">
+              <p>
+              <ol>
+                 <li> Take a look for exemples at the CAGS-notebook repository here: <a href="https://github.com/agrogeophy/notebooks.git" target="_blank"> Github agrogeophy-notebooks</a>
+                </li>
+                 <li> Submit: <a href="https://github.com/agrogeophy/notebooks.git" target="_blank"> Github agrogeophy-notebooks submit template</a>
+                </li>
+                <li> Submit to the CAGS
+                </li>
+              </ol>
+<!-- 
+              If you want to submit an individual notebook, fill the form: <a href="input_form_notebook" target="_blank"> Submit notebook </a> -->
+            </p>
+            </div>
+          </li>
+          <li>
+            <li>
+            <a data-toggle="collapse" class="collapsed" href="#sub_1" id="subm_dataset">Prepare a dataset<i class="ion-android-remove"></i></a>
+            <div class="container-fluid">
+                <div id="sub_1" class="collapse" data-parent="#about_catalog-list">
+              		<div class="list-group-item">
+              			<i class="fa fa-spinner fa-2x mr-4 mr-4" style="color:green"></i> In construction
+              		</div>
+                	<ol>
+	                    <p> At this point we do not provide user a data storage facility. A link to a dataset repository will allow to download the full dataset (Exemple of repositories: zenodo).</p>
+
+                		<li>
+	                    <p> If applicable, we recommand the user to use REDA importer to collect dataset metadatas before submitting it. In order to make the processing perfectly reproducible, the journal file produced contains all information logged during the process of importation and processing. 
+	<!--                     (see REDA github for more details: <a href=https://github.com/geophysics-ubonn/reda target="_blank">Link</a>)</p>
+	 -->
+	                    <a href=https://github.com/geophysics-ubonn/reda target="_blank">see REDA github for more details</a></p>
+                		</li>
+
+
+	    <!--               Jupyter notebook template demonstrating how to import a dataset using REDA here:  </p>
+	     -->
+	<!--                     <p> Exemple of EIT dataset: https://zenodo.org/record/1320755 (provided by M. Weigand) supporting the paper "Imaging and functional characterization of crop root systems using spectroscopic electrical impedance measurements: <a href=https://doi.org/10.1007/s11104-018-3867-3 target="_blank">Link</a></p>
+	 -->
+	    <!--                 <p> <a href="https://github.com/BenjMy/agrogeophy-data.git">
+	     --> 
+              			Before submiting please consider to take a look for exemples at the dataset repository here: <a href="https://github.com/agrogeophy/data.git" target="_blank"> Github agrogeophy-data repository</a>
+
+	     				 <li>
+ 	                      <p> Fill the form and create a list of metadatas describing the dataset: <a href="" target="_blank"> Submit dataset </a>
+	                       </p>
+	                      </li>
+	                  </ol>
+	                </div>
+              </div>
+          </li>
+          <li>
+            <a data-toggle="collapse" class="collapsed" href="#sub_2" id="subm_bench">Challenge the community!<i class="ion-android-remove"></i></a>
+            <div id="sub_2" class="collapse" data-parent="#about_catalog-list">
+              <p>
+        <!-- - Submit a dataset for benchmarking of inversion process -->
+               Send us a message on our Slack chatroom describing your issue.      
+              <a href="https://agrogeophy.slack.com" target="_blank">Slack channel</a>
+        	</p>
+            </div>
+          </li>
+
+            <li>
+            <a data-toggle="collapse" class="collapsed" href="#sub_00" id="subm_comm">Submit a contribution<i class="ion-android-remove"></i></a>
+            <div id="sub_00" class="collapse" data-parent="#about_catalog-list">
+              <a href="input_form" target="_blank"> Fill the form here </a>
+           </div>
+          </li>
+
+
+        </ul>
+
+      </div>
+
+    </section><!-- #about_catalog -->
+    
 <!-- --------------------------------------------------
 ------------- OBJECTIVES -------------------------
 -------------------------------------------------- -->
@@ -562,104 +771,32 @@ $rownb_datasets = $stmt->fetch(PDO::FETCH_ASSOC);
 </section>
 
 
+
 <!-- --------------------------------------------------
 ------------- Data mining  -------------------------
 -------------------------------------------------- -->
 
 <section id="DataMining">
 <header class="section-header">
-  <h3>Data mining</h3>
+  <h3>Metadata mining</h3>
 </header>
   <div class="container">
     <div class="text-center">
-      <img src="./img/map/wordcloud.png" alt="Keywords cloud" class="rounded" width="1000">
-    </div>
-  </div>
+
+      <img src="./img/cloudimg.PNG" alt="Keywords cloud" class="rounded" width="400">
+      <img src="./img/barwebimg.PNG" alt="Keywords cloud" class="rounded" width="400">
+
+	</div>
+<!-- 
+<?php /* include('./img/cloud_keywords_web.html');  */ ?>   
+<?php /* include('./img/bar_web.html');  */ ?>
+ -->
+
+</div>
 </section>
 
 
-<!-- --------------------------------------------------
-------------- CONTRIBUTE  -------------------------
--------------------------------------------------- -->
 
- <section id="about_catalog">
-      <div class="container">
-        <header class="section-header">
-          <h3 id="howtocontribute">How to contribute</h3>
-<!--           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
- -->        </header>
-
-        <ul id="about_catalog-list" class="wow fadeInUp">
-          <li>
-            <a data-toggle="collapse" class="collapsed" href="#sub_00" id="subm_comm">Submit a scientific communication<i class="ion-android-remove"></i></a>
-            <div id="sub_00" class="collapse" data-parent="#about_catalog-list">
-              <a href="input_form" target="_blank"> Fill the form here </a>
-           </div>
-          </li>
-          <li>
-            <a data-toggle="collapse" class="collapsed" href="#sub_0" id="subm_model">Submit a notebook<i class="ion-android-remove"></i></a>
-            <div id="sub_0" class="collapse" data-parent="#about_catalog-list">
-              <p>
-
-              Before submiting take a look for exemples at the jupyter notebook repository here: <a href="https://github.com/BenjMy/agrogeophy-notebooks.git"> Github agrogeophy-notebooks repo</a>
-
-              Then fill the form: <a href="input_form_notebook" target="_blank"> submit notebook </a>
-
-<!--         Here:  find an exemple Jupyter notebook template demonstrating how the process of experimental data
- -->        <?php
-        // include('./dbb/M_models/agrogeophy-notebooks/html/blanchy_wheat-rwu-ert-timelapse.html');
-        ?>
-            </p>
-            </div>
-          </li>
-          <li>
-          <li>
-            <a data-toggle="collapse" class="collapsed" href="#sub_1" id="subm_dataset">Submit a dataset<i class="ion-android-remove"></i></a>
-            <div id="sub_1" class="collapse" data-parent="#about_catalog-list">
-        <?php
-        echo '<p> under construction - coming soon! </p>'
-
-        // 1 - execute the binder with your dataset
-        // 2 - fill the form
-
-        ?>
-        <ol>
-          <li>import the data with REDA notebook</li>
-          <li>fill the form</li>
-        </ol>
-        <p>
-          We are building here a routine to import any kind of geoelectrical (ERT/SIP) input formats  datasets via REDA python package and to be returned into the database. The routine should help to fill with metadata the field of the "acquisition" table of the database + a journal file would be avaiable for download containing all instrumental information, import and pre-processing about the dataset (see REDA manual for more details).
-        </p>
-        <p>
-          The dataset would not be stored within the website but in dedicated repositories: 
-        Exemple of repositories: zenodo
-        </p>
-        <p>
-        Exemple of EIT dataset: https://zenodo.org/record/1320755
-         (provided by M. Weigand) supporting the paper "Imaging and functional characterization of crop root systems using spectroscopic electrical impedance measurements: <a href=https://doi.org/10.1007/s11104-018-3867-3 target="_blank">here</a><?php
-        // include('.\dbb\M_models\jupyter_notebooks\lorenz.html');
-        ?>
-                </p>
-                              <p>
-        To upload a dataset-metadata journal rendez-vous: <a href="https://github.com/BenjMy/agrogeophy-data.git"> Github agrogeophy-data repo</a>
-        You can find there Jupyter notebook template demonstrating how to import a dataset using REDA. 
-            </p>
-            </div>
-          </li>
-          <li>
-            <a data-toggle="collapse" class="collapsed" href="#sub_2" id="subm_bench">Challenge the community!<i class="ion-android-remove"></i></a>
-            <div id="sub_2" class="collapse" data-parent="#about_catalog-list">
-              <p>
-        <!-- - Submit a dataset for benchmarking of inversion process -->
-        Coming soon
-        </p>
-            </div>
-          </li>
-        </ul>
-
-      </div>
-
-    </section><!-- #about_catalog -->
 
 <!-- --------------------------------------------------
 ------------- about_catalog  -------------------------
@@ -685,8 +822,11 @@ $rownb_datasets = $stmt->fetch(PDO::FETCH_ASSOC);
             <a data-toggle="collapse" class="collapsed" href="#faq1">Cite us<i class="ion-android-remove"></i></a>
             <div id="faq1" class="collapse" data-parent="#about_catalog-list">
               <p>
-               DOI VZJ paper 
-              </p>
+<!--                <i class="fa fa-bookmark">DOI VZJ paper</i>
+
+ -->              
+				DOI VZJ paper
+			</p>
             </div>
           </li>
           <li>
@@ -714,6 +854,37 @@ $rownb_datasets = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 
+<!-- --------------------------------------------------
+------------- feedback and ideas LINKS  -------------------------
+-------------------------------------------------- -->
+<section id="contact">
+<header class="section-header">
+  <h3>Contact</h3>
+<!--           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+--> 
+</header>
+    <div class="container">
+          <div class="about-content">
+            <h3>We welcome any feedback and ideas!</h3>
+            <h4>
+            Let us know by submitting an issue on Github          
+              <a href="https://github.com/BenjMy/agrogeophy-catalog/issues" target="_blank" class="fa fa-github"> </a>
+            </h4>
+            <h4> 
+            Send us a message on our Slack chatroom         
+              <a href="https://agrogeophy.slack.com" target="_blank" class="fa fa-slack"></a>
+            </h4>
+        </div>
+
+		<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdgYaXgvtPQ2XK3RKUih7itWVr6TJ4ZtTPsKw-aPe3POzYUzQ/viewform?embedded=true" width="840" height="1174" frameborder="0" marginheight="0" marginwidth="100">Chargement…</iframe>
+
+</div>
+
+</section>
+
+
+
+
 
 <!-- --------------------------------------------------
 ------------- USEFUL LINKS  -------------------------
@@ -732,11 +903,11 @@ $rownb_datasets = $stmt->fetch(PDO::FETCH_ASSOC);
 <!--             <div class="col-lg-5 col-md-6">
  -->            <h3>
                   <ul class="columns" data-columns="2">
-                    <li><i class="ion-android-checkmark-circle"></i>Wikipedia page: <a href="https://en.wikipedia.org/wiki/Comparison_of_free_geophysics_software">Comparison of free geophysics software:</a></li> 
-                 <li><i class="ion-android-checkmark-circle"></i>  A website presenting image analysis software tools and models for plants: <a href="https://www.quantitative-plant.org/">https://www.quantitative-plant.org/</a>  </li>
+                    <li><i class="ion-android-checkmark-circle"></i>Wikipedia page: <a href="https://en.wikipedia.org/wiki/Comparison_of_free_geophysics_software" target="_blank">Comparison of free geophysics software</a></li> 
+                 <li><i class="ion-android-checkmark-circle"></i>  A website presenting image analysis software tools and models for plants: <a href="https://www.quantitative-plant.org/" target="_blank">https://www.quantitative-plant.org/</a>  </li>
 <!--                   <li><i class="ion-android-checkmark-circle"></i> Create synergies </li>               
  -->                    <li><i class="ion-android-checkmark-circle"></i>  ISMC - The International Soil Modeling:
-                <a href="https://soil-modeling.org/">ISMC data</a> 
+                <a href="https://soil-modeling.org/" target="_blank">ISMC data</a> 
 
  </li>
                   </ul>
@@ -748,17 +919,21 @@ $rownb_datasets = $stmt->fetch(PDO::FETCH_ASSOC);
 </section>
 
 
-
-<footer id="all-to-action" class="section-bg">
-  <div class="footer-top">
-    <div class="container">
-          <h4><a href="mailto:CatalogAgroGeophy-admin@gmail.com?subject=Catalog AgroGeophy"> Email support </a></h4>
-        <!--
+<section id="contact">
+<header class="section-header">
+  <h3>Project funding</h3>
+<!--           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+--> 
+</header>
+<!--           <h4><a href="mailto:CatalogAgroGeophy-admin@gmail.com?subject=Catalog AgroGeophy"> Email support </a></h4>
+ -->        <!--
           All the links in the footer should remain intact.
           You can delete the links only if you purchased the pro version.
           Licensing information: https://bootstrapmade.com/license/
           Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Rapid
         -->
+    <div class="container">
+
           <div class="copyright">
             <p>
               This project has received funding from the European Union's Horizon 2020 research and innovation programme under the Marie Sklodowska-Curie grant agreement No 842922.
@@ -768,35 +943,50 @@ $rownb_datasets = $stmt->fetch(PDO::FETCH_ASSOC);
             &copy; Copyright <strong>Rapid</strong>. All Rights Reserved
           </div>
           <div class="credits">
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a>
           </div>
 
     </div>
-
-<!--   <h6> Designed with <a href="https://bootstrapmade.com/">BootstrapMade</a> </h6> 
+<!--   <h6> Designed with <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a> </h6> 
  -->
-</footer>
-<?php
-    // ------------------------------------------------------------------------------------
-    //Making database connection
-
-    try
-    {
-    }
-    catch(Exception $e)
-    {
-            die('Erreur : '.$e->getMessage());
-    }
-
-    include("dbb/join_query.php"); # return sql_main_joint
-    // echo $sql_main_joint;
-
-    // new without joint
-    $select = $conn->prepare($sql_main_joint);
-    $select->execute();
+</section>
 
 
-?>
+
+
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+  <!--==========================
+  -- JavaScript Libraries 
+  ============================-->
+
+<!-- form
+ -->
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/mobile-nav/mobile-nav.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+
+
 
 
 <?php
@@ -809,13 +999,11 @@ $geojson = array(
    'type'      => 'FeatureCollection',
    'features'  => array()
 );
-
 ?>
 
-    <?php
+<?php
     # Loop through rows to build feature arrays
     while ($row = $select->fetch(PDO::FETCH_ASSOC)) {
-
         $properties = $row;
         // echo var_dump($properties);
         unset($properties['icon_img']);
@@ -829,20 +1017,11 @@ $geojson = array(
         unset($properties['email']);
         unset($properties['website']);
         unset($properties['contrib_title']);
-
-        echo "<br>";
-        // echo "remove icon";
-
-
-        // echo var_dump($properties);
-        // echo var_dump($row['y']);
         if($row['y']== NULL)
         {
-            // echo 'null';
         }
         else
         {
-        // unset($properties['y']);
         $feature = array(
             'type' => 'Feature',
             'geometry' => array(
@@ -854,30 +1033,17 @@ $geojson = array(
             ),
             'properties' => $properties
         );
-        // echo 'Add feature arrays to feature collection array';
-
         # Add feature arrays to feature collection array
         array_push($geojson['features'], $feature);
-
-    // echo  var_dump((float) $row['x']);
-    // echo  var_dump((float) $row['y']);
             } // end cond coordinates
-
-
-
     } // end while loop
-
     $select->closeCursor(); // Termine le traitement de la requête
-
     // header('Content-type: application/json');
     // echo json_encode($geojson, JSON_NUMERIC_CHECK);
     $fp = fopen('./dbb/map.json', 'w');
     fwrite($fp, json_encode($geojson, JSON_NUMERIC_CHECK));
     fclose($fp);
-
 ?>
-
-
 
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 <!-- <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -901,8 +1067,6 @@ $geojson = array(
   });
 
 
-
-
   // Bike Racks
   var AgrogeophyIcon = L.icon({
     iconUrl: 'img/map/Eco_leaves_nature-512.png',
@@ -923,7 +1087,9 @@ $geojson = array(
           // document.write(myJSON)
 
           var content = '<table border="0" style="border-collapse:collapse;" cellpadding="2">' +
-            '<tr>' + '<th>Org.:</th>' + '<td>' + feature.properties.organisation + '</td>' + '</tr>' +
+           '<tr>' + '<th>Date:</th>' + '<td>' + feature.properties.contrib_date + '</td>' + '</tr>' +
+           '<tr>' + '<th>Org.:</th>' + '<td>' + feature.properties.organisation + '</td>' + '</tr>' +
+           '<tr>' + '<th>Type:</th>' + '<td>' + feature.properties.contrib_type + '</td>' + '</tr>' +
             '<tr>' + '<th>Methods:</th>' + '<td>' +  feature.properties.method +   '</td>' + '</tr>' +
             '<tr>' + '<th></th>' + '<td>'+ '<a href="contribution_detailed.php?idnb=' + JSON.stringify(feature.properties.id) + '"> More</a>'  + 
             '</td>' + '</tr>' +
@@ -970,36 +1136,4 @@ $geojson = array(
 
 </script>
 
-
-
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <!-- Uncomment below i you want to use a preloader -->
-  <!-- <div id="preloader"></div> -->
-
-  <!--==========================
-  -- JavaScript Libraries 
-  ============================-->
-
-<!-- form
- -->
-
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/mobile-nav/mobile-nav.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/counterup/counterup.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/isotope/isotope.pkgd.min.js"></script>
-  <script src="lib/lightbox/js/lightbox.min.js"></script>
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
-
-  <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
-
-</body>
 </html>

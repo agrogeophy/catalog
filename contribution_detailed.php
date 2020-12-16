@@ -41,6 +41,10 @@
 	<!-- # https://api.altmetric.com/embeds.html -->
 	<script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
 
+
+
+
+
 </head>
 
 <style type="text/css">
@@ -58,6 +62,8 @@
 
 <body>
 
+
+
 <?php include("header_home_contrib.php"); ?>
 
 <?php
@@ -65,23 +71,57 @@
 include("dbb/connect_db.php");
 
 
-// $select = $conn->prepare('SELECT * FROM main_l1 WHERE id = ?');
-// $select->execute(array($_GET['idnb'])) 
+// $sql_main_joint_idnb = 'SELECT * 
+// 						FROM main
+// 						FOR JSON PATH';
 
-    $sql_main_joint_idnb='
-    SELECT main.*,
-           contact.*,
-           prospection.*, prospection.lat AS x, prospection.longitude AS y,
-           processing.*,
-           biotic.*,
-           abiotic.*
-           FROM main
-           LEFT JOIN contact ON (main.id_FK_contact = contact.id_contact_l2)
-           LEFT JOIN processing ON (main.id_FK_processing = processing.id_processing_l2)
-           LEFT JOIN prospection ON (main.id_FK_prospection = prospection.id_prospection_l2)
-           LEFT JOIN biotic ON (main.id_FK_biotic = biotic.id_biotic_l2)
-           LEFT JOIN abiotic ON (main.id_FK_abiotic = abiotic.id_abiotic_l2)
-           WHERE main.id = ?';
+
+// abiotic.land_use
+
+// $sql_main_joint_idnb='
+// SELECT main.id, main.contrib_type,main.contrib_title,main.contrib_date,main.contrib_authors,main.DOI,main.journal,main.icon_img,main.keywords,
+// main.id_FK_abiotic, main.id_FK_biotic,main.id_FK_prospection,main.id_FK_processing,main.id_FK_contact,
+//        contact.name,contact.surname,contact.name,contact.email,contact.organisation,contact.website_perso,  contact.id_contact_l2,
+//        prospection.datep, prospection.method, prospection.spatial_scale, prospection.bound_cond, prospection.temperature, prospection.temporal_scale, prospection.instrument, prospection.dimension, prospection.permanent_setup, prospection.lat AS x, prospection.longitude AS y,prospection.id_prospection_l2,
+//        processing.software_name,processing.licence_type,processing.DOI_software,processing.notebook_filename,processing.notebook_purpose,processing.data_repo_url, processing.data_licence,processing.id_processing_l2,
+//        biotic.species,biotic.organ,biotic.id_biotic_l2,
+//        abiotic.soil_type, abiotic.water_input ,abiotic.id_abiotic_l2
+// FROM 
+// 		main
+//        	LEFT JOIN contact ON (main.id_FK_contact = contact.id_contact_l2)
+//        	LEFT JOIN processing ON (main.id_FK_processing = processing.id_processing_l2)
+//        	LEFT JOIN prospection ON (main.id_FK_prospection = prospection.id_prospection_l2)
+//        	LEFT JOIN biotic ON (main.id_FK_biotic = biotic.id_biotic_l2)
+//        	LEFT JOIN abiotic ON (main.id_FK_abiotic = abiotic.id_abiotic_l2)
+// WHERE main.id = ?';
+
+// $sql_main_joint_idnb='
+// SELECT contrib_type,contrib_title,contrib_date,contrib_authors,DOI,journal,icon_img,keywords FROM main
+// WHERE main.id = ?';
+
+
+$sql_main_joint_idnb='
+SELECT main.*,
+       contact.*,
+       prospection.*, prospection.lat AS x, prospection.longitude AS y,
+       processing.*,
+       biotic.*,
+       abiotic.*
+FROM 
+		main
+       	LEFT JOIN contact ON (main.id_FK_contact = contact.id_contact_l2)
+       	LEFT JOIN processing ON (main.id_FK_processing = processing.id_processing_l2)
+       	LEFT JOIN prospection ON (main.id_FK_prospection = prospection.id_prospection_l2)
+       	LEFT JOIN biotic ON (main.id_FK_biotic = biotic.id_biotic_l2)
+       	LEFT JOIN abiotic ON (main.id_FK_abiotic = abiotic.id_abiotic_l2)
+WHERE main.id = ?';
+
+// ALTER TABLE Temptable
+// DROP COLUMN main.id_FK_biotic
+// DROP TABLE Temptable';
+		   #FOR JSON AUTO';
+
+// NEED TO REMOVE collumns with foreign key ids
 
 
 $select = $conn->prepare($sql_main_joint_idnb);
@@ -91,8 +131,26 @@ $select->execute(array($_GET['idnb']));
 
 <?php
 	$overview = $select->fetch(PDO::FETCH_ASSOC);
+	// $overview = mysql_fetch_array($select, MYSQL_ASSOC);
+    unset($overview['id_FK_prospection']);
+    unset($overview['id_FK_biotic']);
+    unset($overview['id_FK_contact']);
+    unset($overview['id_FK_processing']);
+    unset($overview['id_FK_abiotic']);
+    unset($overview['id_processing_l2']);
+    unset($overview['id_prospection_l2']);
+    unset($overview['id_biotic_l2']);
+    unset($overview['id_abiotic_l2']);
+
+
+
+	$json_data=array();//create the array 
+    array_push($json_data,$overview);  
+	//echo var_dump($overview) ;
+	// echo json_encode($json_data)
 
 ?>
+
 
 <!------------------------------------- DISPLAY Scientif comm CONTRIB ------------------------------------ -->
 <?php
@@ -105,9 +163,22 @@ if  ($overview['contrib_type']=='Research article'|| $overview['contrib_type']==
 
               <div class="col-lg-5 col-md-6" >
                        <div class="sticky-top">
+                       	
+
+<!-- 			 				<button class="btn" value="Download_JSON" onclick="DownloadJSON()"><i class="fa fa-download"></i> Download Json metadatas</button> -->
+			 				<button class="btn" id="Download_JSON"><i class="fa fa-download"></i> Download Json metadatas</button>
+<!-- 			 				something.outerHTML += '<input id="btnsave" ...>'
+							document.getElementById ("btnsave").addEventListener ("click", resetEmotes, false); -->
+
+<!-- 			 				<button class="btn" id="Download_XML"><i class="fa fa-download"></i> Download XML metadatas</button>
+ -->
+<!-- 			 				<button class="btn" value="Download XML" onclick="DownloadXML()"><i class="fa fa-download"></i> Download XML metadatas</button> -->
+			 				<!-- 						<input type="button" value="Download JSON" onclick="DownloadJSON()" />
+ -->
+
 		                  <?php
 
-			                  if ($overview['icon_img']='N.C.')
+			                  if (is_null($overview['icon_img']))
 			                  {
 			                                  // echo  '****************************************';
 
@@ -122,11 +193,12 @@ if  ($overview['contrib_type']=='Research article'|| $overview['contrib_type']==
 			                  <?php echo $overview['contrib_title']; ?>
 			                 </h1>
                       </div>
+
              </div>
 
              <div class="col-lg-7 col-md-6">
                 <div class="about-content">
-                 	<h2>Metrics</h2>
+                 	<h3>Metrics</h3>
 		                <?php
 		                echo '<div class="altmetric-embed" data-badge-type="donut" data-doi="'.$overview['DOI'].'"></div>'
 		                ?>
@@ -299,6 +371,19 @@ if  ($overview['contrib_type']=='Notebook')
                   <h2>Contribution overview</h2>
                       <ul class="list-group">
 
+		                  <?php
+
+			                  if (is_null($overview['icon_img']))
+			                  {
+			                                  // echo  '****************************************';
+			                    echo '<div class="about-img"><p><img src="dbb/SC_icons/Eco_leaves_nature-512.png" width="100"><p></div>';
+			                  }
+			                  else
+			                  {
+			                  echo '<div class="caption"><h3><img src="dbb/M_models/agrogeophy-notebooks/icon_img/'.$overview['icon_img'].'" width="250"></h3></div>';
+			                  }
+			               ?>
+
 		                <?php  
 		                        if (!empty($overview['contrib_type']))
 		                              {
@@ -314,17 +399,34 @@ if  ($overview['contrib_type']=='Notebook')
 		                               }
 
 		                ?>
+                      </ul>
+                  <h2>Contact description</h2>
+                        <ul class="list-group">
 
-                    </ul>
+                        <?php
+                                if (!empty($overview['name']))
+                                      {
+                                        echo '<li class="list-group-item"><b>Contrib. Author: </b> '.$overview['surname'].' '.$overview['name'].'</li>';
+                                      }
+                                if (!empty($overview['email']))
+                                      {
+                                        echo '<li class="list-group-item"><b>Email: </b> '.$overview['email'].'</li>';
+                                        echo '<li class="list-group-item"><a href=mailto:'.$overview['email'].'?subject=><b>Contact the author</b></a></li>';
+                                      }
+
+                        ?>
+                      </ul>
 	                  <?php
-	                    if (!empty($overview['notebook_file']))
+	                    if (!empty($overview['notebook_filename']))
 	                          {
-	                           echo '<h4><a href=https://mybinder.org/v2/gh/BenjMy/agrogeophy-notebooks.git/master?filepath=.%2Fnotebooks%2F'.$overview['notebook_file'].'.ipynb class="btn btn-primary" target="_blank"> Try model in binder </a></h4>';
-	                           include('./dbb/M_models/agrogeophy-notebooks/html/'.$overview['notebook_file'].'.html');
+	                           echo '<h4><a href=https://mybinder.org/v2/gh/agrogeophy/notebooks/master?filepath=notebooks/'.$overview['notebook_filename'].' class="btn btn-primary" target="_blank"> Try model in binder </a></h4>';
+                             // echo '<h4><a href=https://mybinder.org/v2/gh/BenjMy/agrogeophy-notebooks.git/master?filepath=.%2Fnotebooks%2F'.$overview['notebook_file'].'.ipynb class="btn btn-primary" target="_blank"> Download Notebook </a></h4>';
+
+                             include('./dbb/M_models/agrogeophy-notebooks/html/'.$overview['notebook_filename'].'.html');
 	                          }
 	                    else
 	                          {
-	                           echo '<h4><a href=https://mybinder.org/v2/gh/BenjMy/agrogeophy-notebooks.git/master?filepath=.%2Fnotebooks%2FLorenz.ipynb class="btn btn-primary" target="_blank"> Try model in binder </a></h4>';
+	                           echo '<h4><a href=https://mybinder.org/v2/gh/BenjMy/agrogeophy-notebooks.git/master?filepath=.%2Fnotebooks%2FLorenz.ipynb class="btn btn-primary" target="_blank"> Try example model in binder </a></h4>';
 	                           include('./dbb/M_models/agrogeophy-notebooks/html/Lorenz.html');
 
 	                          }
@@ -333,21 +435,7 @@ if  ($overview['contrib_type']=='Notebook')
                 </div>
             </div>
           </div>
-          <h2>Contact description</h2>
-            <ul class="list-group">
 
-            <?php
-                    if (!empty($overview['name']))
-                          {
-                            echo '<li class="list-group-item"><b>Contrib. Author: </b> '.$overview['surname'].' '.$overview['name'].'</li>';
-                          }
-                    if (!empty($overview['email']))
-                          {
-                            echo '<li class="list-group-item"><b>Email: </b> '.$overview['email'].'</li>';
-                            echo '<li class="list-group-item"><a href=mailto:'.$overview['email'].'?subject=><b>Contact the author</b></a></li>';
-                          }
-
-            ?>
         <p>
         <h4><a href="mailto:benjamin.mary@unipd.it?subject=error dbb Agrogeophysic" class="btn btn-primary"> Report an error </a></h4>    
         </p>
@@ -426,9 +514,36 @@ if  ($overview['contrib_type']=='Dataset')
 ?>
 
 
-<footer>
-Designed with <a href="https://bootstrapmade.com/">BootstrapMade</a>
-</footer><!-- #footer -->
+<script type="text/javascript">
+    document.getElementById ("Download_JSON").addEventListener ("click", DownloadJSON, false);
+
+    function DownloadJSON(exportObj, exportName){
+
+        var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(<?php echo json_encode($json_data) ?>));
+        var downloadAnchorNode = document.createElement('a');
+        downloadAnchorNode.setAttribute("href",     dataStr);
+        downloadAnchorNode.setAttribute("download", exportName + ".json");
+        document.body.appendChild(downloadAnchorNode); // required for firefox
+        downloadAnchorNode.click();
+        downloadAnchorNode.remove();
+  }
+</script>
+
+<script type="text/javascript">
+    document.getElementById ("Download_XML").addEventListener ("click", DownloadXML, false);
+
+    function DownloadXML(exportObj, exportName){
+
+        var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON_PRETTY(JSON.stringify(<?php echo xmlrpc_encode($json_data) ?>)));
+        var downloadAnchorNode = document.createElement('a');
+        downloadAnchorNode.setAttribute("href",     dataStr);
+        downloadAnchorNode.setAttribute("download", exportName + ".json");
+        document.body.appendChild(downloadAnchorNode); // required for firefox
+        downloadAnchorNode.click();
+        downloadAnchorNode.remove();
+  }
+</script>
+
 
 </body>
 </html>
