@@ -10,9 +10,9 @@ Graphical
 .. _importing:
 .. figure:: images/channels.png
     :alt: channels
-    :scale: 50 %
+    :scale: 10 %
 
-    Possible channels for soil/plant geoelectical measurements. Credit to L. Peruzzo.
+    Possible channels for soil/plant geoelectical measurements. Credit to L. Peruzzo [CIT2002]_.
 
 Acronyms
 ********
@@ -42,3 +42,7 @@ Acronyms
 
 - EMI: ElectroMagnetic Induction
 
+
+References
+----------
+.. [CIT2002] Peruzzo, L., Chou, C., Wu, Y. et al. Imaging of plant current pathways for non-invasive root Phenotyping using a newly developed electrical current source density approach. Plant Soil 450, 567–584 (2020). https://doi.org/10.1007/s11104-020-04529-w
