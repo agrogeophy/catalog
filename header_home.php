@@ -40,11 +40,11 @@ header
           <li><a href="#about_catalog">About the catalog</a></li>
           <li class="drop-down"><a href="">How to contribute</a>
               <ul>
-                <li><a href="#subm_comm">Submit a communication</a></li>
-                <li><a href="#subm_dataset">Submit a compagnion dataset</a></li>
-                <li><a href="#subm_model">Submit a notebook</a></li>
-                <li><a href="#subm_bench">Propose a benchmarking</a></li>
-              </ul>
+<!--                 <li><a href="#subm_comm">Submit a communication</a></li>
+ -->                <li><a href="#subm_dataset">Prepare a dataset</a></li>
+                <li><a href="#subm_model">Prepare a notebook</a></li>
+<!--                 <li><a href="#subm_bench">Propose a benchmarking</a></li>
+ -->              </ul>
           </li>
           <li><a href="#useful_links">Useful links</a></li>
           <li><a href="#contact">Contact</a></li>

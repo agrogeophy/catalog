@@ -11,7 +11,7 @@ agrogeophysic-catalog
    FAIR
    glossary
    schema_documentation
-
+   contibutors
 
 
 Indices and tables
