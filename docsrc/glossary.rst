@@ -14,6 +14,15 @@ Graphical
 
     Possible channels for soil/plant geoelectical measurements. Credit to L. Peruzzo [CIT2002]_.
 
+.. _importing:
+.. figure:: images/ehosioke_sensing_2020_fig2.tif
+    :alt: ehosioke_sensing_2020_fig2
+    :scale: 10 %
+
+See :cite:`ehosioke_sensing_2020` for more details.
+
+Figure 2
+
 Acronyms
 ********
 
@@ -45,4 +54,7 @@ Acronyms
 
 References
 ----------
-.. [CIT2002] Peruzzo, L., Chou, C., Wu, Y. et al. Imaging of plant current pathways for non-invasive root Phenotyping using a newly developed electrical current source density approach. Plant Soil 450, 567–584 (2020). https://doi.org/10.1007/s11104-020-04529-w
+.. [PER2020] Peruzzo, L., Chou, C., Wu, Y. et al. Imaging of plant current pathways for non-invasive root Phenotyping using a newly developed electrical current source density approach. Plant Soil 450, 567–584 (2020). https://doi.org/10.1007/s11104-020-04529-w
+
+.. bibliography::
+   :cited:

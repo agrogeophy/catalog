@@ -43,9 +43,13 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
     'numpydoc',
+    'sphinxcontrib.bibtex',
     # 'nbsphinx',
     # 'sphinx_nbexamples',
 ]
+
+bibtex_bibfiles = ['refs.bib']
+
 
 numpydoc_show_class_members = False
 
