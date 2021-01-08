@@ -8,6 +8,7 @@ agrogeophysic-catalog
    :caption: Contents:
    
    getting-started
+   CAGS_ecosystem
    FAIR
    glossary
    schema_documentation
