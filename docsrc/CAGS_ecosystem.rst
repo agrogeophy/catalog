@@ -1,3 +1,6 @@
+CAGS ecosystem
+==============
+
 CAGS is an ecosystem with many interrelated projects and repositories.
 
 **Catalog**: a platform putting together a database/catalog of agrogeophysical surveys in order to boost future research
