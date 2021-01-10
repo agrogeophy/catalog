@@ -1,6 +1,6 @@
-![https://img.shields.io/badge/Slack-agrogeophy-1.svg?logo=slack](https://agrogeophy.slack.com/)
-    
-![docsrc/CAGS.png](https://agrogeophy.github.io/catalog/docs/)
+[<img src="https://img.shields.io/badge/Slack-agrogeophy-1.svg?logo=slack">](https://agrogeophy.slack.com)
+
+[<img src="docsrc/CAGS.png" width=30%>](https://agrogeophy.github.io/catalog/docs)
     
 
 # Catalog of Agrogeophysical Studies (CAGS)
