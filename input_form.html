@@ -2,23 +2,15 @@
 <html>
 <head>
   <title>Catalog Agrogeophysic</title>
-
+  <meta charset="utf-8">
 <!--  <link href="css/form.css" rel="stylesheet">
  -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-  <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css" />
-  <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css" />
 
-
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
-
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
-
-  <!-- (Optional) Latest compiled and minified JavaScript translation files -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/i18n/defaults-*.min.js"></script>
+  <!-- Bootstrap CSS File -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
@@ -69,9 +61,9 @@
 
 <script>
 function toggleField(hideObj,showObj){
-  hideObj.disabled=true;        
+  hideObj.disabled=true;
   hideObj.style.display='none';
-  showObj.disabled=false;   
+  showObj.disabled=false;
   showObj.style.display='inline';
   showObj.focus();
 }
@@ -85,17 +77,32 @@ function toggleField(hideObj,showObj){
 
 
 
-<?php include("header_home_contrib.php"); ?>
-<section id="about">
+  <header id="header_home">
+          <nav class="main-nav float-right d-none d-lg-block">
+            <ul>
+              <li class="active"><a href="index.html">Home</a></li>
+          </nav>
+        <div class="container">
+          <div class="logo float-left">
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <h1 class="text-light"><a href="catalog.html" class="scrollto"><span>Catalog of agrogeophysical studies</span></a></h1>
+
+            <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
+          </div>
+        </div>
+      </header>
+
+
+  <section id="about">
       <div class="container">
 <!--         <div class="row">
  -->
     <h3>Add a contribution</h3>
-    <form enctype="multipart/form-data" action="notification_handler.php" method="post" style="margin:5%;">
+    <form id="contributionForm" enctype="multipart/form-data" action="" style="margin:5%;">
 
-<!----------------------------------->    
-<!-- Contact description  -->    
-<!----------------------------------->    
+<!----------------------------------->
+<!-- Contact description  -->
+<!----------------------------------->
 
  <div class="container">
         <header class="section-header">
@@ -105,7 +112,7 @@ function toggleField(hideObj,showObj){
             <div class="form-group row required">
               <label for="surname" class="col-sm-2 col-form-label">Surname</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="surname" name="surname" placeholder="e.g. John" required>
+                <input type="text" class="form-control" id="surname" name="surname" placeholder="e.g. Jon" required>
               </div>
             </div>
 
@@ -119,7 +126,7 @@ function toggleField(hideObj,showObj){
           <div class="form-group row required">
             <label for="organisation" class="col-sm-2 col-form-label">First author organisation</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="organisation" name="organisation" placeholder="e.g. Lancaster University" required>
+              <input type="text" class="form-control" id="organisation" name="organisation" placeholder="e.g. Winterfell University" required>
             </div>
           </div>
 
@@ -133,15 +140,14 @@ function toggleField(hideObj,showObj){
   </div>
 
 
-<!----------------------------------->    
-<!-- Contribution description  -->    
-<!----------------------------------->    
+<!----------------------------------->
+<!-- Contribution description  -->
+<!----------------------------------->
 
  <div class="container">
         <header class="section-header">
           <h3 id="howtocontribute">Contribution details</h3>
-<!--           <p></p>
- -->        </header>
+         </header>
         <div class="form-group row">
           <label for="contributionType" class="col-sm-2 col-form-label">Contribution Type</label>
           <div class="col-sm-10">
@@ -177,7 +183,7 @@ function toggleField(hideObj,showObj){
           <div class="form-group row required">
             <label for="authors" class="col-sm-2 col-form-label">Author(s) (comma separated)</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="authors" name="authors" placeholder="e.g. J. Snow, B. Bastard, ..." required>
+              <input type="text" class="form-control" id="authors" name="authors" placeholder="e.g. J. Snow, ..." required>
             </div>
           </div>
 
@@ -188,12 +194,12 @@ function toggleField(hideObj,showObj){
           </div>
         </div>
 
-      <div class="form-group row" enctype="multipart/form-data">
+      <!-- <div class="form-group row" enctype="multipart/form-data">
           <label for="keyFigure" class="col-sm-2 col-form-label">Key figure</label>
           <div class="col-sm-10">
             <input type="file" class="form-control-file" name="keyFigure">
           </div>
-      </div>
+      </div> -->
         <div class="form-group row">
           <label for="comment" class="col-sm-2 col-form-label">Comment</label>
           <div class="col-sm-10">
@@ -203,9 +209,9 @@ function toggleField(hideObj,showObj){
   </div>
 
 
-<!----------------------------------->    
-<!-- Survey description  -->    
-<!----------------------------------->    
+<!----------------------------------->
+<!-- Survey description  -->
+<!----------------------------------->
 
  <div class="container">
         <header class="section-header">
@@ -238,28 +244,17 @@ function toggleField(hideObj,showObj){
           </select>
         </div>
       </div>
-        <div class="form-group row">
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="prospectionType_new" name="prospectionType_new" placeholder="Enter new methods here (comma separated)">
-            </div>
-      </div>
-
-  <!-- TODO replace by bhecklist -->
 
       <div class="form-group row">
         <label for="SpatialScale" class="col-sm-2 col-form-label">Spatial Scale</label>
         <div class="col-sm-10">
-          <select multiple class="form-control" id="SpatialScale" name="SpatialScale">
+          <!-- <select multiple class="form-control" id="SpatialScale" name="SpatialScale"> -->
+          <select class="form-control form-select" id="SpatialScale" name="SpatialScale">
             <option>Field</option>
             <option>Laboratory</option>
             <option>Catchement</option>
           </select>
         </div>
-      </div>
-        <div class="form-group row">
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="prospectionType_new" name="prospectionType_new" placeholder="Enter new scale here (comma separated)">
-            </div>
       </div>
 
       <div class="form-group row">
@@ -345,9 +340,9 @@ function toggleField(hideObj,showObj){
 
 
 
-<!----------------------------------->    
-<!-- Processing tools description  -->    
-<!----------------------------------->    
+<!----------------------------------->
+<!-- Processing tools description  -->
+<!----------------------------------->
 
  <div class="container">
         <header class="section-header">
@@ -363,19 +358,22 @@ function toggleField(hideObj,showObj){
         </div>
 
         <div class="form-group row">
-          <label for="licence_soft" class="col-sm-2 col-form-label">Software Licence</label>
+          <label for="licence_soft" class="col-sm-2 col-form-label">Software Licence Type</label>
           <div class="col-sm-10">
-            <select multiple class="form-control" id="licence_soft" name="licence_soft">
+            <select multiple class="form-control" id="licence_type" name="licence_type">
               <option>Open source</option>
+              <option>Freeware</option>
               <option>Proprietary</option>
             </select>
           </div>
         </div>
+
         <div class="form-group row">
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="prospectionType_new" name="prospectionType_new" placeholder="Enter new software licence type here">
-            </div>
-      </div>
+          <label for="licence_name" class="col-sm-2 col-form-label">Software Licence Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="licence_name" name="licence_name" placeholder="Enter licence name">
+          </div>
+        </div>
 
         <div class="form-group row">
           <label for="comment" class="col-sm-2 col-form-label">Comment</label>
@@ -386,9 +384,9 @@ function toggleField(hideObj,showObj){
   </div>
 
 
-<!----------------------------------->    
-<!-- Abiotic tools description  -->    
-<!----------------------------------->    
+<!----------------------------------->
+<!-- Abiotic tools description  -->
+<!----------------------------------->
 
  <div class="container">
         <header class="section-header">
@@ -416,9 +414,9 @@ function toggleField(hideObj,showObj){
           </div>
         </div>
 </div>
-<!----------------------------------->    
-<!-- Abiotic tools description  -->    
-<!----------------------------------->    
+<!----------------------------------->
+<!-- Abiotic tools description  -->
+<!----------------------------------->
 
  <div class="container">
         <header class="section-header">
@@ -447,9 +445,9 @@ function toggleField(hideObj,showObj){
         </div>
  </div>
 
-<!----------------------------------->    
-<!-- Ancillary measurements        -->    
-<!----------------------------------->    
+<!----------------------------------->
+<!-- Ancillary measurements        -->
+<!----------------------------------->
 
  <div class="container">
         <header class="section-header">
@@ -472,9 +470,9 @@ function toggleField(hideObj,showObj){
             </div>
       </div>
 
-<!----------------------------------->    
-<!-- Companion notebook  -->    
-<!----------------------------------->    
+<!----------------------------------->
+<!-- Companion notebook  -->
+<!----------------------------------->
 
  <div class="container">
         <header class="section-header">
@@ -557,14 +555,90 @@ function toggleField(hideObj,showObj){
         </div>
 
 </div>
-    <button type="submit_contrib_form" class="btn btn-primary" value="Upload File">Submit</button>
+    <p>You can now, send the form via email and attach any cover picture or notebook to it.
+      Please keep the subject line and keep the CSV line as it is.
+    </p>
+    <button onclick='sendMail();' class="btn btn-primary" value="">Send form via email</button>
   </form>
-<!--     </div>
- -->  </div>
+</div>
 
 
 </section>
 
+
+<script type="text/javascript">
+  function sendMail() {
+    let mailtoHeader = "mailto:CatalogAgroGeophy-admin@gmail.com?subject=CAGS%20contribution&body="
+    let content = ''
+    let form = document.querySelector('form')
+    let data = new FormData(form)
+    console.log(data)
+
+    // collect all answers
+    content = content + "id,Contribution type,Sequence,Nb of electrodes,Dimension,Boreholes,Rhizotron,Method,Boundary cond,Spatial scale,Spatial scale (m),Temporal scale,Prospection date,Instrument,Permanent setup,Ancillary measurements,Crop type,Organ studied,Soil type,Water input,Research purpose* (According to Zhao et al 2019),Calibration ,Temperature correction,Authors,Surname,Name,Corresponding email,Personal website,DOI,Preprint,URL,Organisation,Address,Title,Keywords,Date,Journal,Dataset DOI,Notebook DOI,Notebook filename,Lat,Long,Software name,Software licence,Software DOI,Software website\n"
+    content = content + '0,' // to be changed at insertion time ofc
+    content = content + data.get('contributionType') + ','
+    content = content + ','
+    content = content + ','
+    content = content + data.get('dimension') + ','
+    content = content + ',' // borehole
+    content = content + ',' // rhizotron
+    content = content + ',' // method
+    content = content + ',' // boundary cond
+    content = content + data.get('SpatialScale') + ','
+    content = content + ',' // spatial scale (m)
+    content = content + data.get('TemporalScale') + ','
+    content = content + ',' // prospection date
+    content = content + data.get('instrument') + ','
+    content = content + data.get('permanentSetup') + ','
+    content = content + data.get('Ancillary_meas') + ','
+    content = content + data.get('species') + ','
+    content = content + data.get('organ') + ','
+    content = content + data.get('soil') + ','
+    content = content + data.get('water') + ','
+    content = content + ',' // calibration
+    content = content + data.get('Temperature') + ','
+    content = content + data.get('authors') + ','
+    content = content + data.get('surname') + ','
+    content = content + data.get('name') + ','
+    content = content + data.get('email') + ','
+    content = content + ',' // website
+    content = content + data.get('publicationLink') + ',' // DOI
+    content = content + ',' // Preprint
+    content = content + data.get('publicationLink') + ',' // URL
+    content = content + data.get('organisation') + ','
+    content = content + ',' // address
+    content = content + data.get('title') + ','
+    content = content + data.get('keywords') + ','
+    content = content + data.get('publicDate') + ',' // Date
+    content = content + ',' // journal
+    content = content + data.get('dataLink') + ',' // dataset DOI
+    content = content + ',' // notebook filename (TO BE FILLED by admin)
+    content = content + data.get('latitude') + ','
+    content = content + data.get('longitude') + ','
+    content = content + data.get('software') + ','
+    content = content + data.get('licence_type') + ',' // software licence_type
+    content = content + ',' // software DOI
+    content = content // software website
+    console.log(content)
+    // TODO what about user comments?
+
+    content = encodeURIComponent(content)
+
+    // form the mailto link
+    if ((data.get('surname') != '')
+      && (data.get('name') != '')
+      && (data.get('organisation') != '')
+      && (data.get('title') != '')
+      && (data.get('authors') != '')) {
+        console.log('form sent to mailto')
+        window.location = mailtoHeader + content
+      } else {
+        console.log('some mandatory fields are blank')
+      }
+    }
+
+</script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -575,7 +649,7 @@ function toggleField(hideObj,showObj){
 
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <!--==========================
-  -- JavaScript Libraries 
+  -- JavaScript Libraries
   ============================-->
 
 <!-- form
@@ -607,9 +681,6 @@ function toggleField(hideObj,showObj){
  <script> $(".js-example-tags").select2({
   tags: true
 });
-</script> 
+</script>
 
 </html>
-
-
-

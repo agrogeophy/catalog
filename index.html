@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta charset="utf-8">
+<title>Catalog Agrogeophysic</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="Geophysics, Roots, Water, Irrigation, Benjamin Mary, MSCA, Marie-Curie, Padova, Berkeley" name="keywords">
+<meta content="GROWING MSCA project website" name="description">
+<meta name="author" content="Benjamin Mary">
+
+ <!-- Global Site Tag (gtag.js) - Google Analytics-->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=TRACKING_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-156846585-1');
+</script> -->
+
+
+<link href="css/form.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Bootstrap CSS File -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+<!-- leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+<!-- to add the marker cluster -->
+<link href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" rel="stylesheet">
+<link href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" ref="stylesheet">
+<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+<!-- <script src="https://api.tiles.mapbox/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js><scritp> -->
+
+<!-- boostrap select -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+<!-- Favicons -->
+<link href="img/favicon.png" rel="icon">
+<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+
+
+<!-- Libraries CSS Files -->
+<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="lib/animate/animate.min.css" rel="stylesheet">
+<link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.13/js/dataTables.bootstrap4.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script> -->
+
+
+
+
+<!-- <script type="text/javascript" src="js/addons/datatables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"> -->
+
+<!-- for parsing the .csv file that serve as database -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+<script src="js/papaparse.min.js"></script>
+
+<!-- alternatively we can use this great extension for more complex static database -->
+<!-- <script src="https://jlxw.github.io/static-json-db/static-json-db.min.js"></script>
+<script>
+  const db = new StaticJsonDb(new URL('data',window.location));
+  (async () => {
+    console.log(await db.get('key1')) // Hello World1
+    console.log(await db.getAll()) // {key1: "Hello World1", abc: "def"}
+  })();
+</script> -->
+
+<!-- boostrap tables -->
+
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+
+
+<link href="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.css" rel="stylesheet">
+<script src="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.js"></script>
+
+<script src="https://unpkg.com/bootstrap-table@1.17.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.17.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
+
+<!-- data tables (jquery plugins) -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script> -->
+
+<script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+<script src="https://unpkg.com/tableexport.jquery.plugin/libs/jsPDF/jspdf.min.js"></script>
+<script src="https://unpkg.com/tableexport.jquery.plugin/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+
+
+<!-- filter control boostrap extension -->
+<!-- <link rel="stylesheet" type="text/css" href="extensions/filter-control/bootstrap-table-filter-control.css"> -->
+<script src="https://unpkg.com/bootstrap-table@1.18.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+
+<!-- Main Stylesheet File -->
+<link href="css/style.css" rel="stylesheet">
+
+
+<style>
+  html, body {
+     height: 100%;
+     margin: 0;
+  }
+/*  #map-container {
+      margin-left: auto;
+      margin-right: auto;
+      width: 60%;
+  }*/
+
+/* About section
+--------------------------------*/
+input[type=text] {
+  width: 60%;
+  padding: 0px 20px;
+  margin: 0px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid blue;
+  transition: width 0.4s ease-in-out;
+}
+
+/*input[type=text]:focus {
+  width: 100%;
+}*/
+
+#about_catalog {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+#about_catalog #about_catalog-list {
+  padding: 0;
+  list-style: none;
+}
+
+#about_catalog #about_catalog-list li {
+  border-bottom: 1px solid #ebebeb;
+}
+
+#about_catalog #about_catalog-list a {
+  padding: 22px 0;
+  display: block;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 400;
+  padding-right: 20px;
+}
+
+#about_catalog #about_catalog-list i {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+#about_catalog #about_catalog-list p {
+  margin-bottom: 20px;
+}
+
+#about_catalog #about_catalog-list a.collapse {
+  color: #1bb1dc;
+}
+
+#about_catalog #about_catalog-list a.collapsed {
+  color: #000;
+}
+
+#about_catalog #about_catalog-list a.collapsed i::before {
+  content: "\f2c7" !important;
+}
+
+/* count_db section
+--------------------------------*/
+
+#count_db .counters {
+  padding-top: 40px;
+}
+
+#count_db .counters span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+  display: block;
+  color: #555186;
+}
+
+#count_db .counters p {
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #8a87b6;
+}
+/* gridmysql_results Section
+--------------------------------*/
+
+#gridmysql_results {
+  padding: 0px 0 0px 0;
+}
+
+#gridmysql_results .box {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  margin: 0 10px 40px 10px;
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+
+#gridmysql_results .box:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+#gridmysql_results .icon {
+  margin: 0 auto 15px auto;
+  padding-top: 12px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+#gridmysql_results .icon i {
+  font-size: 36px;
+  line-height: 1;
+}
+
+#gridmysql_results .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+#gridmysql_results .title a {
+  color: #111;
+}
+
+#gridmysql_results .box:hover .title a {
+  color: #1bb1dc;
+}
+
+#gridmysql_results .description {
+  font-size: 14px;
+  line-height: 28px;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+
+/* objectives Section
+--------------------------------*/
+
+#objectives {
+  padding: 80px 0;
+}
+
+#objectives .about-content {
+  padding-top: 40px;
+}
+
+#objectives .about-content h2 {
+  color: #413e66;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+#objectives .about-content h3 {
+  color: #696592;
+  font-weight: 400;
+  font-size: 22px;
+  font-style: italic;
+}
+
+#objectives .about-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+#objectives .about-content ul li {
+  padding-bottom: 10px;
+}
+
+#objectives .about-content ul li i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #1bb1dc;
+}
+
+#objectives .about-img {
+  position: relative;
+  margin: 30px 30px 30px 30px;
+}
+
+#objectives .about-img img {
+  width: 80%;
+  border: 0px solid #fff;
+  transition: .5s;
+}
+
+#objectives .about-img img:hover {
+  width: 100%;
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+}
+
+#objectives .about-img::before {
+  position: absolute;
+  left: -31px;
+  top: -30px;
+  width: 80%;
+/*  height: 92%;*/
+  z-index: -1;
+  content: '';
+  background-color: white;
+  transition: .5s;
+}
+
+#objectives .about-img::after {
+  position: absolute;
+  right: -31px;
+  bottom: -30px;
+  width: 90%;
+  height: 92%;
+  z-index: -1;
+  content: '';
+  background-color: white;
+  transition: .5s;
+}
+
+#objectives .msca-logo {
+    width: 50%;
+    height: auto;
+}
+
+/*---- Useful links section
+*/
+#useful_links {
+  padding: 80px 0;
+}
+
+#useful_links .about-content {
+  padding-top: 40px;
+}
+
+#useful_links .about-content h2 {
+  color: #413e66;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+#useful_links .about-content h3 {
+  color: #696592;
+  font-weight: 400;
+  font-size: 22px;
+  font-style: italic;
+}
+
+#useful_links .about-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+#useful_links .about-content ul li {
+  padding-bottom: 10px;
+}
+
+#useful_links .about-content ul li i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #1bb1dc;
+}
+
+#useful_links .about-img {
+  position: relative;
+  margin: 30px 30px 30px 30px;
+}
+
+#useful_links .about-img img {
+  width: 80%;
+  border: 0px solid #fff;
+  transition: .5s;
+}
+
+#useful_links .about-img img:hover {
+  width: 100%;
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+}
+
+#useful_links .about-img::before {
+  position: absolute;
+  left: -31px;
+  top: -30px;
+  width: 80%;
+/*  height: 92%;*/
+  z-index: -1;
+  content: '';
+  background-color: white;
+  transition: .5s;
+}
+
+#useful_links .about-img::after {
+  position: absolute;
+  right: -31px;
+  bottom: -30px;
+  width: 90%;
+  height: 92%;
+  z-index: -1;
+  content: '';
+  background-color: white;
+  transition: .5s;
+}
+
+#useful_links .msca-logo {
+    width: 50%;
+    height: auto;}
+
+#map{
+    margin-top: 100px;
+}
+
+}
+
+
+/*style for autocomplete suggestions*/
+  * { box-sizing: border-box; }
+  body {
+    font: 16px Arial;
+  }
+  .autocomplete {
+    /*the container must be positioned relative:*/
+    position: relative;
+    display: inline-block;
+  }
+  input {
+    border: 1px solid transparent;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;
+  }
+  input[type=text] {
+    background-color: #f1f1f1;
+    width: 100%;
+  }
+  input[type=submit] {
+    background-color: DodgerBlue;
+    color: #fff;
+  }
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+  }
+  .autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: #e9e9e9;
+  }
+  .autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+  }
+
+
+  /* style for the data table */
+
+  #result-table {
+    position: center;
+    padding-bottom: 50px;
+    padding-top: 50px;
+   }
+
+  .search {
+    width: 50%;
+    position: relative;
+  }
+
+  .search span {
+    position: relative; /*Set search icon*/
+    right: 50px;
+    top: 50px;
+  }
+  .search input[type=text]{
+    border-color: red; /*Set the border color for search box*/
+  }
+
+  .search input[type=text]:focus{
+   outline:none;
+   box-shadow:none; /*If you dont need the shadow on click*/
+  }
+
+  .fixed-table-toolbar .bs-bars,
+  .fixed-table-toolbar .search,
+  .fixed-table-toolbar .columns {
+    position: relative;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    line-height: 34px;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- header home-->
+<div w3-include-html="header_home.html"></div>
+
+ <!-- leaflet map-->
+<section id="studyAreas">
+  <div class="container">
+    <div id="map">map</div>
+      *The map only displays georeferenced studies.
+  </div>
+</section>
+
+<!-- some numbers -->
+<section id="count_db" class="wow fadeIn">
+  <div class="container">
+    <div class="row counters">
+      <div class="col-lg-3 col-6 text-center">
+        <span data-toggle="counter-up" id="nbContributions"></span>
+        <p>Nb of contributions</p>
+      </div>
+      <div class="col-lg-3 col-6 text-center">
+        <span data-toggle="counter-up" id="nbOrganisations"></span>
+        <p>Nb of organisations</p>
+      </div>
+      <div class="col-lg-3 col-6 text-center">
+        <span data-toggle="counter-up" id="nbNotebooks"></span>
+        <p>Nb of notebook models</p>
+      </div>
+      <div class="col-lg-3 col-6 text-center">
+        <span data-toggle="counter-up" id="nbDatasets"></span>
+        <p>Nb of datasets</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- searchbox -->
+<section id="searchbox">
+  <div class="section-header">
+    <!-- <div class="row"> -->
+      <!-- <div class="col-sm" align="center"> -->
+      <div class="w-50 mx-auto">
+        <div class="autocomplete" style="width:500px; height:50px;">
+          <input id="myInput" type="text" style="width:500px; height:50px; opacity:1;" name="myCountry" placeholder="Search authors or title"/>
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>
+</section>
+
+
+<!-- geophy table -->
+<section id="geophy_table">
+  <div class="container">
+          <table id="result-table" data-show-export="true" data-search="true" data-height="560" data-show-columns="true" class="table table-striped table-bordered" data-filter-control="true" data-filter-show-clear="true">
+          <thead>
+              <tr>
+                  <th data-field="contrib_type" data-filter-control="select" data-sortable="true">Contr. type</th>
+                  <th data-field="contrib_date" data-sortable="true">Date</th>
+                  <th data-field="contrib_authors" data-sortable="true">Authors</th>
+                  <th data-field="organisation" data-visible="false" data-filter-control="select"  data-sortable="true">Organisation</th>
+                  <th data-field="method" data-filter-control="select"  data-sortable="true">Method</th>
+                  <th data-field="species" data-filter-control="select"  data-sortable="true">Crop type</th>
+                  <th data-field="organ" data-visible="false" data-filter-control="select"  data-sortable="true">Organ measured</th>
+                  <th data-field="contrib_title" data-sortable="true" data-filter-control="input">Title</th>
+                  <th data-field="software_name" data-visible="false" data-filter-control="select"  data-sortable="true">Soft</th>
+                  <th data-field="licence_type" data-visible="false" data-filter-control="select"  data-sortable="true">Licence</th>
+                  <th data-field="notebook_filename" data-visible="false" data-filter-control="select"  data-sortable="true">Notebook file</th>
+                  <th data-field="dimension" data-visible="false" data-filter-control="select"  data-sortable="true">Dimension</th>
+                  <th data-field="spacial_scale" data-visible="false" data-filter-control="select"  data-sortable="true">Spatial scale</th>
+                  <th data-field="bound_cond" data-visible="false" data-filter-control="select"  data-sortable="true">Bound. cond.</th>
+                  <th data-field="temporal_scale" data-visible="false" data-filter-control="select"  data-sortable="true">Temp. scale</th>
+                  <th data-field="instrument" data-visible="false" data-filter-control="select"  data-sortable="true">Instrument</th>
+                  <th data-field="DOI" data-sortable="true">DOI</th>
+                  <th data-field="more" data-sortable="true">more</th>
+              </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <p>
+          Extend and select the collumns thanks to the widget on the top right corner of the table.
+          Export it using the second widget. *Table mainly build on top of the review of Zhao et al. (2019).
+        </p>
+    </div>
+</section>
+
+
+<section id="ecosystem">
+<header class="section-header">
+  <h3>Project ecosystem</h3>
+           <p>CAGS is an ecosystem with many interrelated projects and repositories.</p>
+
+</header>
+
+    <div class="container">
+<!--         <div class="row">
+ -->            <div class="about-content">
+
+					<div class="container">
+					  <div class="row">
+					    <div class="col-sm" align="center">
+					      <h4> Catalog </h4>
+					      A platform putting together a database/catalog of agrogeophysical surveys in order to boost future research
+
+					        <div class="list-group-flush">
+					            <div class="list-group-item">
+					              <i class="fa fa-github fa-2x mr-4 mr-4"></i><a href="https://github.com/agrogeophy/catalog" style="text-align:center" target="_blank"> agrogeophy/catalog</a>
+					            </div>
+
+								<div class="list-group-item">
+					              <i class="fa fa-book fa-lg fa-2x mr-4 mr-4"></i><a href="https://agrogeophy.github.io/docs/index.html" target="_blank"> agrogeophy.github.io/docs</a>
+					            </div>
+					         	<div class="list-group-item">
+					             <i class="fa fa-bookmark fa-2x mr-4 mr-4"></i><a href="https://doi.org/10.5281/zenodo.4058524" target="_blank"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4058524.svg" alt="DOI"></a>
+					            </div>
+					            <div class="list-group-item">
+					              <i class="fa fa-refresh fa-2x mr-4 mr-4" style="color:green"></i> Ready to use but changing
+					            </div>
+					          </div>
+					    </div>
+					    <div class="col-sm" align="center">
+					      <h4>Notebooks</h4>
+					      A collection of jupyter notebooks that use agrogeophysical models
+							        <div class="list-group-flush">
+							            <div class="list-group-item">
+							              <i class="fa fa-github fa-2x mr-4 mr-4"></i><a href="https://github.com/agrogeophy/notebooks.git" style="text-align:center" target="_blank"> agrogeophy/notebooks</a>
+							            </div>
+
+										<div class="list-group-item">
+							              <i class="fa fa-book fa-lg fa-2x mr-4 mr-4"></i><a href="https://agrogeophy.github.io/notebooks/" target="_blank"> agrogeophy.github.io/notebooks</a>
+							            </div>
+
+							         	<div class="list-group-item">
+							              <i class="fa fa-bookmark fa-2x mr-4 mr-4"></i><a href="https://zenodo.org/badge/latestdoi/292793548" target="_blank"><img src="https://zenodo.org/badge/292793548.svg" alt="DOI"></a>
+							            </div>
+							            <div class="list-group-item">
+							              <i class="fa fa-refresh fa-2x mr-4 mr-4" style="color:green"></i> Ready to use but changing
+							            </div>
+							          </div>
+					    </div>
+					    <div class="col-sm" align="center">
+					      <h4>Datasets</h4>
+					      A list of agrogeophysical dataset of interest with associated metadata and references
+							        <div class="list-group-flush">
+							            <div class="list-group-item">
+							              <i class="fa fa-github fa-2x mr-4 mr-4"></i><a href="https://github.com/agrogeophy/datasets.git" style="text-align:center" target="_blank"> agrogeophy/datasets</a>
+							            </div>
+
+										<div class="list-group-item">
+							              <i class="fa fa-book fa-lg fa-2x mr-4 mr-4"></i><a href="https://agrogeophy.github.io/datasets/" target="_blank"> agrogeophy.github.io/datasets</a>
+							            </div>
+
+							         	<div class="list-group-item">
+							              <i class="fa fa-bookmark fa-2x mr-4 mr-4"></i><a href="" alt="DOI"></a>
+							            </div>
+							            <div class="list-group-item">
+							              <i class="fa fa-spinner fa-2x mr-4 mr-4" style="color:green"></i> In construction
+							            </div>
+							        </div>
+
+					    </div>
+					  </div>
+					</div>
+
+           </div>
+      </div>
+</section>
+
+<section id="objectives">
+<header class="section-header">
+  <h3>Objectives</h3>
+<!--           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+-->        </header>
+
+    <div class="container">
+<!--         <div class="row">
+ -->            <div class="about-content">
+
+<!--             <div class="col-lg-5 col-md-6">
+ -->            <h3>
+                  <ul class="columns" data-columns="2">
+                    <li><i class="ion-android-checkmark-circle"></i> Build a repository that is trust by the community </li>
+                 <li><i class="ion-android-checkmark-circle"></i>  Gather datasets needed for modeling </li>
+<!--                   <li><i class="ion-android-checkmark-circle"></i> Create synergies </li>
+ -->                    <li><i class="ion-android-checkmark-circle"></i>  Finding easily georeferenced data-sets linked to research themes </li>
+                    <li><i class="ion-android-checkmark-circle"></i> Facilitate communication to stakeholders </li>
+                  </ul>
+                </h3>
+<!--             </div>
+ -->          </div>
+      </div>
+
+
+</section>
+
+
+<section id="about_catalog">
+      <div class="container">
+        <header class="section-header">
+          <h3 id="howtocontribute">How to contribute</h3>
+          <p>Accepted contributions are <b> scientific communications with a DOI </b>  and companion <b>notebooks</b>  and <b>datasets</b> complying with CAGS guidelines. Fill out your metadatas by using the dedicated tools and submit a new contribution to the catalogue; </p>
+        </header>
+
+        <ul id="about_catalog-list" class="list-group">  <!--class="wow fadeInUp"> -->
+          <li>
+            <a data-toggle="collapse" class="collapsed" href="#sub_0" id="subm_model">Prepare a notebook<i class="ion-android-remove"></i></a>
+            <div id="sub_0" class="collapse" data-parent="#about_catalog-list">
+              <p>
+              </p><ol>
+                 <li> Take a look for exemples at the CAGS-notebook repository here: <a href="https://github.com/agrogeophy/notebooks.git" target="_blank"> Github agrogeophy-notebooks</a>
+                </li>
+                 <li> Submit: <a href="https://github.com/agrogeophy/notebooks.git" target="_blank"> Github agrogeophy-notebooks submit template</a>
+                </li>
+                <li> Submit to the CAGS
+                </li>
+              </ol>
+<!--
+              If you want to submit an individual notebook, fill the form: <a href="input_form_notebook" target="_blank"> Submit notebook </a> -->
+            <p></p>
+            </div>
+          </li>
+          <li>
+            </li><li>
+            <a data-toggle="collapse" class="collapsed" href="#sub_1" id="subm_dataset">Prepare a dataset<i class="ion-android-remove"></i></a>
+            <div class="container-fluid">
+                <div id="sub_1" class="collapse" data-parent="#about_catalog-list">
+              		<div class="list-group-item">
+              			<i class="fa fa-spinner fa-2x mr-4 mr-4" style="color:green"></i> In construction
+              		</div>
+	             </div>
+            </div>
+          </li>
+<!--           <li>
+            <a data-toggle="collapse" class="collapsed" href="#sub_2" id="subm_bench">Challenge the community!<i class="ion-android-remove"></i></a>
+            <div id="sub_2" class="collapse" data-parent="#about_catalog-list">
+              <p>
+        - Submit a dataset for benchmarking of inversion process
+               Send us a message on our Slack chatroom describing your issue.
+              <a href="https://agrogeophy.slack.com" target="_blank">Slack channel</a>
+        	</p>
+            </div>
+          </li> -->
+        </ul>
+      </div>
+
+	<div class="col-sm" align="center">
+              <p>
+<!--       <a href="input_form" target="_blank">Test </a>
+      <button type="button" class="btn btn-success">Submit</button> -->
+      <a class="btn btn-success" href="input_form.html" target="_blank" role="button">I'm ready to submit</a>
+        	</p>
+    </div>
+
+
+
+    </section>
+
+
+    <section id="contact">
+<header class="section-header">
+  <h3>Contact</h3>
+<!--           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+-->
+</header>
+    <div class="container">
+          <div class="about-content">
+            <h3>We welcome any feedback and ideas!</h3>
+            <h4>
+            Let us know by submitting an issue on Github
+              <a href="https://github.com/BenjMy/agrogeophy-catalog/issues" target="_blank" class="fa fa-github"> </a>
+            </h4>
+            <h4>
+            Send us a message on our Slack chatroom
+              <a href="https://agrogeophy.slack.com" target="_blank" class="fa fa-slack"></a>
+            </h4>
+        </div>
+
+		<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdgYaXgvtPQ2XK3RKUih7itWVr6TJ4ZtTPsKw-aPe3POzYUzQ/viewform?embedded=true" marginheight="0" marginwidth="100" width="840" height="1174" frameborder="0">Chargement…</iframe>
+
+</div>
+
+</section>
+
+
+
+<!-- DATA MINING -->
+<section id="DataMining">
+<header class="section-header">
+  <h3>Metadata mining</h3>
+</header>
+  <div class="container">
+    <div class="text-center">
+
+      <img src="./img/cloudimg.PNG" alt="Keywords cloud" class="rounded" width="400">
+      <img src="./img/barwebimg.PNG" alt="Keywords cloud" class="rounded" width="400">
+
+	</div>
+<!--
+
+ -->
+
+</div>
+</section>
+
+
+
+
+<!-- ABOUT CATALOG -->
+<section id="about_catalog">
+      <div class="container">
+        <header class="section-header">
+          <h3>About the catalog</h3>
+<!--           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+ -->        </header>
+
+        <ul id="about_catalog-list" class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+          <li>
+            <a data-toggle="collapse" class="collapsed" href="#faq0">Database architecture<i class="ion-android-remove"></i></a>
+            <div id="faq0" class="collapse" data-parent="#about_catalog-list">
+              <p>
+               </p><div class="caption"><h3><img src="img/db_structure.png" width="800"></h3></div>
+              <p></p>
+            </div>
+          </li>
+          <li>
+          </li><li>
+            <a data-toggle="collapse" class="collapsed" href="#faq1">Cite us<i class="ion-android-remove"></i></a>
+            <div id="faq1" class="collapse" data-parent="#about_catalog-list">
+              <p>
+<!--                <i class="fa fa-bookmark">DOI VZJ paper</i>
+
+ -->
+				DOI VZJ paper
+			</p>
+            </div>
+          </li>
+          <li>
+            <a data-toggle="collapse" class="collapsed" href="#faq2">Term of use<i class="ion-android-remove"></i></a>
+            <div id="faq2" class="collapse" data-parent="#about_catalog-list">
+              <p>
+               The agrigeophysical catalog is made available under the Open Data Commons Attribution License (ODC-By) v1.0. [https://opendatacommons.org/licenses/by/1.0/]
+              </p>
+            </div>
+          </li>
+          <li>
+            <a data-toggle="collapse" class="collapsed" href="#faq3">Credits<i class="ion-android-remove"></i></a>
+            <div id="faq3" class="collapse" data-parent="#about_catalog-list">
+              <p>
+              Website inspired from the wonderfull work of quantitative-plant (https://www.quantitative-plant.org/ ).  <br>
+              Created and maintained in the framework of the Growing project by B. Mary.
+             </p>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+    </section>
+
+
+
+<!-- USEFUL LINKS-->
+<section id="useful_links">
+  <header class="section-header">
+    <h3>Useful links</h3>
+  </header>
+  <div class="container">
+    <div class="about-content">
+      <h3>
+        <ul class="columns" data-columns="2">
+          <li><i class="ion-android-checkmark-circle"></i>Wikipedia page:
+             <a href="https://en.wikipedia.org/wiki/Comparison_of_free_geophysics_software">
+               Comparison of free geophysics software:</a></li>
+          <li><i class="ion-android-checkmark-circle"></i>
+            A website presenting image analysis software tools and models for plants:
+             <a href="https://www.quantitative-plant.org/">https://www.quantitative-plant.org/</a>
+          </li>
+          <li>
+            <i class="ion-android-checkmark-circle"></i>
+            ISMC - The International Soil Modeling:
+            <a href="https://soil-modeling.org/">ISMC data</a>
+          </li>
+        </ul>
+      </h3>
+    </div>
+  </div>
+</section>
+
+
+
+<section id=funding>
+<header class="section-header">
+  <h3>Project funding</h3>
+<!--           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+-->
+</header>
+<!--           <h4><a href="mailto:CatalogAgroGeophy-admin@gmail.com?subject=Catalog AgroGeophy"> Email support </a></h4>
+ -->        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Rapid
+        -->
+    <div class="container">
+
+          <div class="copyright">
+            <p>
+              This project has received funding from the European Union's Horizon 2020 research and innovation programme under the Marie Sklodowska-Curie grant agreement No 842922.
+            </p>
+          </div>
+          <div class="copyright">
+            © Copyright <strong>Rapid</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            Designed by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a>
+          </div>
+
+    </div>
+</section>
+
+<!-- main javascript tag -->
+<script type="text/javascript">
+  // for autocomplete search
+  let input = document.getElementById('searchbox')
+  function autocomplete(inp, arr, ids) {
+    /*the autocomplete function takes two arguments,
+    the text field element and an array of possible autocompleted values:*/
+    var currentFocus;
+    /*execute a function when someone writes in the text field:*/
+    inp.addEventListener("input", function(e) {
+        var a, b, i, val = this.value;
+        /*close any already open lists of autocompleted values*/
+        closeAllLists();
+        if (!val) { return false;}
+        currentFocus = -1;
+        /*create a DIV element that will contain the items (values):*/
+        a = document.createElement("div");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        /*append the DIV element as a child of the autocomplete container:*/
+        this.parentNode.appendChild(a);
+        /*for each item in the array...*/
+        for (i = 0; i < arr.length; i++) {
+          /*check if the item starts with the same letters as the text field value:*/
+          taken = false
+          for (j = 0; j < arr[i].length; j++) {
+            if (arr[i].substr(j, val.length).toUpperCase() == val.toUpperCase()) {
+              /*create a DIV element for each matching element:*/
+              if (taken == false) {
+                b = document.createElement("div");
+                /*make the matching letters bold:*/
+                b.innerHTML += arr[i].substr(0, j)
+                b.innerHTML += "<strong>" + arr[i].substr(j, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(j + val.length);
+                /*insert a input field that will hold the current array item's value:*/
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                b.setAttribute('idetailed', ids[i])
+                /*execute a function when someone clicks on the item value (DIV element):*/
+                b.addEventListener("click", function(e) {
+                  /*insert the value for the autocomplete text field:*/
+                  inp.value = this.getElementsByTagName("input")[0].value;
+                  let a = this.getAttribute('idetailed')
+                  /*close the list of autocompleted values,
+                  (or any other open lists of autocompleted values:*/
+                  closeAllLists();
+                  // open the detailed contribution page
+                  window.location.href = window.location.href.replace(
+                    'catalog.html', 'contribution_detailed.html?id=' + a);
+                });
+                a.appendChild(b);
+                taken = true
+              }
+          }
+          }
+        }
+    });
+    /*execute a function presses a key on the keyboard:*/
+    inp.addEventListener("keydown", function(e) {
+        var x = document.getElementById(this.id + "autocomplete-list");
+        if (x) x = x.getElementsByTagName("div");
+        if (e.keyCode == 40) {
+          /*If the arrow DOWN key is pressed,
+          increase the currentFocus variable:*/
+          currentFocus++;
+          /*and and make the current item more visible:*/
+          addActive(x);
+        } else if (e.keyCode == 38) { //up
+          /*If the arrow UP key is pressed,
+          decrease the currentFocus variable:*/
+          currentFocus--;
+          /*and and make the current item more visible:*/
+          addActive(x);
+        } else if (e.keyCode == 13) {
+          /*If the ENTER key is pressed, prevent the form from being submitted,*/
+          e.preventDefault();
+          if (currentFocus > -1) {
+            /*and simulate a click on the "active" item:*/
+            if (x) x[currentFocus].click();
+          }
+        }
+    });
+    function addActive(x) {
+      /*a function to classify an item as "active":*/
+      if (!x) return false;
+      /*start by removing the "active" class on all items:*/
+      removeActive(x);
+      if (currentFocus >= x.length) currentFocus = 0;
+      if (currentFocus < 0) currentFocus = (x.length - 1);
+      /*add class "autocomplete-active":*/
+      x[currentFocus].classList.add("autocomplete-active");
+    }
+    function removeActive(x) {
+      /*a function to remove the "active" class from all autocomplete items:*/
+      for (var i = 0; i < x.length; i++) {
+        x[i].classList.remove("autocomplete-active");
+      }
+    }
+    function closeAllLists(elmnt) {
+      /*close all autocomplete lists in the document,
+      except the one passed as an argument:*/
+      var x = document.getElementsByClassName("autocomplete-items");
+      for (var i = 0; i < x.length; i++) {
+        if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+    /*execute a function when someone clicks in the document:*/
+    document.addEventListener("click", function (e) {
+        closeAllLists(e.target);
+    });
+  }
+</script>
+
+
+<script type="text/javascript">
+function buildMap(db) {
+
+      // load background maps (OSM or OAM)
+      let mapquestOSM = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 18,
+                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                      '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                      'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                    id: 'mapbox/light-v9'
+                  });
+      let mapquestOAM = new L.TileLayer("http://{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg", {
+        maxZoom: 17,
+        subdomains: ["oatile1", "oatile2", "oatile3", "oatile4"],
+        attribution: 'Tiles courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a>. Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency'
+      });
+
+      // icons
+      let AgrogeophyIcon = L.icon({
+        iconUrl: 'img/map/Eco_leaves_nature-512.png',
+        iconSize: [24, 28],
+        iconAnchor: [12, 28],
+        popupAnchor: [0, -25]
+      });
+
+      // sites of agrogeophysical studies
+      let agrogeophyClusters = new L.MarkerClusterGroup({
+        spiderfyOnMaxZoom: true,
+        showCoverageOnHover: false,
+        zoomToBoundsOnClick: true,
+        disableClusteringAtZoom: 16
+      });
+
+      // add site locations to the cluster
+      for (let i = 0; i < db.length; i++) {
+        let long = parseFloat(db[i]['Long'])
+        let lat = parseFloat(db[i]['Lat'])
+        if (isNaN(long) == false && isNaN(lat) == false) {
+          console.log(lat, long)
+          let latLng = new L.LatLng(lat, long)
+          let marker = new L.Marker(latLng,{title: db[i]['Organisation'],icon: AgrogeophyIcon})
+          let content = '<table border="0" style="border-collapse:collapse;" cellpadding="2">' +
+            '<tr><th>Org.:</th><td>' + db[i]['Organisation'] + '</td></tr>' +
+            '<tr><th>Methods:</th><td>' +  db[i]['Method'] +   '</td></tr>' +
+            '<tr><th></th><td><a href="contribution_detailed.html?id=' + db[i]['id'] + '">More</a>'  +
+            '</td></tr>' +
+             // '<tr>' + '<th>Date:</th>' + '<td>' + feature.properties.datep + '</td>' + '</tr>' +
+           // '<tr>' + '<th></th>' + '<td>' +"'<a href='"feature.properties.DOI">"</a>'+  '</td>' + '</tr>' +
+            '</table>';
+          marker.bindPopup(content)
+          agrogeophyClusters.addLayer(marker)
+        }
+      }
+
+      // adjust bounds of the map after adding sites locations
+
+      // define main map with markers and background
+      let map = new L.Map("map",{
+        layers: [mapquestOSM, agrogeophyClusters]
+      });
+      map.fitBounds(agrogeophyClusters.getBounds())
+
+
+
+      // add to map
+    /*
+      let agrogeophy = new L.geoJson(null, {
+          pointToLayer: function (feature, latlng) {
+            return L.marker(latlng, {
+              icon: AgrogeophyIcon,
+              title: feature.properties.organisation
+            });
+          },
+          onEachFeature: function (feature, layer) {
+            if (feature.properties) {
+              var myJSON = JSON.stringify(feature.properties.id);
+
+              var content = '<table border="0" style="border-collapse:collapse;" cellpadding="2">' +
+                '<tr>' + '<th>Org.:</th>' + '<td>' + feature.properties.organisation + '</td>' + '</tr>' +
+                '<tr>' + '<th>Methods:</th>' + '<td>' +  feature.properties.method +   '</td>' + '</tr>' +
+                '<tr>' + '<th></th>' + '<td>'+ '<a href="contribution_detailed.php?idnb=' + JSON.stringify(feature.properties.id) + '"> More</a>'  +
+                '</td>' + '</tr>' +
+                 // '<tr>' + '<th>Date:</th>' + '<td>' + feature.properties.datep + '</td>' + '</tr>' +
+               // '<tr>' + '<th></th>' + '<td>' +"'<a href='"feature.properties.DOI">"</a>'+  '</td>' + '</tr>' +
+                '<table>';
+              layer.bindPopup(content);
+            }
+          }
+        });
+
+      let agrogeophyClusters = new L.MarkerClusterGroup({
+        spiderfyOnMaxZoom: true,
+        showCoverageOnHover: false,
+        zoomToBoundsOnClick: true,
+        disableClusteringAtZoom: 16
+      });
+
+    */
+
+    /*
+      $.getJSON("./dbb/map.json", function (data) {
+        agrogeophy.addData(data);
+        agrogeophyClusters.addLayer(agrogeophy);
+      }).complete(function () {
+        map.fitBounds(agrogeophy.getBounds());
+      });
+    */
+
+      // add layer controls
+      let baseLayers = {
+       "MapQuest Aerial": mapquestOAM
+      };
+      let overlays = {
+       "Agrogeophysical sites (clustered)": agrogeophyClusters
+      };
+      let layersControl = new L.Control.Layers(baseLayers, overlays, {
+       collapsed: false
+      });
+      map.addControl(layersControl);
+
+      console.log('leaflet map with contributions loaded')
+  }
+
+function buildTable(db) {
+    let fields = ["Contribution type",
+                  "Date",
+                  "Authors",
+                  "Organisation",
+                  "Method",
+                  "Crop type",
+                  "Organ studied",
+                  "Title",
+                  "Software name",
+                  "Software licence",
+                  "Notebook filename",
+                  "Dimension",
+                  "Spatial scale",
+                  "Boundary cond",
+                  "Temporal scale",
+                  "Instrument",
+                  "DOI",
+                  "id"]
+
+    let tbody = document.getElementById('result-table').getElementsByTagName('tbody')[0];
+
+    for (let i = 0; i < db.length; i ++) {
+      var tr = tbody.insertRow()
+      for (let j = 0; j < fields.length; j ++) {
+        let td = tr.insertCell()
+        if (fields[j] == "DOI") {
+          td.innerHTML = '<a href="https://dx.doi.org/' + db[i]['DOI'] + '"target="_blank">DOI</a>'
+        } else if (fields[j] == "id") {
+          td.innerHTML = '<a href="contribution_detailed.html?id=' + db[i]['id'] + '">more</a>'
+        } else {
+          var newText = document.createTextNode(db[i][fields[j]])
+          td.appendChild(newText)
+        }
+      }
+    }
+    // let table = $('#result-table')
+    // table.bootstrapTable();
+
+    // Basic example
+    // let oTable = $('#result-table').DataTable();   //pay attention to capital D, which is mandatory to retrieve "api" datatables' object, as @Lionel said
+    //  $('#myInputTextField').keyup(function(){
+    //        oTable.search($(this).val()).draw() ;
+    // })
+    $(document).ready( function () {
+      $('#result-table').bootstrapTable();
+      // $('#result-table').DataTable();
+  } );
+
+}
+
+function buildNumbers(db) {
+  document.getElementById("nbContributions").innerHTML = db.length
+  document.getElementById("nbOrganisations").innerHTML = getUnique(db, 'Organisation').length
+  document.getElementById("nbNotebooks").innerHTML = getNumber(db, 'Contribution Type', 'Notebook')
+  document.getElementById("nbDatasets").innerHTML = getNumber(db, 'Contribution Type', 'Dataset')
+}
+
+// loading the database (.csv file)
+let dbb = {}
+Papa.parse("db.csv", {
+  download: true,
+  header: true,
+  //worker: true, // for large csv
+  complete: function(res) {
+    console.log('database loaded:', res);
+    callback(res)
+    dbb = res.data
+    }
+  });
+
+// get unique contribution type
+function getUnique(db, col) {
+  a = []
+  for (let i = 0; i < db.length; i++) {
+    a.push(db[i][col])
+  }
+  return [... new Set(a)] // the ... operator convert the Set back to array
+}
+
+function getNumber(db, col, val) {
+  let count = 0
+  for (let i = 0; i < db.length; i++) {
+    if (db[i][col] == val) {
+      count = count + 1
+    }
+  }
+  return count
+}
+
+// main callback function that build interactive elements of the page
+function callback(res) {
+  let db = res.data
+
+  // setup the interactive map
+  buildMap(db)
+
+  // setup numbers
+  buildNumbers(db)
+
+  // setup the interactive table
+  buildTable(db)
+
+  // for the autocompletion search
+  let items = []
+  let ids = []
+  for (let i = 0; i < db.length; i++) {
+    items.push(db[i]['Authors'] + ' (' + db[i]['Date'] + ') ' + db[i]['Title'])
+    ids.push(db[i]['id'])
+  }
+  console.log(items)
+  autocomplete(document.getElementById('myInput'), items, ids)
+  console.log('all done')
+}
+
+</script>
+
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+  <!--==========================
+  -- JavaScript Libraries
+  ============================-->
+
+<!-- form
+
+ -->
+
+ <script src="js/includeHTML.js"></script>
+
+
+ <script type="text/javascript">
+
+ </script>
+
+
+
+
+  <!-- JavaScript Libraries -->
+  <!-- <script src="lib/jquery/jquery.min.js"></script> -->
+  <!-- <script src="lib/jquery/jquery-migrate.min.js"></script> -->
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/mobile-nav/mobile-nav.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
