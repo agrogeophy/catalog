@@ -1,15 +1,15 @@
 CAGS ecosystem
 ==============
 
-CAGS is an ecosystem with many interrelated projects and repositories.
+CAGS is an ecosystem with many interrelated projects and repositories:
 
-**Catalog**: a platform putting together a database/catalog of agrogeophysical surveys in order to boost future research
+- **Catalog**: a platform putting together a database/catalog of agrogeophysical surveys in order to boost future research
 
-**Notebooks**: a collection of jupyter notebooks that use agrogeophysical models
+- **Notebooks**: a collection of jupyter notebooks that use agrogeophysical models
 
 `Documentation <https://agrogeophy.github.io/notebooks/>`_
 
-**Datasets**: a list of agrogeophysical dataset of interest with associated metadata and references
+- **Datasets**: a list of agrogeophysical dataset of interest with associated metadata and references
 
 `Documentation <https://agrogeophy.github.io/datasets/>`_
 
