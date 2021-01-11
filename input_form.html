@@ -308,7 +308,17 @@ function toggleField(hideObj,showObj){
     <div class="form-group row">
       <label for="instrument" class="col-sm-2 col-form-label">Instrument</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" name="instrument" placeholder="Enter instrument(s) used">
+        <select multiple class="form-control add-select" name="instrument">
+          <option>Iris Instruments - Syscal Pro</option>
+          <option>ABEM - Resistivity meter</option>
+          <option>Geonics - EM31</option>
+          <option>Geonics - EM38</option>
+          <option>GF Instruments - CMD Mini-Explorer</option>
+          <option>GF Instruments - CMD Mini-Explorer Special edition</option>
+          <option>GF Instruments - CMD Explorer</option>
+          <option>DUALEM - DUALEM 421S</option>
+          <option>Geophex- GEM 2</option>
+        </select>
       </div>
     </div>
 
@@ -552,8 +562,9 @@ function toggleField(hideObj,showObj){
     console.log(data)
 
     // format answers as CSV string (ORDER MATTERS)
-    content = content + "id,surname,name,organisation,email,contribution_type,title,publication_date,publication_link,authors,keywords,latitude,longitude,method,spatial_scale,temporal_scale,temperature_correction,instrument,dimension,permanent_setup,software_name,software_licence,plant,organ,soil,water,ancillary_data,notebook_filename,notebook_purpose,dataset_link,dataset_licence,dataset_comment,comment\n"
-    content = content + '0,' // to be changed at insertion time ofc
+    let content = ''
+    content += 'id,surname,name,organisation,email,contribution_type,title,publication_date,publication_link,authors,keywords,latitude,longitude,method,spatial_scale,temporal_scale,temperature_correction,instrument,dimension,permanent_setup,software_name,software_licence,plant,organ,soil,water,ancillary_data,notebook_filename,notebook_purpose,dataset_link,dataset_licence,dataset_comment,comment\n'
+    content += '0,' // to be changed at insertion time ofc
     content += data.get('surname') + ','
     content += data.get('name') + ','
     content += data.get('organisation') + ','
