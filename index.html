@@ -610,19 +610,18 @@ input[type=text] {
                   <th data-field="contrib_authors" data-sortable="true">Authors</th>
                   <th data-field="organisation" data-visible="false" data-filter-control="select"  data-sortable="true">Organisation</th>
                   <th data-field="method" data-filter-control="select"  data-sortable="true">Method</th>
-                  <th data-field="species" data-filter-control="select"  data-sortable="true">Crop type</th>
+                  <th data-field="plant" data-filter-control="select"  data-sortable="true">Crop type</th>
                   <th data-field="organ" data-visible="false" data-filter-control="select"  data-sortable="true">Organ measured</th>
-                  <th data-field="contrib_title" data-sortable="true" data-filter-control="input">Title</th>
+                  <th data-field="title" data-sortable="true" data-filter-control="input">Title</th>
                   <th data-field="software_name" data-visible="false" data-filter-control="select"  data-sortable="true">Soft</th>
-                  <th data-field="licence_type" data-visible="false" data-filter-control="select"  data-sortable="true">Licence</th>
+                  <th data-field="software_licence" data-visible="false" data-filter-control="select"  data-sortable="true">Licence</th>
                   <th data-field="notebook_filename" data-visible="false" data-filter-control="select"  data-sortable="true">Notebook file</th>
                   <th data-field="dimension" data-visible="false" data-filter-control="select"  data-sortable="true">Dimension</th>
                   <th data-field="spacial_scale" data-visible="false" data-filter-control="select"  data-sortable="true">Spatial scale</th>
-                  <th data-field="bound_cond" data-visible="false" data-filter-control="select"  data-sortable="true">Bound. cond.</th>
                   <th data-field="temporal_scale" data-visible="false" data-filter-control="select"  data-sortable="true">Temp. scale</th>
                   <th data-field="instrument" data-visible="false" data-filter-control="select"  data-sortable="true">Instrument</th>
-                  <th data-field="DOI" data-sortable="true">DOI</th>
-                  <th data-field="more" data-sortable="true">more</th>
+                  <th data-field="publication_link" data-sortable="true">link (DOI)</th>
+                  <th data-field="more" data-sortable="true">details</th>
               </tr>
           </thead>
           <tbody>
@@ -1016,18 +1015,18 @@ input[type=text] {
                 b.innerHTML += arr[i].substr(j + val.length);
                 /*insert a input field that will hold the current array item's value:*/
                 b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-                b.setAttribute('idetailed', ids[i])
+                b.setAttribute('idetails', ids[i])
                 /*execute a function when someone clicks on the item value (DIV element):*/
                 b.addEventListener("click", function(e) {
                   /*insert the value for the autocomplete text field:*/
                   inp.value = this.getElementsByTagName("input")[0].value;
-                  let a = this.getAttribute('idetailed')
+                  let a = this.getAttribute('idetails')
                   /*close the list of autocompleted values,
                   (or any other open lists of autocompleted values:*/
                   closeAllLists();
-                  // open the detailed contribution page
+                  // open the details contribution page
                   window.location.href = window.location.href.replace(
-                    'catalog.html', 'catalog/contribution_detailed.html?id=' + a);
+                    'catalog.html', 'catalog/contribution_details.html?id=' + a);
                 });
                 a.appendChild(b);
                 taken = true
@@ -1130,16 +1129,16 @@ function buildMap(db) {
 
       // add site locations to the cluster
       for (let i = 0; i < db.length; i++) {
-        let long = parseFloat(db[i]['Long'])
-        let lat = parseFloat(db[i]['Lat'])
+        let long = parseFloat(db[i]['longitude'])
+        let lat = parseFloat(db[i]['latitude'])
         if (isNaN(long) == false && isNaN(lat) == false) {
           console.log(lat, long)
           let latLng = new L.LatLng(lat, long)
-          let marker = new L.Marker(latLng,{title: db[i]['Organisation'],icon: AgrogeophyIcon})
+          let marker = new L.Marker(latLng,{title: db[i]['organisation'],icon: AgrogeophyIcon})
           let content = '<table border="0" style="border-collapse:collapse;" cellpadding="2">' +
-            '<tr><th>Org.:</th><td>' + db[i]['Organisation'] + '</td></tr>' +
-            '<tr><th>Methods:</th><td>' +  db[i]['Method'] +   '</td></tr>' +
-            '<tr><th></th><td><a href="contribution_detailed.html?id=' + db[i]['id'] + '">More</a>'  +
+            '<tr><th>Org.:</th><td>' + db[i]['organisation'] + '</td></tr>' +
+            '<tr><th>Methods:</th><td>' +  db[i]['method'] +   '</td></tr>' +
+            '<tr><th></th><td><a href="contribution_details.html?id=' + db[i]['id'] + '">More</a>'  +
             '</td></tr>' +
              // '<tr>' + '<th>Date:</th>' + '<td>' + feature.properties.datep + '</td>' + '</tr>' +
            // '<tr>' + '<th></th>' + '<td>' +"'<a href='"feature.properties.DOI">"</a>'+  '</td>' + '</tr>' +
@@ -1219,23 +1218,22 @@ function buildMap(db) {
   }
 
 function buildTable(db) {
-    let fields = ["Contribution type",
-                  "Date",
-                  "Authors",
-                  "Organisation",
-                  "Method",
-                  "Crop type",
-                  "Organ studied",
-                  "Title",
-                  "Software name",
-                  "Software licence",
-                  "Notebook filename",
-                  "Dimension",
-                  "Spatial scale",
-                  "Boundary cond",
-                  "Temporal scale",
-                  "Instrument",
-                  "DOI",
+    let fields = ["contribution_type",
+                  "publication_date",
+                  "authors",
+                  "organisation",
+                  "method",
+                  "plant",
+                  "organ",
+                  "title",
+                  "software_name",
+                  "software_licence",
+                  "notebook_filename",
+                  "dimension",
+                  "spatial_scale",
+                  "temporal_scale",
+                  "instrument",
+                  "publication_link",
                   "id"]
 
     let tbody = document.getElementById('result-table').getElementsByTagName('tbody')[0];
@@ -1244,10 +1242,10 @@ function buildTable(db) {
       var tr = tbody.insertRow()
       for (let j = 0; j < fields.length; j ++) {
         let td = tr.insertCell()
-        if (fields[j] == "DOI") {
-          td.innerHTML = '<a href="https://dx.doi.org/' + db[i]['DOI'] + '"target="_blank">DOI</a>'
+        if (fields[j] == "publication_link") {
+          td.innerHTML = '<a href="https://dx.doi.org/' + db[i]['publication_link'] + '"target="_blank">link</a>'
         } else if (fields[j] == "id") {
-          td.innerHTML = '<a href="contribution_detailed.html?id=' + db[i]['id'] + '">more</a>'
+          td.innerHTML = '<a href="contribution_details.html?id=' + db[i]['id'] + '">details</a>'
         } else {
           var newText = document.createTextNode(db[i][fields[j]])
           td.appendChild(newText)
@@ -1271,9 +1269,9 @@ function buildTable(db) {
 
 function buildNumbers(db) {
   document.getElementById("nbContributions").innerHTML = db.length
-  document.getElementById("nbOrganisations").innerHTML = getUnique(db, 'Organisation').length
-  document.getElementById("nbNotebooks").innerHTML = getNumber(db, 'Contribution Type', 'Notebook')
-  document.getElementById("nbDatasets").innerHTML = getNumber(db, 'Contribution Type', 'Dataset')
+  document.getElementById("nbOrganisations").innerHTML = getUnique(db, 'organisation').length
+  document.getElementById("nbNotebooks").innerHTML = getNumber(db, 'contribution_type', 'Notebook')
+  document.getElementById("nbDatasets").innerHTML = getNumber(db, 'contribution_type', 'Dataset')
 }
 
 // loading the database (.csv file)
@@ -1325,7 +1323,7 @@ function callback(res) {
   let items = []
   let ids = []
   for (let i = 0; i < db.length; i++) {
-    items.push(db[i]['Authors'] + ' (' + db[i]['Date'] + ') ' + db[i]['Title'])
+    items.push(db[i]['authors'] + ' (' + db[i]['publication_date'] + ') ' + db[i]['title'])
     ids.push(db[i]['id'])
   }
   console.log(items)

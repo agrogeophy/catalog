@@ -98,12 +98,12 @@ function toggleField(hideObj,showObj){
 <!--         <div class="row">
  -->
     <h3>Add a contribution</h3>
-        
+
     <p>Thanks to users feedback the form is improving bit by bit. Please comment for missing information that you would consider relevant to highlight your contribution. </p>
 
     <p>If you want to report any problem please open an issue into the catalog-github: <a href='https://github.com/agrogeophy/catalog/issues' target="_blank"> report an issue </a></p>
 
-        
+
     <form id="contributionForm" enctype="multipart/form-data" action="" style="margin:5%;">
 
 <!----------------------------------->
@@ -112,7 +112,7 @@ function toggleField(hideObj,showObj){
 
  <div class="container">
         <header class="section-header">
-          <h3 id="howtocontribute">Contact details</h3>
+          <h3>Contact details</h3>
 <!--           <p></p>
  -->        </header>
             <div class="form-group row required">
@@ -152,12 +152,12 @@ function toggleField(hideObj,showObj){
 
  <div class="container">
         <header class="section-header">
-          <h3 id="howtocontribute">Contribution details</h3>
+          <h3>Contribution details</h3>
          </header>
         <div class="form-group row">
           <label for="contributionType" class="col-sm-2 col-form-label">Contribution Type</label>
           <div class="col-sm-10">
-            <select class="form-control" id="contributionType" name="contributionType">
+            <select class="form-control" name="contribution_type">
               <option>Peer reviewed publication</option>
               <option>Preprint</option>
               <option>Book</option>
@@ -168,35 +168,35 @@ function toggleField(hideObj,showObj){
           <div class="form-group row required">
             <label for="title" class="col-sm-2 col-form-label">Title</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="title" name="title" placeholder="My Agrogeophysical Survey" required>
+              <input type="text" class="form-control" name="title" placeholder="My Agrogeophysical Survey" required>
             </div>
           </div>
 
         <div class="form-group row">
           <label for="publiDate" class="col-sm-2 col-form-label">Date</label>
           <div class="col-sm-10">
-            <input type="date" class="form-control" id="publiDate" name="publiDate">
+            <input type="date" class="form-control" name="publication_date">
           </div>
         </div>
 
       <div class="form-group row">
         <label for="publicationLink" class="col-sm-2 col-form-label">Publication Link (DOI)</label>
         <div class="col-sm-10">
-          <input type="url" class="form-control" id="publicationLink" name="publicationLink" placeholder="Enter publication link (DOI) as URL. e.g. https://doi.org/10.1016/j.cageo.2020.104423">
+          <input type="url" class="form-control" name="publication_link" placeholder="Enter publication link (DOI) as URL. e.g. https://doi.org/10.1016/j.cageo.2020.104423">
         </div>
       </div>
 
           <div class="form-group row required">
             <label for="authors" class="col-sm-2 col-form-label">Author(s) (comma separated)</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="authors" name="authors" placeholder="e.g. J. Snow, ..." required>
+              <input type="text" class="form-control" name="authors" placeholder="e.g. J. Snow, ..." required>
             </div>
           </div>
 
         <div class="form-group row">
-          <label for="keywords" class="col-sm-2 col-form-label">Keywords (comma separated)</label>
+          <label for="keywords" class="col-sm-2 col-form-label">Keywords (semi-colon separated)</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="keywords" name="keywords" placeholder="e.g. ERT, MALM">
+            <input type="text" class="form-control" name="keywords" placeholder="e.g. hydrogeophysics; vineyard; ERT">
           </div>
         </div>
 
@@ -206,12 +206,12 @@ function toggleField(hideObj,showObj){
             <input type="file" class="form-control-file" name="keyFigure">
           </div>
       </div> -->
-        <div class="form-group row">
+        <!-- <div class="form-group row">
           <label for="comment" class="col-sm-2 col-form-label">Comment</label>
           <div class="col-sm-10">
-            <input type="url" class="form-control" id="comment" name="comment" placeholder="Enter a comment">
+            <input type="url" class="form-control" name="comment" placeholder="Enter a comment">
           </div>
-        </div>
+        </div> -->
   </div>
 
 
@@ -222,57 +222,65 @@ function toggleField(hideObj,showObj){
  <div class="container">
         <header class="section-header">
           <h3 id="howtocontribute">Survey description</h3>
-          <p>Please indicate your laboratory location for synthetic and laboratory survey</p>
+          <p>Please indicate the location where the data were collected or the location
+            of your laboratory location for synthetic and lab studies. This location will be
+          displayed in the interactive map on the catalog webiste.</p>
         </header>
 
         <div class="form-group row">
           <label for="longitude" class="col-sm-2 col-form-label">Longitude</label>
           <div class="col-sm-10">
-            <input type="number" class="form-control" id="longitude" name="longitude" placeholder="Longitude as decimal degree (WGS84)" step="any">
+            <input type="number" class="form-control" name="longitude" placeholder="Longitude as decimal degree (WGS84)" step="any">
           </div>
         </div>
 
         <div class="form-group row">
           <label for="latitude" class="col-sm-2 col-form-label">Latitude</label>
           <div class="col-sm-10">
-            <input type="number" class="form-control" id="latitude" name="latitude" placeholder="Latitude as decimal degree (WGS84)" step="any">
+            <input type="number" class="form-control" name="latitude" placeholder="Latitude as decimal degree (WGS84)" step="any">
           </div>
         </div>
 
       <div class="form-group row">
-        <label for="prospectionType" class="col-sm-2 col-form-label">Prospection Type</label>
+        <label for="method" class="col-sm-2 col-form-label">Methods used</label>
         <div class="col-sm-10">
-          <select multiple class="form-control js-example-tags" id="prospectionType" name="prospectionType">
+          <select multiple class="form-control add-select" name="method">
             <option>ERT (DC only)</option>
+            <option>EIT (DC and IP)</option>
             <option>TDIP</option>
-            <option>EIT</option>
+            <option>SIP</option>
             <option>MALM</option>
+            <option>FDEM</option>
+            <option>TDEM</option>
+            <option>SNMR</option>
+            <option>MRI</option>
+            <option>Seismic</option>
           </select>
         </div>
       </div>
 
       <div class="form-group row">
-        <label for="SpatialScale" class="col-sm-2 col-form-label">Spatial Scale</label>
+        <label for="spatial_scale" class="col-sm-2 col-form-label">Spatial Scale</label>
         <div class="col-sm-10">
           <!-- <select multiple class="form-control" id="SpatialScale" name="SpatialScale"> -->
-          <select class="form-control form-select" id="SpatialScale" name="SpatialScale">
-            <option>Field</option>
+          <select class="form-control form-select" name="spatial_scale">
             <option>Laboratory</option>
+            <option selected>Field</option>
             <option>Catchement</option>
           </select>
         </div>
       </div>
 
       <div class="form-group row">
-        <label for="TemporalScale" class="col-sm-2 col-form-label">Temporal Scale</label>
+        <label for="temporal_scale" class="col-sm-2 col-form-label">Temporal Scale</label>
         <div class="col-sm-10">
-          <select multiple class="form-control" id="TemporalScale" name="TemporalScale">
+          <select multiple class="form-control add-select" name="temporal_scale">
+            <option selected>None (one time survey)</option>
             <option>Minutes</option>
             <option>Hours</option>
             <option>Days</option>
             <option>Months</option>
             <option>Years</option>
-            <option>None</option>
           </select>
         </div>
       </div>
@@ -282,14 +290,14 @@ function toggleField(hideObj,showObj){
         <legend class="col-form-label col-sm-2 pt-0">Temperature correction</legend>
         <div class="col-sm-10">
           <div class="form-check">
-            <input class="form-check-input" type="radio" id="TemperatureNo" name="Temperature" value="no" checked>
-            <label class="form-check-label" for="TemperatureNo">
+            <input class="form-check-input" type="radio" id="temperature_no" name="temperature_correction" value="no" checked>
+            <label class="form-check-label" for="temperature_correction">
               No
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" id="TemperatureYes" name="Temperature" value="yes">
-            <label class="form-check-label" for="permanentSetupYes">
+            <input class="form-check-input" type="radio" id="temperature_yes" name="temperature_correction" value="yes">
+            <label class="form-check-label" for="temperature_correction">
               Yes
             </label>
           </div>
@@ -300,14 +308,14 @@ function toggleField(hideObj,showObj){
     <div class="form-group row">
       <label for="instrument" class="col-sm-2 col-form-label">Instrument</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="instrument" name="instrument" placeholder="Enter instrument(s) used">
+        <input type="text" class="form-control" name="instrument" placeholder="Enter instrument(s) used">
       </div>
     </div>
 
     <div class="form-group row">
       <label for=dimension class="col-sm-2 col-form-label">Dimension</label>
       <div class="col-sm-10">
-        <select class="form-control" id="dimension" name="dimension">
+        <select class="form-control add-select" name="dimension">
           <option>1D</option>
           <option>2D</option>
           <option>3D</option>
@@ -322,26 +330,20 @@ function toggleField(hideObj,showObj){
         <legend class="col-form-label col-sm-2 pt-0">Permanent setup</legend>
         <div class="col-sm-10">
           <div class="form-check">
-            <input class="form-check-input" type="radio" id="permanentSetupNo" name="permanentSetup" value="no" checked>
-            <label class="form-check-label" for="permanentSetupNo">
+            <input class="form-check-input" type="radio" id="permanent_setup_no" name="permanent_setup" value="no" checked>
+            <label class="form-check-label" for="permanent_setup">
               No
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" id="permanentSetupYes" name="permanentSetup" value="yes">
-            <label class="form-check-label" for="permanentSetupYes">
+            <input class="form-check-input" type="radio" id="permanent_setup_yes" name="permanent_setup" value="yes">
+            <label class="form-check-label" for="permanent_setup">
               Yes
             </label>
           </div>
         </div>
       </div>
     </fieldset>
-        <div class="form-group row">
-          <label for="comment" class="col-sm-2 col-form-label">Comment</label>
-          <div class="col-sm-10">
-            <input type="url" class="form-control" id="comment" name="comment" placeholder="Enter a comment">
-          </div>
-        </div>
 </div>
 
 
@@ -352,39 +354,40 @@ function toggleField(hideObj,showObj){
 
  <div class="container">
         <header class="section-header">
-          <h3 id="howtocontribute">Processing tools</h3>
+          <h3>Processing tools</h3>
           <p>Please indicate your processing tools</p>
         </header>
 
         <div class="form-group row">
-          <label for="software" class="col-sm-2 col-form-label">Software Name</label>
+          <label for="software_name" class="col-sm-2 col-form-label">Software Name</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="software" name="software" placeholder="Enter software used">
+            <div class="col-sm-10">
+              <select multiple class="form-control add-select"  name="software_licence">
+                <option>Custom scripts</option>
+                <option>R2, cR2, R3t, cR3t, ResIPy</option>
+                <option>Res2Dinv; Res3Dinv</option>
+                <option>CRTomo</option>
+                <option>pyGimli, BERT</option>
+                <option>SimPEG</option>
+                <option>ERTLab</option>
+                <option>Reflex 2D, Reflex 3D</option>
+                <option>GPRmax</option>
+                <option>EM4Soil</option>
+                <option>Femics</option>
+                <option>EMagPy</option>
+              </select>
+            </div>
           </div>
         </div>
 
         <div class="form-group row">
-          <label for="licence_soft" class="col-sm-2 col-form-label">Software Licence Type</label>
+          <label for="software_licence" class="col-sm-2 col-form-label">Software Licence</label>
           <div class="col-sm-10">
-            <select multiple class="form-control" id="licence_type" name="licence_type">
+            <select multiple class="form-control add-select"  name="software_licence">
               <option>Open source</option>
               <option>Freeware</option>
               <option>Proprietary</option>
             </select>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label for="licence_name" class="col-sm-2 col-form-label">Software Licence Name</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="licence_name" name="licence_name" placeholder="Enter licence name">
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label for="comment" class="col-sm-2 col-form-label">Comment</label>
-          <div class="col-sm-10">
-            <input type="url" class="form-control" id="comment" name="comment" placeholder="Enter a comment">
           </div>
         </div>
   </div>
@@ -396,27 +399,20 @@ function toggleField(hideObj,showObj){
 
  <div class="container">
         <header class="section-header">
-          <h3 id="howtocontribute">Biotic description</h3>
-<!--           <p></p>
- -->        </header>
+          <h3>Biotic description</h3>
+        </header>
 
         <div class="form-group row">
-          <label for="species" class="col-sm-2 col-form-label">Crop type</label>
+          <label for="plant" class="col-sm-2 col-form-label">Plant</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="species" name="species" placeholder="e.g. Triciticum aestivum L. (Winter wheat)">
+            <input type="text" class="form-control" name="plant" placeholder="e.g. Triciticum aestivum L. (Winter wheat)">
           </div>
         </div>
 
         <div class="form-group row">
           <label for="organ" class="col-sm-2 col-form-label">Organ studied</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="organ" name="organ" placeholder="e.g. Roots, stem">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="comment" class="col-sm-2 col-form-label">Comment</label>
-          <div class="col-sm-10">
-            <input type="url" class="form-control" id="comment" name="comment" placeholder="Enter a comment">
+            <input type="text" class="form-control" name="organ" placeholder="e.g. Roots, stem">
           </div>
         </div>
 </div>
@@ -425,30 +421,24 @@ function toggleField(hideObj,showObj){
 <!----------------------------------->
 
  <div class="container">
-        <header class="section-header">
-          <h3 id="howtocontribute">Abiotic description</h3>
-<!--           <p></p>
- -->        </header>
+    <header class="section-header">
+      <h3 id="howtocontribute">Abiotic description</h3>
+    </header>
 
     <div class="form-group row">
       <label for="soil" class="col-sm-2 col-form-label">Soil type</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="soil" name="soil" placeholder="e.g. Cambisol, clayey loam">
+        <input type="text" class="form-control" name="soil" placeholder="e.g. Cambisol, clayey loam">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="water" class="col-sm-2 col-form-label">Water use</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="water" name="water" placeholder="e.g. irrigated, rain-fed">
+        <input type="text" class="form-control" name="water" placeholder="e.g. irrigated, rain-fed">
       </div>
     </div>
-        <div class="form-group row">
-          <label for="comment" class="col-sm-2 col-form-label">Comment</label>
-          <div class="col-sm-10">
-            <input type="url" class="form-control" id="comment" name="comment" placeholder="Enter a comment">
-          </div>
-        </div>
+
  </div>
 
 <!----------------------------------->
@@ -462,18 +452,14 @@ function toggleField(hideObj,showObj){
  -->        </header>
 
       <div class="form-group row">
-        <label for="notebook_purpose" class="col-sm-2 col-form-label">Ancillary measurements</label>
+        <label for="ancillary_data" class="col-sm-2 col-form-label">Ancillary data</label>
         <div class="col-sm-10">
-          <select multiple class="form-control" id="Ancillary_meas" name="Ancillary_meas">
+          <select multiple class="form-control add-select" name="ancillary_data">
+            <option>Meteorological data</option>
             <option>Evapotranspiration</option>
             <option>Soil Water Content</option>
           </select>
         </div>
-      </div>
-      <div class="form-group row">
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="Ancillary_meas_new" name="Ancillary_meas_new" placeholder="Enter new measurement here">
-            </div>
       </div>
 
 <!----------------------------------->
@@ -482,38 +468,22 @@ function toggleField(hideObj,showObj){
 
  <div class="container">
         <header class="section-header">
-          <h3 id="howtocontribute">Companion notebook</h3>
-<!--           <p></p>
- -->        </header>
+          <h3>Companion notebook</h3>
+           <p>Once you have completed the form you can attach a notebook to the mail
+           to be sent (.ipynb) file. Please specify below what the notebook does.</p>
+        </header>
 
       <div class="form-group row">
         <label for="notebook_purpose" class="col-sm-2 col-form-label">Notebook purpose</label>
         <div class="col-sm-10">
-          <select multiple class="form-control" id="notebook_purpose" name="notebook_purpose">
+          <select multiple class="form-control add-select" name="notebook_purpose">
             <option>Establish Pedophysical relationships</option>
             <option>Data inversion</option>
-            <option>Fwd model</option>
+            <option>Forward model</option>
+            <option>Data processing</option>
           </select>
         </div>
       </div>
-      <div class="form-group row">
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="notebook_purpose_new" name="notebook_purpose_new" placeholder="Enter new notebook purpose here">
-            </div>
-      </div>
-
-      <div class="form-group row" enctype="multipart/form-data">
-          <label for="notebook" class="col-sm-2 col-form-label">Notebook</label>
-          <div class="col-sm-10">
-            <input type="file" class="form-control-file" name="notebook">
-          </div>
-      </div>
-        <div class="form-group row">
-          <label for="comment" class="col-sm-2 col-form-label">Comment</label>
-          <div class="col-sm-10">
-            <input type="url" class="form-control" id="comment" name="comment" placeholder="Enter a comment">
-          </div>
-        </div>
 </div>
 
 
@@ -524,45 +494,47 @@ function toggleField(hideObj,showObj){
  -->        </header>
 
         <div class="form-group row">
-          <label for="dataLink" class="col-sm-2 col-form-label">Data Link (DOI)</label>
+          <label for="dataset_link" class="col-sm-2 col-form-label">Data Link (DOI)</label>
           <div class="col-sm-10">
-            <input type="url" class="form-control" id="dataLink" name="dataLink" placeholder="Enter DOI (if applicable) without URL. e.g. 10.5281/zenodo.2530059">
+            <input type="url" class="form-control" name="dataset_link" placeholder="Enter DOI (if applicable) without URL. e.g. 10.5281/zenodo.2530059">
           </div>
         </div>
 
         <div class="form-group row">
-          <label for="licence" class="col-sm-2 col-form-label">Data Licence</label>
+          <label for="dataset_licence" class="col-sm-2 col-form-label">Dataset Licence</label>
           <div class="col-sm-10">
-            <select class="form-control" id="licence" name="licence">
+            <select class="form-control add-select" name="dataset_licence">
               <option>Open source</option>
               <option>Proprietary</option>
             </select>
           </div>
         </div>
         <div class="form-group row">
-          <label for="comment" class="col-sm-2 col-form-label">Comment</label>
+          <label for="dataset_comment" class="col-sm-2 col-form-label">Dataset comment</label>
           <div class="col-sm-10">
-            <input type="url" class="form-control" id="comment" name="comment" placeholder="Enter a comment">
+            <input type="url" class="form-control" name="dataset_comment" placeholder="Enter a comment about the dataset">
           </div>
         </div>
 </div>
 
  <div class="container">
         <header class="section-header">
-          <h5 id="howtocontribute">Something missing? please add a comment</h5>
+          <h5>Something missing? please add a comment</h5>
 <!--           <p></p>
  -->        </header>
 
         <div class="form-group row">
           <label for="comment" class="col-sm-2 col-form-label">Comment</label>
           <div class="col-sm-10">
-            <input type="url" class="form-control" id="comment" name="comment" placeholder="Enter a comment">
+            <input type="url" class="form-control"name="comment"
+            placeholder="Enter a comment if we miss information in this form.">
           </div>
         </div>
 
+
 </div>
-    <p>You can now, send the form via email and attach any cover picture or notebook to it.
-      Please keep the subject line and keep the CSV line as it is.
+    <p>You can now, send the form via email and attach any cover picture or notebook (.ipynb) to it.
+      Please keep the subject line and keep the CSV string as it is.
     </p>
     <button onclick='sendMail();' class="btn btn-primary" value="">Send form via email</button>
   </form>
@@ -575,57 +547,45 @@ function toggleField(hideObj,showObj){
 <script type="text/javascript">
   function sendMail() {
     let mailtoHeader = "mailto:hello.agrogeophy@gmail.com?subject=CAGS%20contribution&body="
-    let content = ''
     let form = document.querySelector('form')
     let data = new FormData(form)
     console.log(data)
 
-    // collect all answers
-    content = content + "id,Contribution type,Sequence,Nb of electrodes,Dimension,Boreholes,Rhizotron,Method,Boundary cond,Spatial scale,Spatial scale (m),Temporal scale,Prospection date,Instrument,Permanent setup,Ancillary measurements,Crop type,Organ studied,Soil type,Water input,Research purpose* (According to Zhao et al 2019),Calibration ,Temperature correction,Authors,Surname,Name,Corresponding email,Personal website,DOI,Preprint,URL,Organisation,Address,Title,Keywords,Date,Journal,Dataset DOI,Notebook DOI,Notebook filename,Lat,Long,Software name,Software licence,Software DOI,Software website\n"
+    // format answers as CSV string (ORDER MATTERS)
+    content = content + "id,surname,name,organisation,email,contribution_type,title,publication_date,publication_link,authors,keywords,latitude,longitude,method,spatial_scale,temporal_scale,temperature_correction,instrument,dimension,permanent_setup,software_name,software_licence,plant,organ,soil,water,ancillary_data,notebook_filename,notebook_purpose,dataset_link,dataset_licence,dataset_comment,comment\n"
     content = content + '0,' // to be changed at insertion time ofc
-    content = content + data.get('contributionType') + ','
-    content = content + ','
-    content = content + ','
-    content = content + data.get('dimension') + ','
-    content = content + ',' // borehole
-    content = content + ',' // rhizotron
-    content = content + ',' // method
-    content = content + ',' // boundary cond
-    content = content + data.get('SpatialScale') + ','
-    content = content + ',' // spatial scale (m)
-    content = content + data.get('TemporalScale') + ','
-    content = content + ',' // prospection date
-    content = content + data.get('instrument') + ','
-    content = content + data.get('permanentSetup') + ','
-    content = content + data.get('Ancillary_meas') + ','
-    content = content + data.get('species') + ','
-    content = content + data.get('organ') + ','
-    content = content + data.get('soil') + ','
-    content = content + data.get('water') + ','
-    content = content + ',' // calibration
-    content = content + data.get('Temperature') + ','
-    content = content + data.get('authors') + ','
-    content = content + data.get('surname') + ','
-    content = content + data.get('name') + ','
-    content = content + data.get('email') + ','
-    content = content + ',' // website
-    content = content + data.get('publicationLink') + ',' // DOI
-    content = content + ',' // Preprint
-    content = content + data.get('publicationLink') + ',' // URL
-    content = content + data.get('organisation') + ','
-    content = content + ',' // address
-    content = content + data.get('title') + ','
-    content = content + data.get('keywords') + ','
-    content = content + data.get('publicDate') + ',' // Date
-    content = content + ',' // journal
-    content = content + data.get('dataLink') + ',' // dataset DOI
-    content = content + ',' // notebook filename (TO BE FILLED by admin)
-    content = content + data.get('latitude') + ','
-    content = content + data.get('longitude') + ','
-    content = content + data.get('software') + ','
-    content = content + data.get('licence_type') + ',' // software licence_type
-    content = content + ',' // software DOI
-    content = content // software website
+    content += data.get('surname') + ','
+    content += data.get('name') + ','
+    content += data.get('organisation') + ','
+    content += data.get('email') + ','
+    content += data.get('contribution_type') + ','
+    content += data.get('title') + ','
+    content += data.get('publication_date') + ','
+    content += data.get('publication_link') + ','
+    content += data.get('authors') + ','
+    content += data.get('keywords') + ','
+    content += data.get('latitude') + ','
+    content += data.get('longitude') + ','
+    content += data.get('method') + ','
+    content += data.get('spatial_scale') + ','
+    content += data.get('temporal_scale') + ','
+    content += data.get('temperature_correction') + ','
+    content += data.get('instrument') + ','
+    content += data.get('dimension') + ','
+    content += data.get('permanent_setup') + ','
+    content += data.get('software_name') + ','
+    content += data.get('software_licence') + ','
+    content += data.get('plant') + ','
+    content += data.get('organ') + ','
+    content += data.get('soil') + ','
+    content += data.get('water') + ','
+    content += data.get('ancillary_data') + ','
+    content += ',' // to be filled by admin
+    content += data.get('notebook_purpose') + ','
+    content += data.get('dataset_link') + ','
+    content += data.get('dataset_licence') + ','
+    content += data.get('dataset_comment') + ','
+    content += data.get('comment')
     console.log(content)
     // TODO what about user comments?
 
@@ -673,8 +633,6 @@ function toggleField(hideObj,showObj){
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 <script src="lib/isotope/isotope.pkgd.min.js"></script>
 <script src="lib/lightbox/js/lightbox.min.js"></script>
-<!-- Contact Form JavaScript File -->
-<script src="contactform/contactform.js"></script>
 
 <!-- Template Main Javascript File -->
 <script src="js/main.js"></script>
@@ -683,10 +641,11 @@ function toggleField(hideObj,showObj){
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
 
-
- <script> $(".js-example-tags").select2({
-  tags: true
-});
+ <script>
+    // this add possibility to add custom text to select boxes
+  $(".add-select").select2({
+   tags: true
+  });
 </script>
 
 </html>
