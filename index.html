@@ -1243,7 +1243,7 @@ function buildTable(db) {
       for (let j = 0; j < fields.length; j ++) {
         let td = tr.insertCell()
         if (fields[j] == "publication_link") {
-          td.innerHTML = '<a href="https://dx.doi.org/' + db[i]['publication_link'] + '"target="_blank">link</a>'
+          td.innerHTML = '<a href="' + db[i]['publication_link'] + '"target="_blank">link</a>'
         } else if (fields[j] == "id") {
           td.innerHTML = '<a href="contribution_details.html?id=' + db[i]['id'] + '">details</a>'
         } else {
