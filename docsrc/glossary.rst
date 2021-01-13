@@ -15,7 +15,7 @@ Graphical
     Possible channels for soil/plant geoelectical measurements. Credit to L. Peruzzo [CIT2002]_.
 
 .. _importing:
-.. figure:: images/ehosioke_sensing_2020_fig2.tif
+.. figure:: images/ehosioke_sensing_2020_fig2.png
     :alt: ehosioke_sensing_2020_fig2
     :scale: 10 %
 
