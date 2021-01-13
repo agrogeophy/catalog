@@ -17,7 +17,7 @@ Graphical
 .. _importing:
 .. figure:: images/ehosioke_sensing_2020_fig2.png
     :alt: ehosioke_sensing_2020_fig2
-    :scale: 10 %
+    :scale: 50 %
 
 See :cite:`ehosioke_sensing_2020` for more details.
 
