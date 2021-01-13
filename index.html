@@ -1025,8 +1025,14 @@ input[type=text] {
                   (or any other open lists of autocompleted values:*/
                   closeAllLists();
                   // open the details contribution page
-                  window.location.href = window.location.href.replace(
-                    'catalog.html', 'catalog/contribution_details.html?id=' + a);
+                  let url = window.location.href + ""
+                  console.log(url, '++++++')
+                  if (url.split('/').slice(-1) == 'index.html') {
+                    window.location.href = url.replace(
+                      'index.html', 'contribution_details.html?id=' + a)
+                  } else {
+                    window.location.href = url + 'contribution_details.html?id=' + a
+                  }
                 });
                 a.appendChild(b);
                 taken = true
