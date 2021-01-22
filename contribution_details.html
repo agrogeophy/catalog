@@ -138,6 +138,7 @@
 						<!-- notebook specific -->
 						<h4><a id="mybinder" href="https://mybinder.org/v2/gh/agrogeophy/notebooks/master?filepath=notebooks/" class="btn btn-primary" target="_blank">Try model in binder </a></h4>
 
+						
 						<!-- dataset specific -->
 						<ul id="dataset" class="list-group">
 							<h4><a id="dataset_link" href="" class="btn btn-primary" target="_blank"> Link to data repo or code to reproduce dataset </a></h4>
@@ -146,7 +147,7 @@
 
 						<p>
           		<h4>
-          			<a href="mailto:benjamin.mary@unipd.it?subject=error%20dbb%20Agrogeophysic" class="btn btn-primary">Report an error </a>
+          			<a href="mailto:hello.agrogeophy@gmail.com?subject=error%20dbb%20Agrogeophysic" class="btn btn-primary">Report an error </a>
           		</h4>
           	</p>
 
@@ -211,7 +212,7 @@
 
 		let cover_picture = "img/map/Eco_leaves_nature-512.png"
 		if (row['cover_picture'] != '') {
-			cover_picture = "img/map/" + row['cover_picture']
+			cover_picture = "https://github.com/agrogeophy/notebooks/blob/master/notebooks/img/" + row['cover_picture']
 		}
 		document.getElementById('cover_picture').href = cover_picture
 		addInfo('title', row['Title'])
