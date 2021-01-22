@@ -275,7 +275,7 @@
 
 		} else if (row['contribution_type'] == 'Notebook') {
 			let a = document.getElementById('mybinder')
-			a.setAttribute('href', 'https://mybinder.org/v2/gh/agrogeophy/notebooks/master?filepath=notebooks/' + row['Notebook filename'])
+			a.setAttribute('href', 'https://mybinder.org/v2/gh/agrogeophy/notebooks/master?filepath=notebooks/' + row['notebook_filename'])
 			document.getElementById('dataset').remove()
 
 		} else if (row['contribution_type'] == 'Dataset') {
