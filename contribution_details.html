@@ -247,7 +247,7 @@
 			// prospection
 			addInfo('publication_date', row['publication_date'])
 			if (row['latitude'] != '') {
-				addInfo('latlong', row['latitude']/row['longitude'])
+				addInfo('latlong', row['latitude'] + '; ' + row['longitude'])
 			} else {
 				document.getElementById('latlong').style.visibility = 'hidden'
 			}
