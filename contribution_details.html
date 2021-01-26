@@ -214,7 +214,7 @@
 		if (row['cover_picture'] != '') {
 			cover_picture = "img/cover_pictures/" + row['cover_picture']
 		}
-		document.getElementById('cover_picture').href = cover_picture
+		document.getElementById('cover_picture').setAttribute('src',cover_picture)
 		addInfo('title', row['Title'])
 
 		// contribution overview
@@ -247,7 +247,7 @@
 			// prospection
 			addInfo('publication_date', row['publication_date'])
 			if (row['latitude'] != '') {
-				addInfo('latlong', row['latitude']/row['longitude'])
+				addInfo('latlong', row['latitude'] + '; ' + row['longitude'])
 			} else {
 				document.getElementById('latlong').style.visibility = 'hidden'
 			}
@@ -275,7 +275,7 @@
 
 		} else if (row['contribution_type'] == 'Notebook') {
 			let a = document.getElementById('mybinder')
-			a.setAttribute('href', 'https://mybinder.org/v2/gh/agrogeophy/notebooks/master?filepath=notebooks/' + row['Notebook filename'])
+			a.setAttribute('href', 'https://mybinder.org/v2/gh/agrogeophy/notebooks/master?filepath=notebooks/' + row['notebook_filename'])
 			document.getElementById('dataset').remove()
 
 		} else if (row['contribution_type'] == 'Dataset') {
