@@ -1119,7 +1119,8 @@ function buildMap(db) {
       // icons
       let AgrogeophyIcon = L.icon({
         iconUrl: 'img/map/Eco_leaves_nature-512.png',
-        iconSize: [24, 28],
+        iconUrl: 'img/c0.png',
+        iconSize: [16, 16],
         iconAnchor: [12, 28],
         popupAnchor: [0, -25]
       });
@@ -1131,7 +1132,38 @@ function buildMap(db) {
         zoomToBoundsOnClick: true,
         disableClusteringAtZoom: 1
       });
-	
+
+  
+      let NotebookIcon = L.icon({
+        iconUrl: 'img/c1.png',
+        iconSize: [16, 16],
+        iconAnchor: [12, 28],
+        popupAnchor: [0, -25]
+      });
+
+      // sites of agrogeophysical studies
+      let NotebookClusters = new L.MarkerClusterGroup({
+        spiderfyOnMaxZoom: false,
+        showCoverageOnHover: false,
+        zoomToBoundsOnClick: true,
+        disableClusteringAtZoom: 1
+      });
+
+      let DatasetsIcon = L.icon({
+        iconUrl: 'img/logo.png',
+        iconSize: [16, 16],
+        iconAnchor: [12, 28],
+        popupAnchor: [0, -25]
+      });
+
+      // sites of agrogeophysical studies
+      let DatasetsClusters = new L.MarkerClusterGroup({
+        spiderfyOnMaxZoom: false,
+        showCoverageOnHover: false,
+        zoomToBoundsOnClick: true,
+        disableClusteringAtZoom: 1
+      });
+
 
       // add site locations to the cluster
       for (let i = 0; i < db.length; i++) {
@@ -1155,66 +1187,68 @@ function buildMap(db) {
         }
       }
 
+      for (let i = 0; i < db.length; i++) {
+        let long = parseFloat(db[i]['longitude'])
+        let lat = parseFloat(db[i]['latitude'])
+        if (isNaN(long) == false && isNaN(lat) == false) {
+          if (db[i]['contribution_type']=='Notebook'){
+              console.log(lat, long)
+              let latLng = new L.LatLng(lat, long)
+              let marker = new L.Marker(latLng,{title: db[i]['organisation'],icon: NotebookIcon})
+              let content = '<table border="0" style="border-collapse:collapse;" cellpadding="2">' +
+                '<tr><th>Authors:</th><td>' + db[i]['authors'] + '</td></tr>' +
+                '<tr><th>Methods:</th><td>' +  db[i]['method'] +   '</td></tr>' +
+                '<tr><th></th><td><a href="contribution_details.html?id=' + db[i]['id'] + '">More</a>'  +
+                '</td></tr>' +
+                '<tr>' + '<th>Date:</th>' + '<td>' + db[i]['publication_date'] + '</td>' + '</tr>' +
+                '<tr>' + '<th>Specie:</th>' + '<td>' + db[i]['plant'] + '</td>' + '</tr>' +
+               // '<tr>' + '<th></th>' + '<td>' +"'<a href='"feature.properties.DOI">"</a>'+  '</td>' + '</tr>' +
+                '</table>';
+              marker.bindPopup(content)
+              NotebookClusters.addLayer(marker)
+          }
+        }
+      }
+
+      for (let i = 0; i < db.length; i++) {
+        let long = parseFloat(db[i]['longitude'])
+        let lat = parseFloat(db[i]['latitude'])
+        if (isNaN(long) == false && isNaN(lat) == false) {
+          if (db[i]['contribution_type']=='Datasets'){
+              console.log(lat, long)
+              let latLng = new L.LatLng(lat, long)
+              let marker = new L.Marker(latLng,{title: db[i]['organisation'],icon: NotebookIcon})
+              let content = '<table border="0" style="border-collapse:collapse;" cellpadding="2">' +
+                '<tr><th>Authors:</th><td>' + db[i]['authors'] + '</td></tr>' +
+                '<tr><th>Methods:</th><td>' +  db[i]['method'] +   '</td></tr>' +
+                '<tr><th></th><td><a href="contribution_details.html?id=' + db[i]['id'] + '">More</a>'  +
+                '</td></tr>' +
+                '<tr>' + '<th>Date:</th>' + '<td>' + db[i]['publication_date'] + '</td>' + '</tr>' +
+                '<tr>' + '<th>Specie:</th>' + '<td>' + db[i]['plant'] + '</td>' + '</tr>' +
+               // '<tr>' + '<th></th>' + '<td>' +"'<a href='"feature.properties.DOI">"</a>'+  '</td>' + '</tr>' +
+                '</table>';
+              marker.bindPopup(content)
+              DatasetsClusters.addLayer(marker)
+          }
+        }
+      }
       // adjust bounds of the map after adding sites locations
 
       // define main map with markers and background
       let map = new L.Map("map",{
-        layers: [mapquestOSM, agrogeophyClusters]
+        layers: [mapquestOSM, agrogeophyClusters,NotebookClusters,DatasetsClusters]
       });
       map.fitBounds(agrogeophyClusters.getBounds())
 
-
-
-      // add to map
-    /*
-      let agrogeophy = new L.geoJson(null, {
-          pointToLayer: function (feature, latlng) {
-            return L.marker(latlng, {
-              icon: AgrogeophyIcon,
-              title: feature.properties.organisation
-            });
-          },
-          onEachFeature: function (feature, layer) {
-            if (feature.properties) {
-              var myJSON = JSON.stringify(feature.properties.id);
-
-              var content = '<table border="0" style="border-collapse:collapse;" cellpadding="2">' +
-                '<tr>' + '<th>Org.:</th>' + '<td>' + feature.properties.organisation + '</td>' + '</tr>' +
-                '<tr>' + '<th>Methods:</th>' + '<td>' +  feature.properties.method +   '</td>' + '</tr>' +
-                '<tr>' + '<th></th>' + '<td>'+ '<a href="contribution_detailed.php?idnb=' + JSON.stringify(feature.properties.id) + '"> More</a>'  +
-                '</td>' + '</tr>' +
-                 // '<tr>' + '<th>Date:</th>' + '<td>' + feature.properties.datep + '</td>' + '</tr>' +
-               // '<tr>' + '<th></th>' + '<td>' +"'<a href='"feature.properties.DOI">"</a>'+  '</td>' + '</tr>' +
-                '<table>';
-              layer.bindPopup(content);
-            }
-          }
-        });
-
-      let agrogeophyClusters = new L.MarkerClusterGroup({
-        spiderfyOnMaxZoom: true,
-        showCoverageOnHover: false,
-        zoomToBoundsOnClick: true,
-        disableClusteringAtZoom: 16
-      });
-
-    */
-
-    /*
-      $.getJSON("./dbb/map.json", function (data) {
-        agrogeophy.addData(data);
-        agrogeophyClusters.addLayer(agrogeophy);
-      }).complete(function () {
-        map.fitBounds(agrogeophy.getBounds());
-      });
-    */
 
       // add layer controls
       let baseLayers = {
        "MapQuest Aerial": mapquestOAM
       };
       let overlays = {
-       "Agrogeophysical sites (clustered)": agrogeophyClusters
+       "Scientific communications": agrogeophyClusters,
+       "Notebooks": NotebookClusters,
+       "Datasets": DatasetsClusters
       };
       let layersControl = new L.Control.Layers(baseLayers, overlays, {
        collapsed: false
@@ -1339,7 +1373,6 @@ function callback(res) {
 }
 
 </script>
-
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <!-- Uncomment below i you want to use a preloader -->
