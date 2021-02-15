@@ -13,6 +13,8 @@ agrogeophysic-catalog
    glossary
    schema_documentation
    contibutors
+   ../CODE_OF_CONDUCT
+   terms_of_use
 
 
 Indices and tables
