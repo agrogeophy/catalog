@@ -1,0 +1,1226 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>The CAGS Metadata Schema &mdash; agrogeophy-catalog 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contributors" href="contibutors.html" />
+    <link rel="prev" title="Glossary" href="glossary.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> agrogeophy-catalog
+          
+
+          
+            
+            <img src="_static/CAGS.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CAGS_ecosystem.html">CAGS ecosystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAIR.html">CAGS &amp; FAIR principles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The CAGS Metadata Schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#project-level-metadata">Project level metadata</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#table-abiotic">Table: <code class="docutils literal notranslate"><span class="pre">abiotic</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description">Description:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#columns">Columns:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#table-biotic">Table: <code class="docutils literal notranslate"><span class="pre">biotic</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Description:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Columns:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#table-contact">Table: <code class="docutils literal notranslate"><span class="pre">contact</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Description:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Columns:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#table-main">Table: <code class="docutils literal notranslate"><span class="pre">main</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Description:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Columns:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#table-processing">Table: <code class="docutils literal notranslate"><span class="pre">processing</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Description:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Columns:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#table-prospection">Table: <code class="docutils literal notranslate"><span class="pre">prospection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">Description:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">Columns:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#file-level-geophysical-metadata">File-level geophysical metadata</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#table-report">Table: <code class="docutils literal notranslate"><span class="pre">report</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id11">Description:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">Columns:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#table-survey">Table: <code class="docutils literal notranslate"><span class="pre">survey</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description-1">Description:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#columns-1">Columns:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#table-ert-metadata">Table: <code class="docutils literal notranslate"><span class="pre">ERT</span> <span class="pre">metadata</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description-2">Description:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#columns-3">Columns:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#table-em-metadata">Table: <code class="docutils literal notranslate"><span class="pre">EM</span> <span class="pre">metadata</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description-3">Description:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#columns-4">Columns:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#table-data-quality-assessment-metadata">Table: <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">quality</span> <span class="pre">assessment</span> <span class="pre">metadata</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description-4">Description:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#columns-5">Columns:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#table-sampling">Table: <code class="docutils literal notranslate"><span class="pre">sampling</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description-5">Description:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#columns-6">Columns:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contibutors.html">Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terms_of_use.html">Terms of use</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">agrogeophy-catalog</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>The CAGS Metadata Schema</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/schema_documentation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-cags-metadata-schema">
+<h1>The CAGS Metadata Schema<a class="headerlink" href="#the-cags-metadata-schema" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="project-level-metadata">
+<h2>Project level metadata<a class="headerlink" href="#project-level-metadata" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Project-level Metadata</strong> level is related to the main CAGS interface website from which metadata are harvested through the online submission form. It collects metadata (derived and expended from Dublin Core metadata) which incorporates a number of descriptive and resource discovery focused elements describing either a scientific communication, a notebook and a dataset independently or jointly.</p>
+<p>Tables below are extracted from the database and generated by MySQL Workbench Model Documentation v1.0.0 - Copyright (c)
+2015 Hieu Le</p>
+<div class="section" id="table-abiotic">
+<h3>Table: <code class="docutils literal notranslate"><span class="pre">abiotic</span></code><a class="headerlink" href="#table-abiotic" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="description">
+<h4>Description:<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="columns">
+<h4>Columns:<a class="headerlink" href="#columns" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 33%" />
+<col style="width: 11%" />
+<col style="width: 10%" />
+<col style="width: 13%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Multiplicity</p></th>
+<th class="head"><p>Obligation</p></th>
+<th class="head"><p>Metadata level</p></th>
+<th class="head"><p>Dublin Core
+compatibility</p></th>
+<th class="head"><p>INSPIRE
+compatibility</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>soil</p></td>
+<td></td>
+<td><p>[1,n]</p></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>water</p></td>
+<td><p>Triggered infiltration test:    Yes/No</p></td>
+<td><p>[1,n]</p></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-even"><td><p>land_use</p></td>
+<td></td>
+<td><p>[1,n]</p></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="table-biotic">
+<h3>Table: <code class="docutils literal notranslate"><span class="pre">biotic</span></code><a class="headerlink" href="#table-biotic" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4>Description:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id2">
+<h4>Columns:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 33%" />
+<col style="width: 11%" />
+<col style="width: 10%" />
+<col style="width: 13%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Multiplicity</p></th>
+<th class="head"><p>Obligation</p></th>
+<th class="head"><p>Metadata level</p></th>
+<th class="head"><p>Dublin Core
+compatibility</p></th>
+<th class="head"><p>INSPIRE
+compatibility</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>species</p></td>
+<td></td>
+<td><p>[1,n]</p></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>organ</p></td>
+<td></td>
+<td><p>[1,n]</p></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="table-contact">
+<h3>Table: <code class="docutils literal notranslate"><span class="pre">contact</span></code><a class="headerlink" href="#table-contact" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h4>Description:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id4">
+<h4>Columns:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 13%" />
+<col style="width: 14%" />
+<col style="width: 12%" />
+<col style="width: 16%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Multiplicity</p></th>
+<th class="head"><p>Obligation</p></th>
+<th class="head"><p>Metadata level</p></th>
+<th class="head"><p>Dublin Core
+compatibility</p></th>
+<th class="head"><p>INSPIRE
+compatibility</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>name</p></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>Mandatory</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>surname</p></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>Mandatory</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-even"><td><p>organisation</p></td>
+<td></td>
+<td><p>[1,n]</p></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>email</p></td>
+<td></td>
+<td></td>
+<td><p>Mandatory</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="table-main">
+<h3>Table: <code class="docutils literal notranslate"><span class="pre">main</span></code><a class="headerlink" href="#table-main" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4>Description:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id6">
+<h4>Columns:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 13%" />
+<col style="width: 14%" />
+<col style="width: 12%" />
+<col style="width: 16%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Multiplicity</p></th>
+<th class="head"><p>Obligation</p></th>
+<th class="head"><p>Metadata level</p></th>
+<th class="head"><p>Dublin Core
+compatibility</p></th>
+<th class="head"><p>INSPIRE
+compatibility</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>contrib_type</p></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>Mandatory</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>contrib_title</p></td>
+<td></td>
+<td><p>[1]</p></td>
+<td><p>Mandatory</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-even"><td><p>contrib_date</p></td>
+<td></td>
+<td><p>[1,n]</p></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>contrib_authors</p></td>
+<td></td>
+<td></td>
+<td><p>Mandatory</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-even"><td><p>DOI</p></td>
+<td></td>
+<td></td>
+<td><p>Mandatory</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>journal</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-even"><td><p>icon_img</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>keywords</p></td>
+<td></td>
+<td></td>
+<td><p>Mandatory</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="table-processing">
+<h3>Table: <code class="docutils literal notranslate"><span class="pre">processing</span></code><a class="headerlink" href="#table-processing" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h4>Description:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id8">
+<h4>Columns:<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Multiplicity</p></th>
+<th class="head"><p>Obligation</p></th>
+<th class="head"><p>Metadata level</p></th>
+<th class="head"><p>Dublin Core
+compatibility</p></th>
+<th class="head"><p>INSPIRE
+compatibility</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>software_name</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>licence_type</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-even"><td><p>DOI_software</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>notebook_filename</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-even"><td><p>notebook_purpose</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>data_repo_url</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-even"><td><p>data_licence</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="table-prospection">
+<h3>Table: <code class="docutils literal notranslate"><span class="pre">prospection</span></code><a class="headerlink" href="#table-prospection" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h4>Description:<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id10">
+<h4>Columns:<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 13%" />
+<col style="width: 14%" />
+<col style="width: 12%" />
+<col style="width: 16%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Multiplicity</p></th>
+<th class="head"><p>Obligation</p></th>
+<th class="head"><p>Metadata level</p></th>
+<th class="head"><p>Dublin Core
+compatibility</p></th>
+<th class="head"><p>INSPIRE
+compatibility</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>datep</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>lat</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-even"><td><p>longitude</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>method</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-even"><td><p>spatial_scale</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>bound_cond</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-even"><td><p>temperature</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>temporal_scale</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-even"><td><p>instrument</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-odd"><td><p>dimension</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+<tr class="row-even"><td><p>permanent_setup</p></td>
+<td></td>
+<td></td>
+<td><p>Optional</p></td>
+<td><p>project</p></td>
+<td><p>NONE</p></td>
+<td><p>NONE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="file-level-geophysical-metadata">
+<h2>File-level geophysical metadata<a class="headerlink" href="#file-level-geophysical-metadata" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>File-level Metadata</strong> level collector is a gui designed to help with the initial preparation of one geophysical dataset. Starting from one or multiple input directories, a cleanly structured output directory is generated (without deleting any input files).
+Generate suitable metadata from user input and write this metadata into the directory structure, making it ready for further distribution.</p>
+<p><a class="reference external" href="https://github.com/m-weigand/geometadp.git">geophysical Metadata Management using a Juypter Notebook</a></p>
+<p>Tables below are extracted from the database and generated by MySQL Workbench Model Documentation v1.0.0 - Copyright (c)
+2015 Hieu Le</p>
+<div class="section" id="table-report">
+<h3>Table: <code class="docutils literal notranslate"><span class="pre">report</span></code><a class="headerlink" href="#table-report" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h4>Description:<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<p>Metadata describing general information about the contribution.</p>
+<p>This table has overlapping field with project level metadata (see column
+CAGS Metadata level)</p>
+</div>
+<div class="section" id="id12">
+<h4>Columns:<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 20%" />
+<col style="width: 8%" />
+<col style="width: 7%" />
+<col style="width: 12%" />
+<col style="width: 14%" />
+<col style="width: 11%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Multiplicity</p></th>
+<th class="head"><p>Obligation</p></th>
+<th class="head"><p>CAGS Metadata level</p></th>
+<th class="head"><p>Dublin Core (ArchSearch)</p></th>
+<th class="head"><p>INSPIRE Directive</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Attributes</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Report_title</p></td>
+<td><p>Sort title description of the dataset</p></td>
+<td><p>[1]</p></td>
+<td><p>Mandatory</p></td>
+<td><p>File level</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Unique</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Report_author</p></td>
+<td><p>Reporting authors names</p></td>
+<td><p>[1,n]</p></td>
+<td><p>Mandatory</p></td>
+<td><p>File &amp; project level</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Unique</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="table-survey">
+<h3>Table: <code class="docutils literal notranslate"><span class="pre">survey</span></code><a class="headerlink" href="#table-survey" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="description-1">
+<span id="id13"></span><h4>Description:<a class="headerlink" href="#description-1" title="Permalink to this headline">¶</a></h4>
+<p>Metadata describing one to multiple survey(s).</p>
+<p>The survey table is inspired from `Archaeology Data Service / Digital
+Antiquity</p>
+<p>Guides to Good Practice
+&lt;<a class="reference external" href="https://guides.archaeologydataservice.ac.uk/g2gp/Geophysics_6">https://guides.archaeologydataservice.ac.uk/g2gp/Geophysics_6</a>&gt;`_</p>
+<p>For multiple acquisitions the number n must be unchanged between the
+different fields. For example, if date of time of measurement contains 2
+values, the electrode configuration must contain n columns describing
+the configuration used.</p>
+</div>
+<div class="section" id="columns-1">
+<span id="id14"></span><h4>Columns:<a class="headerlink" href="#columns-1" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 30%" />
+<col style="width: 7%" />
+<col style="width: 6%" />
+<col style="width: 9%" />
+<col style="width: 13%" />
+<col style="width: 10%" />
+<col style="width: 7%" />
+<col style="width: 6%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Multiplicity</p></th>
+<th class="head"><p>Obligation</p></th>
+<th class="head"><p>CAGS</p>
+<p>Metadata   level</p>
+</th>
+<th class="head"><p>Dublin   Core (ArchSearch)</p></th>
+<th class="head"><p>INSPIRE   Directive</p></th>
+<th class="head"><p>Data   type</p></th>
+<th class="head"><p>Attributes</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Survey_type</p></td>
+<td><p>Choose acronyms describing the survey   type (refer to CAGS glossary)</p></td>
+<td><p>[1,n]</p></td>
+<td><p>Mandatory</p></td>
+<td><p>File level</p></td>
+<td><p>Resource Type</p></td>
+<td></td>
+<td></td>
+<td><p>Unique</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Instruments</p></td>
+<td><p>Name of the instrument(s)</p></td>
+<td><p>[1,n]</p></td>
+<td><p>Mandatory</p></td>
+<td><p>File level</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="row-even"><td><p>Choice_survey</p></td>
+<td><p>Text explaining shortly the motivation of   using the method(s)</p></td>
+<td><p>[1,n]</p></td>
+<td><p>Optional</p></td>
+<td><p>File level</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Area</p></td>
+<td><p>Total surface investigated (m2)</p></td>
+<td><p>[1,n]</p></td>
+<td><p>Optional</p></td>
+<td><p>File level</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="row-even"><td><p>Add_remarks</p></td>
+<td><p>Free text for additional remarks</p></td>
+<td><p>[1]</p></td>
+<td><p>Optional</p></td>
+<td><p>File level</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>NULL</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="table-ert-metadata">
+<h3>Table: <code class="docutils literal notranslate"><span class="pre">ERT</span> <span class="pre">metadata</span></code><a class="headerlink" href="#table-ert-metadata" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="description-2">
+<span id="id15"></span><h4>Description:<a class="headerlink" href="#description-2" title="Permalink to this headline">¶</a></h4>
+<p>Metadata describing one to multiple (n) ERT surveys.</p>
+<p>For multiple acquisitions the number n must be unchanged between the
+different fields. For example, if date of time of measurement contains 2
+values, the electrode configuration must contain n columns describing
+the configuration used.</p>
+</div>
+<div class="section" id="columns-3">
+<span id="id16"></span><h4>Columns:<a class="headerlink" href="#columns-3" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 22%" />
+<col style="width: 8%" />
+<col style="width: 7%" />
+<col style="width: 9%" />
+<col style="width: 14%" />
+<col style="width: 11%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Multiplicity</p></th>
+<th class="head"><p>Obligation</p></th>
+<th class="head"><p>CAGS</p>
+<p>Metadata level</p>
+</th>
+<th class="head"><p>Dublin Core (ArchSearch)</p></th>
+<th class="head"><p>INSPIRE Directive</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Attributes</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Date_measure</p></td>
+<td><p>Date(s) of the measurement (dd/mm/aaaa)</p></td>
+<td><p>[n]</p></td>
+<td><p>Mandatory</p></td>
+<td><p>File level</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Unique</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Time_measure</p></td>
+<td><p>Time(s) of the measurement (hh:mm)</p></td>
+<td><p>[m,n]</p></td>
+<td><p>Mandatory</p></td>
+<td><p>File level</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="row-even"><td><p>Elec_conf</p></td>
+<td><p>Electrode   configuration</p></td>
+<td><p>[m,n]</p></td>
+<td><p>Optional</p></td>
+<td><p>File   level</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Elec_spacing</p></td>
+<td><p>Electrode spacing</p></td>
+<td><p>[m,n]</p></td>
+<td><p>Optional</p></td>
+<td><p>File level</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>NULL</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="table-em-metadata">
+<h3>Table: <code class="docutils literal notranslate"><span class="pre">EM</span> <span class="pre">metadata</span></code><a class="headerlink" href="#table-em-metadata" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="description-3">
+<span id="id17"></span><h4>Description:<a class="headerlink" href="#description-3" title="Permalink to this headline">¶</a></h4>
+<p>Metadata describing one to multiple (n) EM surveys.</p>
+<p>For multiple acquisitions the number n must be unchanged between the
+different fields. For example, if date of measurements contains 2
+values, the coil configuration must contain n columns and m lines
+describing the coil configuration used.</p>
+</div>
+<div class="section" id="columns-4">
+<span id="id18"></span><h4>Columns:<a class="headerlink" href="#columns-4" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 31%" />
+<col style="width: 7%" />
+<col style="width: 6%" />
+<col style="width: 8%" />
+<col style="width: 13%" />
+<col style="width: 9%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Multiplicity</p></th>
+<th class="head"><p>Obligation</p></th>
+<th class="head"><p>CAGS</p>
+<p>Metadata level</p>
+</th>
+<th class="head"><p>Dublin Core (ArchSearch)</p></th>
+<th class="head"><p>INSPIRE Directive</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Attributes</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Date_measure</p></td>
+<td><p>Date(s) of the measurement (dd/mm/aaaa)</p></td>
+<td><p>[1,n]</p></td>
+<td><p>Mandatory</p></td>
+<td><p>File level</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Unique</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Coil_conf</p></td>
+<td><p>Coil configuation</p></td>
+<td><p>[m,n]</p></td>
+<td><p>Optional</p></td>
+<td><p>File level</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="row-even"><td><p>Read_interval</p></td>
+<td><p>If automatic time sampling, time steps   between different reading</p></td>
+<td><p>[m,n]</p></td>
+<td><p>Optional</p></td>
+<td><p>File level</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>NULL</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="table-data-quality-assessment-metadata">
+<h3>Table: <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">quality</span> <span class="pre">assessment</span> <span class="pre">metadata</span></code><a class="headerlink" href="#table-data-quality-assessment-metadata" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="description-4">
+<span id="id19"></span><h4>Description:<a class="headerlink" href="#description-4" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="columns-5">
+<span id="id20"></span><h4>Columns:<a class="headerlink" href="#columns-5" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 23%" />
+<col style="width: 6%" />
+<col style="width: 17%" />
+<col style="width: 7%" />
+<col style="width: 11%" />
+<col style="width: 8%" />
+<col style="width: 5%" />
+<col style="width: 6%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Multiplicity</p></th>
+<th class="head"><p>Obligation</p></th>
+<th class="head"><p>CAGS</p>
+<p>Metadata level</p>
+</th>
+<th class="head"><p>Dublin Core (ArchSearch)</p></th>
+<th class="head"><p>INSPIRE Directive</p></th>
+<th class="head"><p>Data type</p></th>
+<th class="head"><p>Attributes</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Peer_reviewed</p></td>
+<td><p>True if the dataset has been   peer-reviewed</p></td>
+<td><p>[1]</p></td>
+<td><p>Mandatory</p></td>
+<td><p>File level</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Unique</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Peer_reviewer_contact</p></td>
+<td><p>Contact of reviewer</p></td>
+<td><p>[1,n]</p></td>
+<td><p>Mandatory only if peer_reviewed is True</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Unique</p></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="row-even"><td><p>Replicate_datasets</p></td>
+<td><p>Number of replicates datasets</p></td>
+<td><p>[1,n]</p></td>
+<td><p>Optional</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="row-odd"><td><p>Comparison_ref_data</p></td>
+<td><p>The dataset has been compared with   reference datasets</p></td>
+<td><p>[1,n]</p></td>
+<td><p>Optional</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>NULL</p></td>
+</tr>
+<tr class="row-even"><td><p>Ref_data</p></td>
+<td><p>DOI of reference dataset</p></td>
+<td><p>[1,n]</p></td>
+<td><p>Optional</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>NULL</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="table-sampling">
+<span id="section-1"></span><h3>Table: <code class="docutils literal notranslate"><span class="pre">sampling</span></code><a class="headerlink" href="#table-sampling" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="description-5">
+<span id="id21"></span><h4>Description:<a class="headerlink" href="#description-5" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="columns-6">
+<span id="id22"></span><h4>Columns:<a class="headerlink" href="#columns-6" title="Permalink to this headline">¶</a></h4>
+<span class="target" id="section-2"></span></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="contibutors.html" class="btn btn-neutral float-right" title="Contributors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="glossary.html" class="btn btn-neutral float-left" title="Glossary" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright MIT License.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
