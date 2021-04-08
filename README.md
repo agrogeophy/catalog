@@ -13,3 +13,9 @@ Let us know by submitting
 issues on Github https://agrogeophy.github.io/catalog/issues
 or send us a message on our
 Slack chatroom https://agrogeophy.slack.com/.
+
+
+Contributors
+------------
+- Benjamin Mary, University of Padua
+- Guillaume Blanchy, University of Lancaster
