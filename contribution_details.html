@@ -94,6 +94,7 @@
        </div>
 
            <div class="col-lg-7 col-md-6">
+           					<div id="title"> <h1> <b></b></h1>
               <div class="about-content">
 
 								<h2 id="metrics">Metrics</h2>
@@ -102,7 +103,6 @@
 
                 <h2>Contribution overview</h2>
                   <ul class="list-group">
-										<li id="title" class="list-group-item"><b>Title: </b></li>
 										<li id="contribution_type" class="list-group-item"><b>Type: </b></li>
 										<li id="keywords" class="list-group-item"><b>Keywords: </b></li>
                     <li class="list-group-item"><a id="link" href="https://dx.doi.org/"  target="_blank"><b>Link to publication</b></a></li>
@@ -230,6 +230,7 @@
 		addInfo('title', row['Title'])
 
 		// contribution overview
+		addInfo('title', row['title'])
 		addInfo('contribution_type', row['contribution_type'])
 		addInfo('keywords', row['keywords'])
 		addAttr('link', row['publication_link'], 'href')
