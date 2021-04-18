@@ -58,9 +58,8 @@ jobs:
         run: |
           cd docsrc
           python3 -m sphinx -b html . ../docs
-      # python3 -m sphinx -b latex . ../docs/tex
           cd ..
-
+      # python3 -m sphinx -b latex . ../docs/tex
       # we set || true, in case, nothing really changes
       - name: Commit to gh-pages
         run: |
