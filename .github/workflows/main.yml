@@ -43,7 +43,8 @@ jobs:
           sudo apt-get install -y pandoc python3-sphinx jupyter
           pip3 install setuptools==49.0.0 wheel
           pip3 install sphinx numpydoc sphinx_rtd_theme sphinx_nbexamples pandoc sphinxcontrib-bibtex
-      
+      # sphinxcontrib-bibtex
+          
       # apt or pip packages needed to run the notebooks are specified in apt.txt and requirements.txt
       - name: Install packages needed for the notebooks
         run: |
@@ -58,9 +59,8 @@ jobs:
         run: |
           cd docsrc
           python3 -m sphinx -b html . ../docs
-          python3 -m sphinx -b latex . ../docs/tex
           cd ..
-
+      # python3 -m sphinx -b latex . ../docs/tex
       # we set || true, in case, nothing really changes
       - name: Commit to gh-pages
         run: |
