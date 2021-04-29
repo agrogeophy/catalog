@@ -153,8 +153,8 @@
 
 						<!-- dataset specific -->
 						<ul id="dataset" class="list-group">
-							<h4><a id="dataset_link" href="" class="btn btn-primary" target="_blank"> Link to data repo or code to reproduce dataset </a></h4>
-							<h4><a id="reda_link" href="https://github.com/BenjMy/agrogeophy-data/raw/master/try-reda-master/" class="btn btn-primary" target="_blank">Download metadata journal file </a></h4>
+							<h4><a id="dataset_link" href="" class="btn btn-primary" target="_blank"> Link to data repository</a></h4>
+							<!--<h4><a id="reda_link" href="https://github.com/BenjMy/agrogeophy-data/raw/master/try-reda-master/" class="btn btn-primary" target="_blank">Download metadata journal file </a></h4>-->
 						</ul>
 
 						<p>
@@ -282,6 +282,15 @@
 			// abiotic
 			addInfo('soil', row['soil'])
 			addInfo('water', row['water'])
+
+			if (row['dataset_link'] != '') {
+				addAttr('dataset_link', row['dataset_link'], 'href')
+			}
+
+			if (row['notebook_filename'] != '') {
+				let a = document.getElementById('mybinder')
+				a.setAttribute('href', 'https://mybinder.org/v2/gh/agrogeophy/notebooks/master?filepath=notebooks/' + row['notebook_filename'])
+			}
 
 
 		} else if (row['contribution_type'] == 'Notebook') {
