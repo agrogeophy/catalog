@@ -35,7 +35,7 @@ db.to_csv('db_backup.csv',sep=',')
 # json_name = 'json_array_Vanderborght_Jan_2020-11-01 11_30_11'
 # with open(json_name + '.txt') as f:
 #   json2parse = json.load(f)
-json_name = path_backup + 'Martin_042821_3'
+json_name = path_backup + 'Martin_042821'
 with open(json_name + '.json') as f:
   json2parse = json.load(f)
   

@@ -251,7 +251,7 @@
 
 
 
-		if (row['contribution_type'] == 'Research article') {
+		if (row['contribution_type'] == 'Peer reviewed publication') {
 			if (row['publication_link'].indexOf('doi') != -1) {
 				let doi = row['publication_link'].split('.org/')[1]
 				document.getElementById('altmetric').setAttribute('data-doi', doi)
