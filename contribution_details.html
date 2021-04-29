@@ -285,11 +285,13 @@
 
 			if (row['dataset_link'] != '') {
 				addAttr('dataset_link', row['dataset_link'], 'href')
+				document.getElementById('no_dataset_warming').remove()
 			}
 
 			if (row['notebook_filename'] != '') {
 				let a = document.getElementById('mybinder')
 				a.setAttribute('href', 'https://mybinder.org/v2/gh/agrogeophy/notebooks/master?filepath=notebooks/' + row['notebook_filename'])
+				document.getElementById('no_notebook_warming').remove()
 			}
 
 
