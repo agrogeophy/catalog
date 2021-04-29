@@ -85,8 +85,8 @@
 		     			In order to improve it, we invite the authors to: 
 		      	    	 <ul>
 		      	    	 	<li>enrich metadata;</li>
-		      	    	 	<li>link the article with a dataset;</li>
-		      	    	 	<li>link the article with a compagnion computationnal notebook.</li>
+		      	    	 	<li id="no_dataset_warming"><b></b></li>
+		      	    	 	<li id="no_notebook_warming"><b></b></li>
 		      	    	 </ul>
 		      			See more in the <a id="link" href="https://agrogeophy.github.io/catalog/docs/getting-started.html"  target="_blank"><b>CAGS documentation</b></a>
 		      </div>
@@ -175,7 +175,7 @@
 
 <script type="text/javascript">
 
-	// load csv database (it should already be cached from catalog.html)
+		// load csv database (it should already be cached from catalog.html)
 	Papa.parse("db.csv", {
 	  download: true,
 	  header: true,
@@ -296,6 +296,12 @@
 			document.getElementById('mybinder').remove()
 		}
 
+		if (row['dataset_link']	== '') {	
+			addInfo('no_dataset_warming', 'link the article with a dataset;')
+		}	
+		if (row['notebook_filename'] == '') {	
+			addInfo('no_notebook_warming', 'link the article with a compagnion computationnal notebook;')
+		}	
 
 		// remove all empty list group and their above h6 title
 		let uls = document.getElementsByClassName('list-group')
@@ -317,6 +323,26 @@
 
 	}
 
+	const select = document.querySelector('select');
+	const para = document.querySelector('p');
+
+	select.addEventListener('change', setWarmings);
+
+	function setWeather() {
+	  const choice = select.value;
+
+	  if (choice === 'sunny') {
+	    para.textContent = 'It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.';
+	  } else if (choice === 'rainy') {
+	    para.textContent = 'Rain is falling outside; take a rain coat and a brolly, and don\'t stay out for too long.';
+	  } else if (choice === 'snowing') {
+	    para.textContent = 'The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.';
+	  } else if (choice === 'overcast') {
+	    para.textContent = 'It isn\'t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.';
+	  } else {
+	    para.textContent = '';
+	  }
+	}
 
 </script>
 
