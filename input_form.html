@@ -157,7 +157,7 @@ function toggleField(hideObj,showObj){
           <h3>Contribution details</h3>
          </header>
         <div class="form-group row">
-          <label for="contributionType" class="col-sm-2 col-form-label">Contribution Type</label>
+          <label for="contributionType" class="col-sm-2 col-form-label">Contribution Type*</label>
           <div class="col-sm-10">
             <select class="form-control" name="contribution_type">
               <option>Peer reviewed publication</option>
@@ -168,37 +168,37 @@ function toggleField(hideObj,showObj){
         </div>
 
           <div class="form-group row required">
-            <label for="title" class="col-sm-2 col-form-label">Title</label>
+            <label for="title" class="col-sm-2 col-form-label">Title*</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" name="title" placeholder="My Agrogeophysical Survey" required>
             </div>
           </div>
 
         <div class="form-group row">
-          <label for="publiDate" class="col-sm-2 col-form-label">Date</label>
+          <label for="publiDate" class="col-sm-2 col-form-label">Date*</label>
           <div class="col-sm-10">
-            <input type="date" class="form-control" name="publication_date">
+            <input type="date" class="form-control" name="publication_date" required>
           </div>
         </div>
 
       <div class="form-group row">
-        <label for="publicationLink" class="col-sm-2 col-form-label">Publication Link (DOI)</label>
+        <label for="publicationLink" class="col-sm-2 col-form-label">Publication Link (DOI)*</label>
         <div class="col-sm-10">
-          <input type="url" class="form-control" name="publication_link" placeholder="Enter publication link (DOI) as URL. e.g. https://doi.org/10.1016/j.cageo.2020.104423">
+          <input type="url" class="form-control" name="publication_link" placeholder="Enter publication link (DOI) as URL. e.g. https://doi.org/10.1016/j.cageo.2020.104423" required>
         </div>
       </div>
 
           <div class="form-group row required">
-            <label for="authors" class="col-sm-2 col-form-label">Author(s) (comma separated)</label>
+            <label for="authors" class="col-sm-2 col-form-label">Author(s) (semi-colon separated)*</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="authors" placeholder="e.g. J. Snow, ..." required>
+              <input type="text" class="form-control" name="authors" placeholder="e.g. J. Snow; A. Christie; ..." required>
             </div>
           </div>
 
         <div class="form-group row">
-          <label for="keywords" class="col-sm-2 col-form-label">Keywords (semi-colon separated)</label>
+          <label for="keywords" class="col-sm-2 col-form-label">Keywords (semi-colon separated)*</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="keywords" placeholder="e.g. hydrogeophysics; vineyard; ERT">
+            <input type="text" class="form-control" name="keywords" placeholder="e.g. hydrogeophysics; vineyard; ERT" required>
           </div>
         </div>
 
@@ -230,23 +230,23 @@ function toggleField(hideObj,showObj){
         </header>
 
         <div class="form-group row">
-          <label for="longitude" class="col-sm-2 col-form-label">Longitude</label>
+          <label for="longitude" class="col-sm-2 col-form-label">Longitude*</label>
           <div class="col-sm-10">
-            <input type="number" class="form-control" name="longitude" placeholder="Longitude as decimal degree (WGS84)" step="any">
+            <input type="number" class="form-control" name="longitude" placeholder="Longitude as decimal degree (WGS84)" step="any" required>
           </div>
         </div>
 
         <div class="form-group row">
-          <label for="latitude" class="col-sm-2 col-form-label">Latitude</label>
+          <label for="latitude" class="col-sm-2 col-form-label">Latitude*</label>
           <div class="col-sm-10">
-            <input type="number" class="form-control" name="latitude" placeholder="Latitude as decimal degree (WGS84)" step="any">
+            <input type="number" class="form-control" name="latitude" placeholder="Latitude as decimal degree (WGS84)" step="any" required>
           </div>
         </div>
 
       <div class="form-group row">
-        <label for="method" class="col-sm-2 col-form-label">Methods used</label>
+        <label for="method" class="col-sm-2 col-form-label">Methods used*</label>
         <div class="col-sm-10">
-          <select multiple class="form-control add-select" name="method">
+          <select multiple class="form-control add-select" name="method" required>
             <option>ERT (DC only)</option>
             <option>EIT (DC and IP)</option>
             <option>TDIP</option>
@@ -262,10 +262,10 @@ function toggleField(hideObj,showObj){
       </div>
 
       <div class="form-group row">
-        <label for="spatial_scale" class="col-sm-2 col-form-label">Spatial Scale</label>
+        <label for="spatial_scale" class="col-sm-2 col-form-label">Spatial Scale*</label>
         <div class="col-sm-10">
           <!-- <select multiple class="form-control" id="SpatialScale" name="SpatialScale"> -->
-          <select class="form-control form-select" name="spatial_scale">
+          <select class="form-control form-select" name="spatial_scale" required>
             <option>Laboratory</option>
             <option selected>Field</option>
             <option>Catchement</option>
@@ -274,9 +274,9 @@ function toggleField(hideObj,showObj){
       </div>
 
       <div class="form-group row">
-        <label for="temporal_scale" class="col-sm-2 col-form-label">Temporal Scale</label>
+        <label for="temporal_scale" class="col-sm-2 col-form-label">Temporal Scale*</label>
         <div class="col-sm-10">
-          <select multiple class="form-control add-select" name="temporal_scale">
+          <select multiple class="form-control add-select" name="temporal_scale" required>
             <option selected>None (one time survey)</option>
             <option>Minutes</option>
             <option>Hours</option>
@@ -325,9 +325,9 @@ function toggleField(hideObj,showObj){
     </div>
 
     <div class="form-group row">
-      <label for=dimension class="col-sm-2 col-form-label">Dimension</label>
+      <label for=dimension class="col-sm-2 col-form-label">Dimension*</label>
       <div class="col-sm-10">
-        <select class="form-control add-select" name="dimension">
+        <select class="form-control add-select" name="dimension" required>
           <option>1D</option>
           <option>2D</option>
           <option>3D</option>
@@ -339,7 +339,7 @@ function toggleField(hideObj,showObj){
 
     <fieldset class="form-group">
       <div class="row">
-        <legend class="col-form-label col-sm-2 pt-0">Permanent setup</legend>
+        <legend class="col-form-label col-sm-2 pt-0">Permanent setup*</legend>
         <div class="col-sm-10">
           <div class="form-check">
             <input class="form-check-input" type="radio" id="permanent_setup_no" name="permanent_setup" value="no" checked>
@@ -415,16 +415,16 @@ function toggleField(hideObj,showObj){
         </header>
 
         <div class="form-group row">
-          <label for="plant" class="col-sm-2 col-form-label">Plant</label>
+          <label for="plant" class="col-sm-2 col-form-label">Plant*</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="plant" placeholder="e.g. Triciticum aestivum L. (Winter wheat)">
+            <input type="text" class="form-control" name="plant" placeholder="e.g. Triciticum aestivum L. (Winter wheat)" required>
           </div>
         </div>
 
         <div class="form-group row">
-          <label for="organ" class="col-sm-2 col-form-label">Organ studied</label>
+          <label for="organ" class="col-sm-2 col-form-label">Organ studied*</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="organ" placeholder="e.g. Roots, stem">
+            <input type="text" class="form-control" name="organ" placeholder="e.g. Roots, stem" required>
           </div>
         </div>
 </div>
@@ -438,7 +438,7 @@ function toggleField(hideObj,showObj){
     </header>
 
     <div class="form-group row">
-      <label for="soil" class="col-sm-2 col-form-label">Soil type</label>
+      <label for="soil" class="col-sm-2 col-form-label">Soil type*</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" name="soil" placeholder="e.g. Cambisol, clayey loam">
       </div>
@@ -447,7 +447,7 @@ function toggleField(hideObj,showObj){
     <div class="form-group row">
       <label for="water" class="col-sm-2 col-form-label">Water use</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" name="water" placeholder="e.g. irrigated, rain-fed">
+        <input type="text" class="form-control" name="water" placeholder="e.g. irrigated, rain-fed, none">
       </div>
     </div>
 
