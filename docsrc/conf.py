@@ -42,8 +42,8 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
-    'numpydoc',
-    'sphinxcontrib.bibtex',
+    'numpydoc'
+    # 'sphinxcontrib.bibtex',
     # 'nbsphinx',
     # 'sphinx_nbexamples',
 ]
