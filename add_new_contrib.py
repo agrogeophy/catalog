@@ -24,6 +24,8 @@ path_backup= 'C:/Users/Benjamin/Documents/Z_Database/bib2add/'
 
 # print(json.dumps(parsed_eml, default=json_serial))
 
+db = pd.read_csv('db.csv')
+db['name'] == 'weigand'
 
 #%% read db.csv
 db = pd.read_csv('db.csv')
