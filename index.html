@@ -46,11 +46,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
 
 <!-- Favicons -->
-<link href="img/favicon.png" rel="icon">
+<!--<link href="img/favicon.png" rel="icon">
 <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+-->
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Garamond:300,400,500,600,700" rel="stylesheet">
 
 
 <!-- Libraries CSS Files -->
@@ -111,10 +112,14 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script> -->
 
 <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+<!--
+
 <script src="https://unpkg.com/tableexport.jquery.plugin/libs/jsPDF/jspdf.min.js"></script>
 <script src="https://unpkg.com/tableexport.jquery.plugin/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
 
-
+ -->
+ 
+ 
 <!-- filter control boostrap extension -->
 <!-- <link rel="stylesheet" type="text/css" href="extensions/filter-control/bootstrap-table-filter-control.css"> -->
 <script src="https://unpkg.com/bootstrap-table@1.18.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
@@ -128,11 +133,6 @@
      height: 100%;
      margin: 0;
   }
-/*  #map-container {
-      margin-left: auto;
-      margin-right: auto;
-      width: 60%;
-  }*/
 
 /* About section
 --------------------------------*/
@@ -168,7 +168,7 @@ input[type=text] {
   padding: 22px 0;
   display: block;
   position: relative;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Garamond", sans-serif;
   font-size: 20px;
   line-height: 1;
   font-weight: 400;
@@ -206,7 +206,7 @@ input[type=text] {
 }
 
 #count_db .counters span {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Garamond", sans-serif;
   font-weight: bold;
   font-size: 48px;
   display: block;
@@ -216,71 +216,10 @@ input[type=text] {
 #count_db .counters p {
   padding: 0;
   margin: 0 0 20px 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Garamond", sans-serif;
   font-size: 14px;
   color: #8a87b6;
 }
-/* gridmysql_results Section
---------------------------------*/
-
-#gridmysql_results {
-  padding: 0px 0 0px 0;
-}
-
-#gridmysql_results .box {
-  padding: 30px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 2px;
-  margin: 0 10px 40px 10px;
-  background: #fff;
-  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
-  transition: all 0.3s ease-in-out;
-  text-align: center;
-}
-
-
-#gridmysql_results .box:hover {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-#gridmysql_results .icon {
-  margin: 0 auto 15px auto;
-  padding-top: 12px;
-  display: inline-block;
-  text-align: center;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-}
-
-#gridmysql_results .icon i {
-  font-size: 36px;
-  line-height: 1;
-}
-
-#gridmysql_results .title {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-#gridmysql_results .title a {
-  color: #111;
-}
-
-#gridmysql_results .box:hover .title a {
-  color: #1bb1dc;
-}
-
-#gridmysql_results .description {
-  font-size: 14px;
-  line-height: 28px;
-  margin-bottom: 0;
-  text-align: left;
-}
-
 
 /* objectives Section
 --------------------------------*/
@@ -295,7 +234,7 @@ input[type=text] {
 
 #objectives .about-content h2 {
   color: #413e66;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Garamond", sans-serif;
   font-weight: 700;
 }
 
@@ -379,7 +318,7 @@ input[type=text] {
 
 #useful_links .about-content h2 {
   color: #413e66;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Garamond", sans-serif;
   font-weight: 700;
 }
 
@@ -515,11 +454,13 @@ input[type=text] {
     position: center;
     padding-bottom: 50px;
     padding-top: 50px;
+    font-family: "Garamond", sans-serif;
    }
 
   .search {
     width: 50%;
     position: relative;
+    font-family: "Garamond", sans-serif;
   }
 
   .search span {
@@ -549,6 +490,8 @@ input[type=text] {
     border:0 !important;
     padding-top:2px !important;
     padding-bottom:2px !important;
+    background: #f5f8fd;
+    font-family: "Garamond", sans-serif;
 }
 	
 </style>
@@ -559,10 +502,12 @@ input[type=text] {
 <div w3-include-html="header_home.html"></div>
 
  <!-- leaflet map-->
-<section id="studyAreas">
+<section id="studyAreas"  class="section-bg">
   <div class="container">
     <div id="map">map</div>
+        <h5>
       *The map only displays georeferenced studies.
+        </h5>
   </div>
 </section>
 
@@ -592,15 +537,12 @@ input[type=text] {
 
 
 <!-- searchbox -->
-<section id="searchbox">
+<section id="searchbox", class="section-bg_dark">
   <div class="section-header">
-    <!-- <div class="row"> -->
-      <!-- <div class="col-sm" align="center"> -->
       <div class="w-50 mx-auto">
         <div class="autocomplete" style="width:500px; height:50px;">
           <input id="myInput" type="text" style="width:500px; height:50px; opacity:1;" name="myCountry" placeholder="Search authors or title"/>
         </div>
-      <!-- </div> -->
     </div>
   </div>
 </section>
@@ -637,15 +579,17 @@ input[type=text] {
     <br/>
     <br/>
     <br/>
+    <h5>
     <p>
       Extend and select the columns thanks to the widget on the top right corner of the table.
       Export it using the second widget. *Table mainly build on top of the review of Zhao et al. (2019).
     </p>
+    </h5>
   </div>
 </section>
 
 
-<section id="ecosystem">
+<section id="ecosystem"  class="section-bg" >
 <header class="section-header">
   <h3>Project ecosystem</h3>
            <p>CAGS is an ecosystem with many interrelated projects and repositories.</p>
@@ -659,27 +603,28 @@ input[type=text] {
 					  <div class="row">
 					    <div class="col-sm" align="center">
 					      <h4> Catalog </h4>
-					      A platform putting together a database/catalog of agrogeophysical surveys in order to promote <a href="https://www.go-fair.org/" target="_blank"> FAIR </a> practicies and boost future research
+					      <h5> A platform putting together a database/catalog of agrogeophysical surveys in order to promote <a href="https://www.go-fair.org/" target="_blank"> FAIR </a> practicies and boost future research </h5>
 
 					        <div class="list-group-flush">
 					            <div class="list-group-item">
-					              <i class="fa fa-github fa-2x mr-4 mr-4"></i><a href="https://github.com/agrogeophy/catalog/" style="text-align:center" target="_blank"> Agrogeophy/catalog</a>
-					            </div>
+							      <i class="fa fa-github fa-2x mr-4 mr-4"></i><a href="https://github.com/agrogeophy/catalog/" style="text-align:center" target="_blank"> Agrogeophy/catalog</a>
+							    </div>
 
 						     <div class="list-group-item">
 					              <i class="fa fa-book fa-lg fa-2x mr-4 mr-4"></i><a href="https://agrogeophy.github.io/catalog/docs" target="_blank"> Documentation</a>
+					            
 					            </div>
 					         	<div class="list-group-item">
 					             <i class="fa fa-bookmark fa-2x mr-4 mr-4"></i><a href="https://doi.org/10.5281/zenodo.4058524" target="_blank"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4058524.svg" alt="DOI"></a>
 					            </div>
-					            <div class="list-group-item">
-					              <i class="fa fa-refresh fa-2x mr-4 mr-4" style="color:green"></i> Ready to use but changing
-					            </div>
+							    <div class="list-group-item">
+							      <i class="fa fa-refresh fa-2x mr-4 mr-4" style="color:green"></i> Ready to use but changing
+							    </div>
 					          </div>
 					    </div>
 					    <div class="col-sm" align="center">
 					      <h4>Notebooks</h4>
-					      A collection of <b>reusable</b> jupyter notebooks that use agrogeophysical models
+					       <h5> A collection of <b>reusable</b> jupyter notebooks that use agrogeophysical models  </h5>
 							        <div class="list-group-flush">
 							            <div class="list-group-item">
 							              <i class="fa fa-github fa-2x mr-4 mr-4"></i><a href="https://github.com/agrogeophy/notebooks.git" style="text-align:center" target="_blank"> Agrogeophy/notebooks</a>
@@ -702,7 +647,7 @@ input[type=text] {
 						  
 					    <div class="col-sm" align="center">
 					      <h4>Datasets</h4>
-					      A list of agrogeophysical dataset of interest with associated <b>survey metadata</b> and <b>quality assessement metadata</b>
+					       <h5> A list of agrogeophysical dataset of interest with associated <b>survey metadata</b> and <b>quality assessement metadata</b>  </h5>
 							        <div class="list-group-flush">
 							            <div class="list-group-item">
 							              <i class="fa fa-github fa-2x mr-4 mr-4"></i><a href="https://github.com/agrogeophy/datasets.git" style="text-align:center" target="_blank">Agrogeophy/datasets</a>
@@ -726,7 +671,7 @@ input[type=text] {
               <div class="col-sm" align="center">
                 <h4>Skeppa</h4>
 
-		        Geophysical Metadata Management
+		         <h5> Geophysical Metadata Management  </h5>
 		        <div class="list-group-item">
 			      <i class="fa fa-spinner fa-2x mr-4 mr-4" style="color:green"></i> In construction
 			</div>
@@ -748,9 +693,10 @@ input[type=text] {
       <div class="container">
         <header class="section-header">
           <h3 id="howtocontribute">How to contribute</h3>
-          <p>Accepted contributions are <b> scientific communications with a DOI</b>, ideally packaged with a companion <b>computationnal notebooks</b>  and/or <b> a dataset DOI and description </b> complying with CAGS guidelines.</p>
+          <h4> Accepted contributions are <b> scientific communications with a DOI</b>, ideally packaged with a companion <b>computationnal notebooks</b>  and/or <b> a dataset DOI and description </b> complying with CAGS guidelines (see below for preparation). </h4>
         </header>
-	      
+
+          
 	<div class="col-sm" align="center">
               <p>
 <!--       <a href="input_form" target="_blank">Test </a>
@@ -759,12 +705,15 @@ input[type=text] {
         	</p>
     </div>
       
+      	
         <ul id="about_catalog-list" class="list-group">  <!--class="wow fadeInUp"> -->
           <li>
             <a data-toggle="collapse" class="collapsed" href="#sub_0" id="subm_model">Prepare a notebook<i class="ion-android-remove"></i></a>
             <div id="sub_0" class="collapse" data-parent="#about_catalog-list">
               <p>
-              </p><ol>
+              </p>
+	    <h5>
+              <ol>
                  <li> Take a look for exemples at the CAGS-notebook repository here: <a href="https://github.com/agrogeophy/notebooks.git" target="_blank"> Github agrogeophy-notebooks</a>
                 </li>
                  <li> Submit: <a href="https://github.com/agrogeophy/notebooks.git" target="_blank"> Github agrogeophy-notebooks submit template</a>
@@ -772,6 +721,7 @@ input[type=text] {
                 <li> Submit to the CAGS
                 </li>
               </ol>
+	    </h5>
 <!--
               If you want to submit an individual notebook, fill the form: <a href="input_form_notebook" target="_blank"> Submit notebook </a> -->
             <p></p>
@@ -782,9 +732,11 @@ input[type=text] {
             <a data-toggle="collapse" class="collapsed" href="#sub_1" id="subm_dataset">Prepare a dataset (in progress, not ready to use)<i class="ion-android-remove"></i></a>
             <div class="container-fluid">
                 <div id="sub_1" class="collapse" data-parent="#about_catalog-list">
-              		<div class="list-group-item">
+              		<div>
               			<i class="fa fa-spinner fa-2x mr-4 mr-4" style="color:green"></i> 
+				  <h5>
 					<ol>
+
 						<li> Use the CAGS geophysical metadata editor: <a href="https://github.com/agrogeophy/geometadp.git" target="_blank"> Github agrogeophy-geometadp</a>
 						</li>
 						<li> Take a look for exemples at the CAGS-datasets repository here: <a href="https://github.com/agrogeophy/datasets.git" target="_blank"> Github agrogeophy-datasets</a>
@@ -794,20 +746,11 @@ input[type=text] {
 						<li> Submit to the CAGS
 						</li>
 				      </ol>
+  				  </h5>
 			</div>
 	             </div>
             </div>
           </li>
-<!--           <li>
-            <a data-toggle="collapse" class="collapsed" href="#sub_2" id="subm_bench">Challenge the community!<i class="ion-android-remove"></i></a>
-            <div id="sub_2" class="collapse" data-parent="#about_catalog-list">
-              <p>
-        - Submit a dataset for benchmarking of inversion process
-               Send us a message on our Slack chatroom describing your issue.
-              <a href="https://agrogeophy.slack.com" target="_blank">Slack channel</a>
-        	</p>
-            </div>
-          </li> -->
         </ul>
       </div>
 	
@@ -840,25 +783,23 @@ input[type=text] {
             </h4>
         </div>
 
-		<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdgYaXgvtPQ2XK3RKUih7itWVr6TJ4ZtTPsKw-aPe3POzYUzQ/viewform?embedded=true" marginheight="0" marginwidth="100" width="840" height="1174" frameborder="0">Chargement…</iframe>
+		<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdgYaXgvtPQ2XK3RKUih7itWVr6TJ4ZtTPsKw-aPe3POzYUzQ/viewform?embedded=true" marginheight="0" marginwidth="100" width="840" height="300" frameborder="0">Chargement…</iframe>
 
 </div>
-
 </section>
 
 
+<!------------------------------------------------------------------------------------------------------------
+---------------------------  objectives ---------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------->
 <section id="objectives">
 <header class="section-header">
   <h3>Objectives</h3>
-<!--           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
--->        </header>
+</header>
 
     <div class="container">
-<!--         <div class="row">
- -->            <div class="about-content">
-
-<!--             <div class="col-lg-5 col-md-6">
- -->            <h3>
+            <div class="about-content">
+                <h3>
                   <ul class="columns" data-columns="2">
                  <li><i class="ion-android-checkmark-circle"></i> Build a repository that is trust by the community </li>
                  <li><i class="ion-android-checkmark-circle"></i>  Gather datasets needed for modeling </li>
@@ -866,43 +807,38 @@ input[type=text] {
                  <li><i class="ion-android-checkmark-circle"></i>  Finding easily georeferenced data-sets linked to research themes </li>
                   </ul>
                 </h3>
-<!--             </div>
- -->          </div>
+            </div>
       </div>
-
-
 </section>
-	
-<!-- DATA MINING -->
+
+
+<!------------------------------------------------------------------------------------------------------------
+---------------------------  DATA MINING ---------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------->
 <section id="DataMining">
 <header class="section-header">
   <h3>Metadata mining</h3>
 </header>
   <div class="container">
     <div class="text-center">
-
       <img src="./img/cloudimg.PNG" alt="Keywords cloud" class="rounded" width="400">
       <img src="./img/barwebimg.PNG" alt="Keywords cloud" class="rounded" width="400">
-
-	</div>
-<!--
-
- -->
-
+    </div>
 </div>
 </section>
 
 	
 
 
+<!------------------------------------------------------------------------------------------------------------
+---------------------------  ABOUT CATALOG -------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------->
 
-<!-- ABOUT CATALOG -->
 <section id="about_catalog">
       <div class="container">
         <header class="section-header">
           <h3>About the catalog</h3>
-<!--           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
- -->        </header>
+        </header>
 
         <ul id="about_catalog-list" class="wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
           <li>
@@ -918,11 +854,9 @@ input[type=text] {
             <a data-toggle="collapse" class="collapsed" href="#faq1">Cite us<i class="ion-android-remove"></i></a>
             <div id="faq1" class="collapse" data-parent="#about_catalog-list">
               <p>
-<!--                <i class="fa fa-bookmark">DOI VZJ paper</i>
-
- -->
-				DOI VZJ paper
-			</p>
+<!--<i class="fa fa-bookmark">DOI VZJ paper</i> -->
+		DOI VZJ paper
+	      </p>
             </div>
           </li>
           <li>
@@ -949,6 +883,9 @@ input[type=text] {
     </section>
 
 
+<!------------------------------------------------------------------------------------------------------------
+---------------------------  Funding section ---------- ------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------->
 <section id=funding>
 <header class="section-header">
   <h3>Project funding</h3>
@@ -965,19 +902,28 @@ input[type=text] {
     <div class="container">
 
           <div class="copyright">
+	  <h5>
             <p>
               This project has received funding from the European Union's Horizon 2020 research and innovation programme under the Marie Sklodowska-Curie grant agreement No 842922.
             </p>
           </div>
+         </h5>
           <div class="copyright">
+  	  <h5>
             © Copyright <strong>Rapid</strong>. All Rights Reserved
-          </div>
-          <div class="credits">
+	  </h5>
+	  </div>
+
+	  <div class="credits">
+    	  <h5>
             Designed by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a>
-          </div>
+	  </h5>
+	  </div>
 
     </div>
 </section>
+
+
 
 <!-- main javascript tag -->
 <script type="text/javascript">
@@ -1325,13 +1271,17 @@ function buildTable(db) {
 function buildNumbers(db) {
   document.getElementById("nbContributions").innerHTML = db.length
   document.getElementById("nbOrganisations").innerHTML = getUnique(db, 'organisation').length
-  document.getElementById("nbNotebooks").innerHTML = getNumber(db, 'contribution_type', 'Notebook')
-  document.getElementById("nbDatasets").innerHTML = getNumber(db, 'contribution_type', 'Dataset')
-}
+  document.getElementById("nbNotebooks").innerHTML = getNumber(db, 'contribution_type', 'Notebook') + 
+    						      getNumber(db, 'contribution_type', 'Peer reviewed publication/Notebook') +
+  						      getNumber(db, 'contribution_type', 'Peer reviewed publication/Notebook/Dataset') 
+  document.getElementById("nbDatasets").innerHTML = getNumber(db, 'contribution_type', 'Dataset') + 
+    						      getNumber(db, 'contribution_type', 'Peer reviewed publication/Notebook/Dataset') +
+  						      getNumber(db, 'contribution_type', 'Notebook/Dataset') 
+			}
 
 // loading the database (.csv file)
 let dbb = {}
-Papa.parse("db.csv", {
+Papa.parse("https://raw.githubusercontent.com/agrogeophy/catalog/master/db.csv", {
   download: true,
   header: true,
   //worker: true, // for large csv
