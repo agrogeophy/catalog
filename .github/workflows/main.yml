@@ -57,7 +57,7 @@ jobs:
       # rather than in docsrc
       - name: Build the doc
         run: |
-          cd docsrc
+          cd docsrc_sphinx
           python3 -m sphinx -b html . ../docs
           cd ..
       # python3 -m sphinx -b latex . ../docs/tex
@@ -65,6 +65,6 @@ jobs:
       - name: Commit to gh-pages
         run: |
           find ./
-          git add docs/*
+          git add docsrc_sphinx/*
           git commit -m "Update documentation" -a || true
           git push
