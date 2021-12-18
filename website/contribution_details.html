@@ -86,6 +86,7 @@
 		     			In order to improve it, we invite the authors to: 
 		      	    	 <ul>
 		      	    	 	<li>enrich metadata;</li>
+		      	    	 	<!-- {% if row['dataset_link'] } -->
 		      	    	 	<li id="no_dataset_warming"><b></b></li>
 		      	    	 	<li id="no_notebook_warming"><b></b></li>
 		      	    	 </ul>
@@ -148,14 +149,21 @@
 
 
 						<!-- notebook specific -->
+           <h2>Notebook details</h2>
 						<h4><a id="mybinder" href="https://mybinder.org/v2/gh/agrogeophy/notebooks/master?filepath=notebooks/" class="btn btn-primary" target="_blank">Try model in binder </a></h4>
 
-
 						<!-- dataset specific -->
-						<ul id="dataset" class="list-group">
+           <h2>Dataset details</h2>
 							<h4><a id="dataset_link" href="" class="btn btn-primary" target="_blank"> Link to data repository</a></h4>
 							<!--<h4><a id="reda_link" href="https://github.com/BenjMy/agrogeophy-data/raw/master/try-reda-master/" class="btn btn-primary" target="_blank">Download metadata journal file </a></h4>-->
-						</ul>
+						<h4><a id="dataset_app" href="https://share.streamlit.io/benjmy/ert_swc_board/main/app.py" class="btn btn-primary" target="_blank">Visualise dataset in streamlit </a></h4
+
+
+               	 <ul class="list-group">
+									 <li class="list-group-item" id="dataset_licence"><b>Licence: </b></li>
+                   <li class="list-group-item" id="dataset_type"><b>Familly: </b></li>
+									 <li class="list-group-item" id="dataset_comment"><b>Comment: </b></li>
+                </ul>
 
 						<p>
           		<h4>
@@ -286,6 +294,7 @@
 			if (row['dataset_link'] != '') {
 				addAttr('dataset_link', row['dataset_link'], 'href')
 				document.getElementById('no_dataset_warming').remove()
+
 			}
 
 			if (row['notebook_filename'] != '') {
@@ -306,7 +315,18 @@
 		
 		
 		else if (row['contribution_type'] == 'Dataset') {
+			let a = document.getElementById('dataset_link')
+
 			addAttr('dataset_link', row['dataset_link'], 'href')
+			addInfo('dataset_licence', row['dataset_licence'])
+			addInfo('dataset_type', row['dataset_type'])
+			addInfo('dataset_comment', row['dataset_comment'])
+
+			if 	(row['dataset_type']== 'ER_SWC'){
+					addAttr('dataset_app', 'https://share.streamlit.io/benjmy/ert_swc_board/main/app.py', 'href')
+					}
+
+
 			document.getElementById('mybinder').remove()
 		}
 		

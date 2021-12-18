@@ -12,7 +12,7 @@
 body {
   background: #fff;
   color: #444;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Garamond, Georgia", sans-serif;
 }
 
 a {
@@ -39,7 +39,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Garamond", sans-serif;
+  font-family: "Garamond, Georgia", sans-serif;
   font-weight: 400;
   margin: 0 0 20px 0;
   padding: 0;
@@ -210,7 +210,7 @@ h6 {
   padding: 10px 15px;
   transition: 0.3s;
   font-size: 14px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Garamond, Georgia", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -406,7 +406,7 @@ h6 {
   text-align: center;
   font-weight: 700;
   position: relative;
-  font-family: "Garamond", sans-serif;
+  font-family: "Garamond, Georgia", sans-serif;
 }
 
 .section-header p {
@@ -443,7 +443,7 @@ h6 {
 
 #about .about-content h2 {
   color: #413e66;
-  font-family: "Garamond", sans-serif;
+  font-family: "Garamond, Georgia", sans-serif;
   font-weight: 700;
 }
 
@@ -570,7 +570,7 @@ h6 {
 
 #studyAreas .studyAreas-content h2 {
   color: #413e66;
-  font-family: "Garamond", sans-serif;
+  font-family: "Garamond, Georgia", sans-serif;
   font-weight: 700;
 }
 
@@ -658,7 +658,7 @@ h6 {
 
 #LeafletCatalog .LeafletCatalog-content h2 {
   color: #413e66;
-  font-family: "Garamond", sans-serif;
+  font-family: "Garamond, Georgia", sans-serif;
   font-weight: 700;
 }
 
@@ -709,7 +709,7 @@ h6 {
   margin: 0 0 20px 0;
   padding: 2px 0 2px 0;
   line-height: 1;
-  font-family: "Garamond", sans-serif;
+  font-family: "Garamond, Georgia", sans-serif;
   color: #413e66;
   font-weight: 400;
   letter-spacing: 3px;
