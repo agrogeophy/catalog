@@ -1,2 +1,0 @@
-CAGS & FAIR guidelines
-======================
