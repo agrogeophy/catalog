@@ -24,7 +24,7 @@ Each contribution can be opened individually to see more details (and contact th
 
 The easiest way to contribute is to fill out the [online form](https://agrogeophy.github.io/catalog/input_form.html).
 
-Send the form via email (don't forget to attached additionnal files such as a cover picture, notebook file). Once received we will open an issue and test if the metadata meet the CAGS requirements - If the test passed your contribution will be automatically upload to the catalog website
+Send the form via email (don't forget to attached additionnal files such as a cover picture, notebook file). Once received we will open a pull request and test if the metadata csv file meet the CAGS requirements - If the test passed your contribution will be automatically upload to the catalog website
 
 
 ## We welcome any feedback and ideas!
