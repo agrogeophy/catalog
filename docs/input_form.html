@@ -562,8 +562,9 @@ function toggleField(hideObj,showObj){
 
 
 <script type="text/javascript">
+
+
   function sendMail() {
-    let mailtoHeader = "mailto:hello.agrogeophy@gmail.com?subject=CAGS%20contribution&body="
     let form = document.querySelector('form')
     let data = new FormData(form)
     console.log(data)
@@ -606,6 +607,18 @@ function toggleField(hideObj,showObj){
     content += data.get('comment')
     console.log(content)
     // TODO what about user comments?
+
+
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = mm + '/' + dd + '/' + yyyy;
+    //document.write(today);
+
+
+    let mailtoHeader = "mailto:hello.agrogeophy@gmail.com?subject=CAGS%20contribution%20" + data.get('surname') + "%20" + data.get('name') + "%20" + today + "%20" + "&body="
 
     content = encodeURIComponent(content)
 
