@@ -69,13 +69,14 @@ def process(verbose,console, style,**kargs):
 
 
     db = pd.read_csv(db_name)
-    console.print(db.head())
+    console.print('db before update', style=style)
+    console.print(db[-3:])
 
-    #save a backup with date flag
+    console.print('save a backup with date flag', style=style)
     today = date.today()
     console.print("Today's date:", today, style=style)
 
-    db.to_csv('db_backup' + str(today) +'.csv',sep=',')
+    db.to_csv('../backup/' +'db_backup' + str(today) +'.csv',sep=',')
 
 
     #%% read new contribution
@@ -131,13 +132,15 @@ def add_to_db(db,new,db_name,console,style):
 
     new['id']=db['id'].max()+1
     db = db.append(new)
-    print(db[-3:])
+
+    console.print('db after update', style=style)
+    console.print(db[-3:])
 
     db.to_csv(db_name,sep=',',index=False)
 
     today = date.today()
 
-    name_backup = new['publication_link'][0] + new['surname'][0] + new['name'][0] + today
+    name_backup = new['surname'][0] + new['name'][0] + str(today) + '.csv'
     new.to_csv('../backup/'+ str(name_backup),sep=',',index=False)
 
 
