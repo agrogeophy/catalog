@@ -5,6 +5,12 @@
 # Catalog of Agrogeophysical Studies (CAGS)
 This repository contains the source for the catalog [website](https://agrogeophy.github.io/catalog/).
 
+## Agrogeophysics
+
+"_Agrogeophysics is a branch of geophysics that uses geophysical methods to characterize patterns or processes in the soil that are of interest for agronomic management_". 
+
+As such, the CAGS groups studies that is using **geophysical techniques** focusing on **agricultural applications**.
+
 ## How to use the meta-database
 
 The database is stored as a single `db.csv` files you can find in root folder. Stable releases can be found in Zenodo.
