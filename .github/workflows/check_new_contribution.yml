@@ -36,6 +36,7 @@ jobs:
 
 
       - name: Install packages needed for the checks
+        if: always()
         run: |
           cd check_process
           sudo apt-get update
@@ -43,12 +44,14 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run add_new_contrib.py
+        if: always()
         run: |
           cd check_process
           python3 add_new_contrib.py -csv CAGS\ contribution.csv
 
       - name: Commit files
         run: |
+        if: always()
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
