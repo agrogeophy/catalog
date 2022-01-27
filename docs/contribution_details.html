@@ -7,7 +7,9 @@
 
 	<!-- Bootstrap CSS File -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+
+	 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
 	<!-- boostrap select -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
@@ -28,13 +30,16 @@
 	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 	<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-	<!-- Main Stylesheet File -->
-	<!-- 	<link href="css/style.css" rel="stylesheet">  -->
- 	<link href="css/style_contrib_details.css" rel="stylesheet">
+
 
 	<!-- parsing .csv database -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="js/papaparse.min.js"></script>
+
+	<!-- Main Stylesheet File -->
+	<!-- 	<link href="css/style.css" rel="stylesheet">  -->
+ 	<link href="css/style_contrib_details.css" rel="stylesheet">
+
 
 </head>
 
@@ -102,13 +107,16 @@
 	                <div id="altmetric" class="altmetric-embed" data-badge-type="donut" data-doi="">
 									</div>
 
+               <p>
                 <h2>Contribution overview</h2>
                   <ul class="list-group">
 										<li id="contribution_type" class="list-group-item"><b>Type: </b></li>
 										<li id="keywords" class="list-group-item"><b>Keywords: </b></li>
                     <li class="list-group-item"><a id="link" href="https://dx.doi.org/"  target="_blank"><b>Link to publication</b></a></li>
               		</ul>
+               </p>
 
+               <p>
                <h2>Prospection</h2>
                	<ul class="list-group">
 									<li class="list-group-item" id="publication_date"><b>Date: </b></li>
@@ -120,25 +128,33 @@
 	                <li class="list-group-item" id="dimension"><b>Dimension: </b></li>
 									<li class="list-group-item" id="permanent_setup"><b>Permanent setup: </b></li>
                 </ul>
+               </p>
 
+               <p>
              <h2>Processing tools</h2>
                <ul class="list-group">
 	               <li class="list-group-item" id="software_name"><b>Software: </b></li>
 	               <li class="list-group-item" id="software_licence"><b>Licence type: </b></li>
                </ul>
+               </p>
 
+               <p>
                <h2>Biotic</h2>
-                 <ul class="list-group">
+                 <ul class="list-group">                 	
 		               <li class="list-group-item" id="plant"><b>Species: </b></li>
 		               <li class="list-group-item" id="organ"><b>Organ: </b></li>
                  </ul>
+               </p>
 
+               <p>
                <h2>Abiotic description</h2>
                  <ul class="list-group">
 	               	<li class="list-group-item" id="soil"><b>Soil type: </b></li>
 	                <li class="list-group-item" id="water"><b>Water input: </b></li>
                	 </ul>
+               </p>
 
+               <p>
                <h2>Contact description</h2>
                	 <ul class="list-group">
 									 <li class="list-group-item" id="authors"><b>Contrib. Authors: </b></li>
@@ -146,17 +162,25 @@
 									 <li class="list-group-item" id="email"><b>Email: </b></li>
                    <li class="list-group-item"><a id="author_contact" href=mailto:><b>Contact the author</b></a></li>
                 </ul>
+               </p>
 
 
 						<!-- notebook specific -->
+					 <p>
            <h2>Notebook details</h2>
 						<h4><a id="mybinder" href="https://mybinder.org/v2/gh/agrogeophy/notebooks/master?filepath=notebooks/" class="btn btn-primary" target="_blank">Try model in binder </a></h4>
 
+						<h4><a id="nbviewer" href="https://nbviewer.org/github/agrogeophy/notebooks/blob/master/notebooks/?filepath=notebooks/" class="btn btn-primary" target="_blank">View notebook in nbviewer</a></h4>
+            </p>
+
 						<!-- dataset specific -->
+						<p>
            <h2>Dataset details</h2>
 							<h4><a id="dataset_link" href="" class="btn btn-primary" target="_blank"> Link to data repository</a></h4>
-							<!--<h4><a id="reda_link" href="https://github.com/BenjMy/agrogeophy-data/raw/master/try-reda-master/" class="btn btn-primary" target="_blank">Download metadata journal file </a></h4>-->
-						<h4><a id="dataset_app" href="https://share.streamlit.io/benjmy/ert_swc_board/main/app.py" class="btn btn-primary" target="_blank">Visualise dataset in streamlit </a></h4
+
+						  <h4>
+						  	<a id="dataset_app" href="https://share.streamlit.io/benjmy/ert_swc_board/main/app.py" class="btn btn-primary" target="_blank">Visualise dataset in streamlit </a>
+						  </h4
 
 
                	 <ul class="list-group">
@@ -164,10 +188,15 @@
                    <li class="list-group-item" id="dataset_type"><b>Familly: </b></li>
 									 <li class="list-group-item" id="dataset_comment"><b>Comment: </b></li>
                 </ul>
+            </p>
+
+						<p>
+						<h4><a id="metadata_download" class="btn btn-success" > Download metadata </a></h4>
+          	</p>
 
 						<p>
           		<h4>
-          			<a href="mailto:hello.agrogeophy@gmail.com?subject=error%20dbb%20Agrogeophysic" class="btn btn-primary">Report an error </a>
+          			<a href="mailto:hello.agrogeophy@gmail.com?subject=error%20dbb%20Agrogeophysic" class="btn btn-danger">Report an error </a>
           		</h4>
           	</p>
 
@@ -293,6 +322,9 @@
 
 			if (row['dataset_link'] != '') {
 				addAttr('dataset_link', row['dataset_link'], 'href')
+			  addInfo('dataset_licence', row['dataset_licence'])
+			  addInfo('dataset_type', row['dataset_type'])
+			  addInfo('dataset_comment', row['dataset_comment'])
 				document.getElementById('no_dataset_warming').remove()
 
 			}
@@ -344,6 +376,16 @@
 		}	
 		
 		
+
+
+		metadata_download.onclick = function(){
+																	var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(row));
+																	var dlAnchorElem = document.getElementById('metadata_download');
+																	dlAnchorElem.setAttribute("href",     dataStr     );
+																	dlAnchorElem.setAttribute("download", "metadata.json");
+																};
+
+
 
 		// remove all empty list group and their above h6 title
 		let uls = document.getElementsByClassName('list-group')
