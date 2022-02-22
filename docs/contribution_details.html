@@ -185,7 +185,7 @@
 
                	 <ul class="list-group">
 									 <li class="list-group-item" id="dataset_licence"><b>Licence: </b></li>
-                   <li class="list-group-item" id="dataset_type"><b>Familly: </b></li>
+                   <li class="list-group-item" id="dataset_type"><b>Family: </b></li>
 									 <li class="list-group-item" id="dataset_comment"><b>Comment: </b></li>
                 </ul>
             </p>
@@ -211,6 +211,9 @@
 
 
 <script type="text/javascript">
+
+
+
 
 		// load csv database (it should already be cached from catalog.html)
 	Papa.parse("https://raw.githubusercontent.com/agrogeophy/catalog/master/db.csv", {
@@ -240,6 +243,11 @@
 			console.log('ERROR: id ' + id + ' has not been found in the database.')
 		}
 		console.log(row)
+
+	  console.log(row['contribution_type']);
+	  console.log(row['contribution_type'].includes("Dataset"));
+	  console.log(row['dataset_link']);
+
 
 		function addInfo(id, val) {
 			let a = document.getElementById(id)
@@ -288,7 +296,7 @@
 
 
 
-		if (row['contribution_type'] == 'Peer reviewed publication') {
+		if (row['contribution_type'].includes('Peer reviewed publication')) {
 			if (row['publication_link'].indexOf('doi') != -1) {
 				let doi = row['publication_link'].split('.org/')[1]
 				document.getElementById('altmetric').setAttribute('data-doi', doi)
@@ -320,6 +328,7 @@
 			addInfo('soil', row['soil'])
 			addInfo('water', row['water'])
 
+
 			if (row['dataset_link'] != '') {
 				addAttr('dataset_link', row['dataset_link'], 'href')
 			  addInfo('dataset_licence', row['dataset_licence'])
@@ -345,8 +354,8 @@
 
 		} 
 		
-		
-		else if (row['contribution_type'] == 'Dataset') {
+
+		else if (row['contribution_type']=="Dataset") {
 			let a = document.getElementById('dataset_link')
 
 			addAttr('dataset_link', row['dataset_link'], 'href')
