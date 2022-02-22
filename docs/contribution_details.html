@@ -342,6 +342,8 @@
 				let a = document.getElementById('mybinder')
 				a.setAttribute('href', 'https://mybinder.org/v2/gh/agrogeophy/notebooks/master?filepath=notebooks/' + row['notebook_filename'])
 				document.getElementById('no_notebook_warming').remove()
+				let b = document.getElementById('nbviewer')
+				b.setAttribute('href', 'https://nbviewer.org/github/agrogeophy/notebooks/blob/master/notebooks/?filepath=notebooks/' + row['notebook_filename'])
 			}
 
 
@@ -350,6 +352,8 @@
 		else if (row['contribution_type'] == 'Notebook') {
 			let a = document.getElementById('mybinder')
 			a.setAttribute('href', 'https://mybinder.org/v2/gh/agrogeophy/notebooks/master?filepath=notebooks/' + row['notebook_filename'])
+			let b = document.getElementById('nbviewer')
+			b.setAttribute('href', 'https://nbviewer.org/github/agrogeophy/notebooks/blob/master/notebooks/?filepath=notebooks/' + row['notebook_filename'])
 			// document.getElementById('dataset').remove()
 
 		} 
