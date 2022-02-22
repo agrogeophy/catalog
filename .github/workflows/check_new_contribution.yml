@@ -28,6 +28,7 @@ jobs:
 
       - name: Update gh-pages branch
         run: |
+          git config --global pull.rebase false
           git fetch
           git checkout gh-pages # go to the gh-pages branch
           git pull
