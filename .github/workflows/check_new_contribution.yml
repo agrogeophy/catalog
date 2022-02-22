@@ -33,8 +33,8 @@ jobs:
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
           git checkout gh-pages # go to the gh-pages branch
-          git pull origin master --allow-unrelated-histories -s theirs
-          git merge origin origin/master -s theirs
+          git pull origin master --allow-unrelated-histories -s recursive -X theirs
+          git merge origin origin/master -s recursive -X theirs
           git push origin gh-pages # commit the changes
           git checkout master # return to the master branch
 
