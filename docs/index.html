@@ -1127,7 +1127,6 @@ function buildMap(db) {
         let long = parseFloat(db[i]['longitude'])
         let lat = parseFloat(db[i]['latitude'])
         if (isNaN(long) == false && isNaN(lat) == false) {
-          console.log(lat, long)
           let latLng = new L.LatLng(lat, long)
           let marker = new L.Marker(latLng,{title: db[i]['organisation'],icon: AgrogeophyIcon})
           let content = '<table border="0" style="border-collapse:collapse;" cellpadding="2">' +
@@ -1149,7 +1148,6 @@ function buildMap(db) {
         let lat = parseFloat(db[i]['latitude'])
         if (isNaN(long) == false && isNaN(lat) == false) {
           if (db[i]['contribution_type'].includes("Notebook")){
-              console.log(lat, long)
               let latLng = new L.LatLng(lat, long)
               let marker = new L.Marker(latLng,{title: db[i]['organisation'],icon: NotebookIcon})
               let content = '<table border="0" style="border-collapse:collapse;" cellpadding="2">' +
@@ -1167,10 +1165,15 @@ function buildMap(db) {
         }
       }
 
+
       for (let i = 0; i < db.length; i++) {
         let long = parseFloat(db[i]['longitude'])
         let lat = parseFloat(db[i]['latitude'])
+                    console.log(db[i]['contribution_type'])
+                  console.log(db[i]['contribution_type'].includes("Dataset"))
+                  console.log(long)
         if (isNaN(long) == false && isNaN(lat) == false) {
+
           if (db[i]['contribution_type'].includes("Dataset")){
               console.log(lat, long)
               let latLng = new L.LatLng(lat, long)
