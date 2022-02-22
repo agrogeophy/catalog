@@ -35,7 +35,7 @@ jobs:
           git checkout gh-pages # go to the gh-pages branch
           git pull origin master --allow-unrelated-histories -s recursive -X theirs
           git merge origin/master -s recursive -X theirs
-          #git push origin gh-pages # commit the changes
+          git push origin gh-pages # commit the changes
           git checkout master # return to the master branch
 
 
@@ -59,7 +59,8 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "Update database" -a
+          #git commit -m "Update database" -a
+          git diff --quiet && git diff --staged --quiet || git commit -am 'Update database'  # git commit only if change
           
       - name: Push changes
         uses: ad-m/github-push-action@master
