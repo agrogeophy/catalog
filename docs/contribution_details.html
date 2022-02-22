@@ -142,7 +142,7 @@
             <div>
               <br/>
               <h2>Biotic</h2>
-              <ul class="list-group">                 	
+              <ul class="list-group">
                 <li class="list-group-item" id="plant"><b>Species: </b></li>
                 <li class="list-group-item" id="organ"><b>Organ: </b></li>
               </ul>
@@ -174,7 +174,7 @@
               <br/>
               <h2>Notebook details</h2>
               <h4>
-                <a id="mybinder" href="https://mybinder.org/v2/gh/agrogeophy/notebooks/master?filepath=notebooks/" class="btn btn-primary" target="_blank">Try model in binder </a>µ
+                <a id="mybinder" href="https://mybinder.org/v2/gh/agrogeophy/notebooks/master?filepath=notebooks/" class="btn btn-primary" target="_blank">Try model in binder </a>
               </h4>
               <h4>
                 <a id="nbviewer" href="https://nbviewer.org/github/agrogeophy/notebooks/blob/master/notebooks/?filepath=notebooks/" class="btn btn-primary" target="_blank">View notebook in nbviewer</a>
@@ -297,7 +297,8 @@
 
 
 
-		if (row['contribution_type'].includes('Peer reviewed publication')) {
+		//if (row['contribution_type'].includes('Peer reviewed publication')) {
+		if (true) { // for all type of contributions, we do that
 			if (row['publication_link'].indexOf('doi') != -1) {
 				let doi = row['publication_link'].split('.org/')[1]
 				document.getElementById('altmetric').setAttribute('data-doi', doi)
@@ -350,7 +351,7 @@
 
 		} 
 		
-		else if (row['contribution_type'] == 'Notebook') {
+		if (row['contribution_type'] == 'Notebook') {
 			let a = document.getElementById('mybinder')
 			a.setAttribute('href', 'https://mybinder.org/v2/gh/agrogeophy/notebooks/master?filepath=notebooks/' + row['notebook_filename'])
 			let b = document.getElementById('nbviewer')
@@ -400,6 +401,7 @@
 
 		// remove all empty list group and their above h6 title
 		let uls = document.getElementsByClassName('list-group')
+		let toRemove = []
 		for (let i = 0; i < uls.length; i++) {
 			let children = uls[i].children
 			let visible = false
@@ -410,10 +412,12 @@
 				}
 			}
 			if (visible == false) {
-				uls[i].previousSibling.previousSibling.remove() // remove h6 title
-				uls[i].remove()
-
+				toRemove.push(uls[i].previousElementSibling) // remove h6 title
+				toRemove.push(uls[i]) // if we remove at the same time, this changes the indexing
 			}
+		}
+		for (let el of toRemove) {
+			el.remove()
 		}
 
 	} 
