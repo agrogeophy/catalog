@@ -30,11 +30,11 @@ jobs:
         run: |
           git fetch
           git config pull.rebase false
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
           git checkout gh-pages # go to the gh-pages branch
           git pull origin master --allow-unrelated-histories
           git merge origin origin/master
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
           git push origin gh-pages # commit the changes
           git checkout master # return to the master branch
 
