@@ -1169,9 +1169,6 @@ function buildMap(db) {
       for (let i = 0; i < db.length; i++) {
         let long = parseFloat(db[i]['longitude'])
         let lat = parseFloat(db[i]['latitude'])
-                    console.log(db[i]['contribution_type'])
-                  console.log(db[i]['contribution_type'].includes("Dataset"))
-                  console.log(long)
         if (isNaN(long) == false && isNaN(lat) == false) {
 
           if (db[i]['contribution_type'].includes("Dataset")){
