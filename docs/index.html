@@ -28,9 +28,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
 <!-- leaflet -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-  crossorigin=""/>
+<link rel="stylesheet" href="css/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
@@ -496,6 +494,8 @@ input[type=text] {
 
 
 }
+
+
 
 </style>
 </head>
@@ -1107,7 +1107,7 @@ function buildMap(db) {
       });
 
       let DatasetsIcon = L.icon({
-        iconUrl: 'img/logo.png',
+        iconUrl: 'img/c2.png',
         iconSize: [16, 16],
         iconAnchor: [12, 28],
         popupAnchor: [0, -25]
@@ -1148,7 +1148,7 @@ function buildMap(db) {
         let long = parseFloat(db[i]['longitude'])
         let lat = parseFloat(db[i]['latitude'])
         if (isNaN(long) == false && isNaN(lat) == false) {
-          if (db[i]['contribution_type']=='Notebook'){
+          if (db[i]['contribution_type'].includes("Notebook")){
               console.log(lat, long)
               let latLng = new L.LatLng(lat, long)
               let marker = new L.Marker(latLng,{title: db[i]['organisation'],icon: NotebookIcon})
@@ -1171,10 +1171,10 @@ function buildMap(db) {
         let long = parseFloat(db[i]['longitude'])
         let lat = parseFloat(db[i]['latitude'])
         if (isNaN(long) == false && isNaN(lat) == false) {
-          if (db[i]['contribution_type']=='Datasets'){
+          if (db[i]['contribution_type'].includes("Dataset")){
               console.log(lat, long)
               let latLng = new L.LatLng(lat, long)
-              let marker = new L.Marker(latLng,{title: db[i]['organisation'],icon: NotebookIcon})
+              let marker = new L.Marker(latLng,{title: db[i]['organisation'],icon: DatasetsIcon})
               let content = '<table border="0" style="border-collapse:collapse;" cellpadding="2">' +
                 '<tr><th>Authors:</th><td>' + db[i]['authors'] + '</td></tr>' +
                 '<tr><th>Methods:</th><td>' +  db[i]['method'] +   '</td></tr>' +
@@ -1211,6 +1211,9 @@ function buildMap(db) {
        collapsed: false
       });
       map.addControl(layersControl);
+
+      L.control.layers(null, mixed).addTo(map);
+
 
       console.log('leaflet map with contributions loaded')
   }

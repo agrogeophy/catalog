@@ -684,6 +684,10 @@ h6 {
   color: #1bb1dc;
 }
 
+.#LeafletCatalog .leaflet-control-layers-overlays input[type='checkbox'] {
+   display: block !important;
+ }
+ 
 
 /*--------------------------------------------------------------
 # Footer
@@ -1077,4 +1081,5 @@ h6 {
       color: $color;
     }
   }
+
 
