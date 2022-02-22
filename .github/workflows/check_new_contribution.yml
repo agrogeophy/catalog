@@ -29,6 +29,7 @@ jobs:
       - name: Update gh-pages branch
         run: |
           git fetch
+          git config pull.rebase false
           git checkout gh-pages # go to the gh-pages branch
           git pull origin master --allow-unrelated-histories
           git merge origin origin/master
