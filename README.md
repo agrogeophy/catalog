@@ -28,15 +28,17 @@ Each contribution can be opened individually to see more details (and contact th
 
 ## How to contibute to the meta-database
 
+### You don't have a DOI? please upload your material content to the [Zenodo agrogeophy group](https://zenodo.org/communities/agphy/)
+
 The easiest way to contribute is to fill out the [online form](https://agrogeophy.github.io/catalog/input_form.html).
 
 Send the form via email. Once received we will open a pull request and test if the metadata csv file meet the CAGS requirements - If the test passed your contribution will be automatically upload to the catalog website
 
-### Possible additionnal files
-- cover picture with Licence description
-- notebook file (possibility to be reviewed using the dedicated folder: https://github.com/agrogeophy/notebooks) with a DOI
-  -  Binder + Zenodo: https://blog.jupyter.org/binder-with-zenodo-af68ed6648a6
-  -  Sharing and Publishing Jupyter Notebooks: https://reproducible-science-curriculum.github.io/publication-RR-Jupyter/aio.html
+
+*Possible additionnal files*
+- a cover picture with a Licence description
+- notebook file with a DOI (see [notebook github](https://github.com/agrogeophy/notebooks) for instruction on how to preapre it) 
+
 
 Don't forget to attached the files in the email submission. 
 
